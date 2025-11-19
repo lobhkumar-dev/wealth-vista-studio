@@ -110,32 +110,36 @@ const About = () => {
 
           {/* Right Side - Content */}
           <div className="space-y-6">
-            <div className={`inline-block transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+            <div className={`inline-block transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
               <span className="px-4 py-2 bg-primary text-primary-foreground text-sm font-semibold rounded-full uppercase tracking-wide">
                 About Us
               </span>
             </div>
 
-            <h2 className={`text-4xl md:text-5xl font-bold leading-tight transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-              The Journey Behind Our{" "}
-              <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+            <h2 className={`text-4xl md:text-5xl font-bold leading-tight transition-all duration-1000 ease-out delay-100 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
+              <span className={`inline-block transition-all duration-1000 delay-150 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+                The Journey Behind Our{" "}
+              </span>
+              <span className={`inline-block bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
                 Business Success
               </span>
             </h2>
 
-            <p className={`text-foreground/70 text-lg leading-relaxed transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+            <p className={`text-foreground/70 text-lg leading-relaxed transition-all duration-1000 ease-out delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
               MoneyTree Wealth is the go-to hub for early adopters and innovation enthusiasts, 
               offering cutting-edge financial solutions that drive success.
             </p>
 
             {/* Creative Solutions */}
-            <div className={`flex gap-4 items-start transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+            <div className={`flex gap-4 items-start transition-all duration-1000 ease-out delay-[400ms] ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}>
+              <div className={`w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-700 delay-[450ms] ${isVisible ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-45 scale-50'}`}>
                 <Lightbulb className="w-6 h-6 text-primary" />
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-2">Creative Solutions</h3>
-                <p className="text-foreground/60">
+                <h3 className={`text-xl font-semibold mb-2 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+                  Creative Solutions
+                </h3>
+                <p className={`text-foreground/60 transition-all duration-1000 delay-[550ms] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
                   In today's competitive business landscape, the need for efficient IT 
                   solutions has been more critical.
                 </p>
@@ -143,13 +147,15 @@ const About = () => {
             </div>
 
             {/* Actionable Solutions */}
-            <div className={`flex gap-4 items-start transition-all duration-700 delay-[400ms] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+            <div className={`flex gap-4 items-start transition-all duration-1000 ease-out delay-[600ms] ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}>
+              <div className={`w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-700 delay-[650ms] ${isVisible ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-45 scale-50'}`}>
                 <Target className="w-6 h-6 text-primary" />
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-2">Actionable Solutions</h3>
-                <p className="text-foreground/60">
+                <h3 className={`text-xl font-semibold mb-2 transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+                  Actionable Solutions
+                </h3>
+                <p className={`text-foreground/60 transition-all duration-1000 delay-[750ms] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
                   In today's competitive business landscape, the need for efficient IT 
                   solutions has been more critical.
                 </p>
@@ -157,32 +163,40 @@ const About = () => {
             </div>
 
             {/* Business Success Progress */}
-            <div className={`space-y-3 transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+            <div className={`space-y-3 transition-all duration-1000 ease-out delay-[800ms] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               <div className="flex justify-between items-center">
-                <span className="font-semibold">Business Success</span>
-                <span className="font-bold text-primary">{progressValue}%</span>
+                <span className={`font-semibold transition-all duration-1000 delay-[850ms] ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}>
+                  Business Success
+                </span>
+                <span className={`font-bold text-primary transition-all duration-1000 delay-[850ms] ${isVisible ? 'opacity-100 translate-x-0 scale-100' : 'opacity-0 translate-x-4 scale-75'}`}>
+                  {progressValue}%
+                </span>
               </div>
               <Progress value={progressValue} className="h-2" />
             </div>
 
             {/* Bottom CTA */}
-            <div className={`flex flex-col sm:flex-row items-start sm:items-center gap-6 pt-4 transition-all duration-700 delay-[600ms] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+            <div className={`flex flex-col sm:flex-row items-start sm:items-center gap-6 pt-4 transition-all duration-1000 ease-out delay-[900ms] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               <Button 
                 size="lg" 
-                className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-8"
+                className={`bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-8 transition-all duration-700 delay-[950ms] ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}
               >
                 Find Services
               </Button>
 
-              <div className="flex items-center gap-4">
+              <div className={`flex items-center gap-4 transition-all duration-1000 delay-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}>
                 <img
                   src={founderProfile}
                   alt="Founder"
                   className="w-14 h-14 rounded-full border-2 border-primary object-cover"
                 />
                 <div>
-                  <p className="font-semibold text-lg italic">Michel Devid</p>
-                  <p className="text-sm text-primary font-medium">Founder</p>
+                  <p className={`font-semibold text-lg italic transition-all duration-700 delay-[1050ms] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}>
+                    Michel Devid
+                  </p>
+                  <p className={`text-sm text-primary font-medium transition-all duration-700 delay-[1100ms] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}>
+                    Founder
+                  </p>
                 </div>
               </div>
             </div>
