@@ -7,10 +7,41 @@ import teamMember1 from "@/assets/team-member-1.jpg";
 import teamMember2 from "@/assets/team-member-2.jpg";
 import teamMember3 from "@/assets/team-member-3.jpg";
 import founderProfile from "@/assets/founder-profile.jpg";
+import { useState, useEffect, useRef } from "react";
 
 const About = () => {
+  const [progressValue, setProgressValue] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (isVisible && progressValue < 88) {
+      const timer = setTimeout(() => {
+        setProgressValue((prev) => Math.min(prev + 1, 88));
+      }, 20);
+      return () => clearTimeout(timer);
+    }
+  }, [isVisible, progressValue]);
+
   return (
-    <section id="about" className="py-24 bg-background">
+    <section id="about" className="py-24 bg-background" ref={sectionRef}>
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Images */}
@@ -62,27 +93,27 @@ const About = () => {
           </div>
 
           {/* Right Side - Content */}
-          <div className="space-y-6 animate-fade-in">
-            <div className="inline-block">
+          <div className="space-y-6">
+            <div className={`inline-block transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
               <span className="px-4 py-2 bg-primary text-primary-foreground text-sm font-semibold rounded-full uppercase tracking-wide">
                 About Us
               </span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in" style={{ animationDelay: '0.1s' }}>
+            <h2 className={`text-4xl md:text-5xl font-bold leading-tight transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
               The Journey Behind Our{" "}
               <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
                 Business Success
               </span>
             </h2>
 
-            <p className="text-foreground/70 text-lg leading-relaxed animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <p className={`text-foreground/70 text-lg leading-relaxed transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
               MoneyTree Wealth is the go-to hub for early adopters and innovation enthusiasts, 
               offering cutting-edge financial solutions that drive success.
             </p>
 
             {/* Creative Solutions */}
-            <div className="flex gap-4 items-start animate-fade-in" style={{ animationDelay: '0.3s' }}>
+            <div className={`flex gap-4 items-start transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
               <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                 <Lightbulb className="w-6 h-6 text-primary" />
               </div>
@@ -96,7 +127,7 @@ const About = () => {
             </div>
 
             {/* Actionable Solutions */}
-            <div className="flex gap-4 items-start animate-fade-in" style={{ animationDelay: '0.4s' }}>
+            <div className={`flex gap-4 items-start transition-all duration-700 delay-[400ms] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
               <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                 <Target className="w-6 h-6 text-primary" />
               </div>
@@ -110,16 +141,16 @@ const About = () => {
             </div>
 
             {/* Business Success Progress */}
-            <div className="space-y-3 animate-fade-in" style={{ animationDelay: '0.5s' }}>
+            <div className={`space-y-3 transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
               <div className="flex justify-between items-center">
                 <span className="font-semibold">Business Success</span>
-                <span className="font-bold text-primary">88%</span>
+                <span className="font-bold text-primary">{progressValue}%</span>
               </div>
-              <Progress value={88} className="h-2" />
+              <Progress value={progressValue} className="h-2" />
             </div>
 
             {/* Bottom CTA */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 pt-4 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+            <div className={`flex flex-col sm:flex-row items-start sm:items-center gap-6 pt-4 transition-all duration-700 delay-[600ms] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
               <Button 
                 size="lg" 
                 className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-8"
