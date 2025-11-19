@@ -150,30 +150,20 @@ const Leadership = () => {
                 </div>
               </div>
 
-              {/* Get Started Button */}
-              <Button 
-                size="lg"
-                className={`bg-[#a8d530] hover:bg-[#a8d530]/90 text-black font-bold rounded-full px-8 transition-all duration-700 ${
-                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                }`}
-                style={{ transitionDelay: '1000ms' }}
-              >
-                Get Started <ArrowUpRight className="ml-2 w-5 h-5" />
-              </Button>
             </div>
 
             {/* Right Image */}
             <div 
-              className={`relative lg:min-h-[600px] transition-all duration-1000 ${
+              className={`relative lg:self-end transition-all duration-1000 ${
                 isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
               }`}
               style={{ transitionDelay: '300ms' }}
             >
-              <div className="relative w-full h-full group">
+              <div className="relative w-full h-full group lg:h-[700px]">
                 <img
                   src={founderCEO.image}
                   alt={founderCEO.name}
-                  className="w-full h-full object-contain object-center grayscale group-hover:grayscale-0 transition-all duration-700"
+                  className="w-full h-full object-contain object-bottom grayscale group-hover:grayscale-0 transition-all duration-700"
                 />
               </div>
             </div>
