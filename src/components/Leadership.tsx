@@ -169,11 +169,11 @@ const Leadership = () => {
               }`}
               style={{ transitionDelay: '300ms' }}
             >
-              <div className="relative w-full h-full rounded-2xl overflow-hidden group">
+              <div className="relative w-full h-full group">
                 <img
                   src={founderCEO.image}
                   alt={founderCEO.name}
-                  className="w-full h-full object-cover object-center grayscale group-hover:grayscale-0 transition-all duration-700"
+                  className="w-full h-full object-contain object-center grayscale group-hover:grayscale-0 transition-all duration-700"
                 />
               </div>
             </div>
