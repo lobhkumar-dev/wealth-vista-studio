@@ -2,7 +2,7 @@ import { useState } from "react";
 import { MessageCircle, X, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import whatsappIcon from "@/assets/whatsapp-icon.png";
+import whatsappIcon from "@/assets/whatsapp-logo.png";
 
 const WhatsAppWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
