@@ -16,8 +16,8 @@ const Hero = () => {
         <path d="M 20 80 Q 40 20, 80 50" stroke="currentColor" strokeWidth="4" fill="none" strokeLinecap="round" />
       </svg>
 
-      <div className="container mx-auto px-4 py-12 relative z-5 h-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start max-w-7xl mx-auto pb-32">
+      <div className="container mx-auto px-4 py-20 relative z-5">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-8 lg:gap-4 items-center max-w-7xl mx-auto">
           {/* Left Content - Text */}
           <div className="text-left animate-fade-in-up lg:pr-8">
             <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-tight mb-8 lg:mb-12">
@@ -45,6 +45,15 @@ const Hero = () => {
                 <span className="font-medium text-base">Watch Video</span>
               </button>
             </div>
+          </div>
+
+          {/* Center Content - Professional Image - In Front */}
+          <div className="relative flex justify-center animate-fade-in-up delay-200 lg:mx-4 z-10">
+            <img
+              src="https://res.cloudinary.com/dkgwi1xvx/image/upload/v1763571734/Gemini_Generated_Image_di4uj2di4uj2di4u-removebg-preview_c6cnx0.png"
+              alt="Professional"
+              className="w-full max-w-[550px] lg:max-w-[750px] xl:max-w-[900px] h-auto object-contain relative"
+            />
           </div>
 
           {/* Right Content - Stats and Description */}
@@ -79,15 +88,6 @@ const Hero = () => {
               </p>
             </div>
           </div>
-        </div>
-
-        {/* Professional Image - At Bottom - Much Larger - In Front */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-10 w-full flex justify-center pointer-events-none">
-          <img
-            src="https://res.cloudinary.com/dkgwi1xvx/image/upload/v1763571734/Gemini_Generated_Image_di4uj2di4uj2di4u-removebg-preview_c6cnx0.png"
-            alt="Professional"
-            className="w-full max-w-[700px] md:max-w-[900px] lg:max-w-[1100px] xl:max-w-[1300px] h-auto object-contain"
-          />
         </div>
       </div>
     </section>
