@@ -1,6 +1,5 @@
 import { ArrowRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-financial.jpg";
 
 const Hero = () => {
   return (
@@ -51,7 +50,7 @@ const Hero = () => {
           {/* Center Content - Professional Image */}
           <div className="relative flex justify-center animate-fade-in-up delay-200 lg:mx-4">
             <img
-              src={heroImage}
+              src="https://res.cloudinary.com/dkgwi1xvx/image/upload/v1763571734/Gemini_Generated_Image_di4uj2di4uj2di4u-removebg-preview_c6cnx0.png"
               alt="Professional"
               className="w-full max-w-[400px] lg:max-w-[450px] xl:max-w-[500px] h-auto object-contain"
             />
@@ -65,7 +64,7 @@ const Hero = () => {
                 {/* Circular Image */}
                 <div className="w-16 h-16 rounded-2xl overflow-hidden flex-shrink-0 bg-gray-200">
                   <img
-                    src={heroImage}
+                    src="https://res.cloudinary.com/dkgwi1xvx/image/upload/v1763571734/Gemini_Generated_Image_di4uj2di4uj2di4u-removebg-preview_c6cnx0.png"
                     alt="Team"
                     className="w-full h-full object-cover"
                   />
