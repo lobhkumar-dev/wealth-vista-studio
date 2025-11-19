@@ -1,7 +1,7 @@
 import { Linkedin, Mail, CheckCircle, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useRef, useState } from "react";
-import founderImage from "@/assets/founder-profile.jpg";
+import founderImage from "@/assets/founder-profile-nobg.png";
 
 const Leadership = () => {
   const [isVisible, setIsVisible] = useState(false);
