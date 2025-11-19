@@ -7,6 +7,7 @@ import Services from "@/components/Services";
 import Leadership from "@/components/Leadership";
 import Gallery from "@/components/Gallery";
 import News from "@/components/News";
+import Testimonials from "@/components/Testimonials";
 import Partners from "@/components/Partners";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -44,6 +45,7 @@ const Index = () => {
       <Leadership />
       <Gallery />
       <News />
+      <Testimonials />
       <Partners />
       <Contact />
       <Footer />
