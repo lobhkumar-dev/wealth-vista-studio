@@ -47,7 +47,7 @@ const About = () => {
           {/* Left Side - Images */}
           <div className="relative h-[600px] lg:h-[700px]">
             {/* Main Image - Colored with teal border */}
-            <div className="relative">
+            <div className={`relative transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               <div className="absolute -inset-3 bg-cyan-500/30 rounded-[2rem] blur-sm" />
               <div className="relative rounded-[2rem] border-2 border-cyan-500/50 overflow-hidden">
                 <img
@@ -59,7 +59,7 @@ const About = () => {
             </div>
 
             {/* Bottom Left Small Image Strip */}
-            <div className="absolute bottom-[280px] left-0 w-[45%] z-10">
+            <div className={`absolute bottom-[280px] left-0 w-[45%] z-10 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               <div className="absolute -inset-2 bg-cyan-500/30 rounded-[1.5rem] blur-sm" />
               <div className="relative rounded-[1.5rem] border-2 border-cyan-500/50 overflow-hidden">
                 <img
@@ -71,7 +71,7 @@ const About = () => {
             </div>
 
             {/* Skilled Team Badge */}
-            <div className="absolute bottom-[220px] left-[35%] transform -translate-x-1/2 bg-[#1a3a3a] backdrop-blur-sm px-6 py-3 rounded-2xl shadow-2xl border border-cyan-500/30 z-20">
+            <div className={`absolute bottom-[220px] left-[35%] transform -translate-x-1/2 bg-[#1a3a3a] backdrop-blur-sm px-6 py-3 rounded-2xl shadow-2xl border border-cyan-500/30 z-20 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}>
               <p className="text-sm font-semibold text-white mb-2">Skilled Team</p>
               <div className="flex -space-x-2">
                 <img
@@ -96,7 +96,7 @@ const About = () => {
             </div>
 
             {/* Bottom Right Image - Grayscale with hover effect */}
-            <div className="absolute bottom-0 right-0 w-[58%]">
+            <div className={`absolute bottom-0 right-0 w-[58%] transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               <div className="absolute -inset-3 bg-cyan-500/30 rounded-[2rem] blur-sm" />
               <div className="relative rounded-[2rem] border-2 border-cyan-500/50 overflow-hidden">
                 <img
