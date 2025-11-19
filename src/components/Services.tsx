@@ -60,26 +60,42 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="group bg-card p-8 rounded-2xl border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-2"
+              data-stagger
+              className="group bg-card p-8 rounded-2xl border border-border hover:border-primary/50 transition-all duration-500 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-2 hover:scale-[1.02]"
             >
               {/* Icon */}
-              <div className="w-14 h-14 bg-gradient-to-br from-primary to-primary/70 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <service.icon className="w-7 h-7 text-white" />
+              <div 
+                data-stagger
+                className="w-14 h-14 bg-gradient-to-br from-primary to-primary/70 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500"
+              >
+                <service.icon className="w-7 h-7 text-white group-hover:scale-110 transition-transform" />
               </div>
 
               {/* Title */}
-              <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">
+              <h3 
+                data-stagger
+                className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors duration-300"
+              >
                 {service.title}
               </h3>
 
               {/* Description */}
-              <p className="text-foreground/70 mb-6">{service.description}</p>
+              <p 
+                data-stagger
+                className="text-foreground/70 mb-6 group-hover:text-foreground/90 transition-colors"
+              >
+                {service.description}
+              </p>
 
               {/* Features */}
               <ul className="space-y-2 mb-6">
                 {service.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center text-sm text-foreground/60">
-                    <div className="w-1.5 h-1.5 bg-primary rounded-full mr-2" />
+                  <li 
+                    key={idx} 
+                    data-stagger
+                    className="flex items-center text-sm text-foreground/60 group-hover:text-foreground/80 transition-colors"
+                  >
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mr-2 group-hover:scale-150 transition-transform" />
                     {feature}
                   </li>
                 ))}
@@ -87,8 +103,9 @@ const Services = () => {
 
               {/* CTA */}
               <Button
+                data-stagger
                 variant="outline"
-                className="w-full group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-colors"
+                className="w-full group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300 group-hover:shadow-lg group-hover:shadow-primary/20"
               >
                 Learn More
               </Button>
@@ -97,8 +114,12 @@ const Services = () => {
         </div>
 
         <div className="mt-16 text-center">
-          <p className="text-foreground/70 mb-6">Need a custom solution?</p>
-          <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
+          <p data-stagger className="text-foreground/70 mb-6 text-lg">Need a custom solution?</p>
+          <Button 
+            data-stagger
+            size="lg" 
+            className="bg-primary text-primary-foreground hover:bg-primary/90 hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-primary/30"
+          >
             Schedule a Consultation
           </Button>
         </div>
