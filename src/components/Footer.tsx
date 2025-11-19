@@ -145,6 +145,9 @@ const Footer = () => {
           <p className="text-foreground/50 text-xs mt-2">
             Investments are subject to market risks. Please read all scheme related documents carefully before investing.
           </p>
+          <p className="text-foreground/40 text-xs mt-4">
+            Website designed and developed by <span className="text-primary font-medium hover:text-primary/80 transition-colors">ULMiND</span>
+          </p>
         </div>
       </div>
     </footer>
