@@ -103,6 +103,7 @@ All colors MUST be HSL.
   
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
   }
   
   /* Smooth scroll animations */
@@ -113,6 +114,11 @@ All colors MUST be HSL.
   
   [data-stagger] {
     will-change: opacity, transform;
+  }
+  
+  /* Smooth section scroll offset for fixed navbar */
+  section[id] {
+    scroll-margin-top: 6rem;
   }
 }
 

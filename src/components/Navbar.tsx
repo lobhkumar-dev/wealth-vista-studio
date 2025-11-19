@@ -46,6 +46,16 @@ const Navbar = () => {
     }
   };
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    setIsMobileMenuOpen(false);
+    
+    const target = document.querySelector(href);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const navLinks = [
     { href: "#about", label: "About Us" },
     { href: "#approach", label: "Our Approach" },
@@ -76,7 +86,8 @@ const Navbar = () => {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-foreground/80 hover:text-primary transition-colors relative group text-sm"
+                onClick={(e) => handleNavClick(e, link.href)}
+                className="text-foreground/80 hover:text-primary transition-colors relative group text-sm cursor-pointer"
               >
                 {link.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
@@ -128,8 +139,8 @@ const Navbar = () => {
                     <a
                       key={link.href}
                       href={link.href}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className="block py-3 px-4 text-foreground/80 hover:text-primary hover:bg-muted/50 rounded-lg transition-colors"
+                      onClick={(e) => handleNavClick(e, link.href)}
+                      className="block py-3 px-4 text-foreground/80 hover:text-primary hover:bg-muted/50 rounded-lg transition-colors cursor-pointer"
                     >
                       {link.label}
                     </a>
