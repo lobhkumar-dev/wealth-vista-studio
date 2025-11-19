@@ -65,7 +65,7 @@ const Hero = () => {
         />
       </div>
 
-      <div className="container mx-auto px-4 pt-16 pb-8 sm:pt-6 sm:pb-12 lg:py-20 relative z-20">
+      <div className="container mx-auto px-4 pt-12 pb-8 sm:pt-6 sm:pb-12 lg:py-20 relative z-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start max-w-7xl mx-auto">
           {/* Left Content - Text */}
           <div className="text-left animate-fade-in-up">
