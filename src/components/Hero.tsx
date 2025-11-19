@@ -16,8 +16,8 @@ const Hero = () => {
         <path d="M 20 80 Q 40 20, 80 50" stroke="currentColor" strokeWidth="4" fill="none" strokeLinecap="round" />
       </svg>
 
-      <div className="container mx-auto px-4 py-0 relative z-5 h-full flex items-end">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-8 lg:gap-4 items-end max-w-7xl mx-auto h-full pb-0">
+      <div className="container mx-auto px-4 py-12 relative z-5">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-8 lg:gap-4 items-end max-w-7xl mx-auto">
           {/* Left Content - Text */}
           <div className="text-left animate-fade-in-up lg:pr-8">
             <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-tight mb-8 lg:mb-12">
@@ -47,13 +47,12 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Center Content - Professional Image - Absolute Bottom */}
-          <div className="relative flex justify-center items-end animate-fade-in-up delay-200 lg:mx-4 z-10 -mb-0">
+          {/* Center Content - Professional Image - Much Larger at Bottom */}
+          <div className="relative flex justify-center items-end animate-fade-in-up delay-200 lg:mx-4 z-10">
             <img
               src="https://res.cloudinary.com/dkgwi1xvx/image/upload/v1763571734/Gemini_Generated_Image_di4uj2di4uj2di4u-removebg-preview_c6cnx0.png"
               alt="Professional"
-              className="w-full max-w-[600px] lg:max-w-[850px] xl:max-w-[1000px] h-auto object-contain object-bottom block"
-              style={{ marginBottom: '-4px' }}
+              className="w-full max-w-[600px] lg:max-w-[850px] xl:max-w-[1000px] h-auto object-contain object-bottom relative"
             />
           </div>
 
