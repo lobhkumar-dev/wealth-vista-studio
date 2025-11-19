@@ -1,13 +1,31 @@
-import { Linkedin, Mail } from "lucide-react";
+import { Linkedin, Mail, CheckCircle, ArrowUpRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Leadership = () => {
-  const leaders = [
-    {
-      name: "Rajesh Kumar",
-      position: "Founder & CEO",
-      bio: "25+ years of experience in wealth management and financial planning. Former VP at leading investment firms.",
-      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop",
+  const founderCEO = {
+    name: "Rajesh Kumar",
+    position: "Founder & CEO",
+    bio: "25+ years of experience in wealth management and financial planning. Former VP at leading investment firms. Dedicated to helping clients build thriving financial futures and unlock limitless possibilities through strategic wealth management.",
+    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&h=800&fit=crop",
+    headquarters: {
+      address: "2972 Westheimer Rd. Santa Ana",
+      city: "Illinois 85486"
     },
+    emails: [
+      "youremail@example.com",
+      "support@gmail.com"
+    ],
+    advantages: [
+      "Guiding Your Business Success",
+      "Evaluate Issues Hindering Your Growth",
+      "Strategic Insights for Business Growth",
+      "Available 24/7 to Assist You Anytime",
+      "Expert Consultants Expertise",
+      "Free Consultation to Collaboration"
+    ]
+  };
+
+  const teamMembers = [
     {
       name: "Priya Sharma",
       position: "Chief Investment Officer",
@@ -43,8 +61,111 @@ const Leadership = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {leaders.map((leader, index) => (
+        {/* Featured CEO Section */}
+        <div className="mb-20 bg-gradient-to-br from-card via-card/95 to-primary/5 rounded-3xl border border-border overflow-hidden">
+          <div className="grid lg:grid-cols-2 gap-8 items-center p-8 lg:p-12">
+            {/* Left Content */}
+            <div className="space-y-8">
+              {/* Badge */}
+              <div className="inline-block">
+                <span className="px-6 py-2 bg-[#a8d530] text-black text-sm font-bold rounded-full uppercase tracking-wider">
+                  Why Choose Us
+                </span>
+              </div>
+
+              {/* Heading */}
+              <h3 className="text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight">
+                Build A Thriving Community And{" "}
+                <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+                  Unlock Limitless Possibilities.
+                </span>
+              </h3>
+
+              {/* Info Cards Grid */}
+              <div className="grid md:grid-cols-2 gap-4">
+                {/* Headquarter Card */}
+                <div className="bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 rounded-2xl p-6">
+                  <h4 className="text-xl font-bold mb-3">Headquarter -</h4>
+                  <p className="text-foreground/80">
+                    {founderCEO.headquarters.address}
+                  </p>
+                  <p className="text-foreground/80">{founderCEO.headquarters.city}</p>
+                </div>
+
+                {/* Email Card */}
+                <div className="bg-[#a8d530] rounded-2xl p-6">
+                  <h4 className="text-xl font-bold text-black mb-3">Email Us -</h4>
+                  {founderCEO.emails.map((email, idx) => (
+                    <p key={idx} className="text-black/80">
+                      {email}
+                    </p>
+                  ))}
+                </div>
+              </div>
+
+              {/* Advantages List */}
+              <div className="bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 rounded-2xl p-6">
+                <h4 className="text-xl font-bold mb-4">
+                  The Advantages of Connecting with Us:
+                </h4>
+                <div className="grid md:grid-cols-2 gap-3">
+                  {founderCEO.advantages.map((advantage, idx) => (
+                    <div key={idx} className="flex items-start gap-2">
+                      <CheckCircle className="w-5 h-5 text-[#a8d530] flex-shrink-0 mt-0.5" />
+                      <span className="text-foreground/80 text-sm">{advantage}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Get Started Button */}
+              <Button 
+                size="lg"
+                className="bg-[#a8d530] hover:bg-[#a8d530]/90 text-black font-bold rounded-full px-8"
+              >
+                Get Started <ArrowUpRight className="ml-2 w-5 h-5" />
+              </Button>
+            </div>
+
+            {/* Right Image */}
+            <div className="relative lg:min-h-[600px]">
+              <div className="relative w-full h-full rounded-2xl overflow-hidden group">
+                <img
+                  src={founderCEO.image}
+                  alt={founderCEO.name}
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                />
+                {/* Decorative Elements */}
+                <div className="absolute bottom-8 right-8 bg-card/95 backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-border">
+                  <div className="text-sm text-muted-foreground mb-1">Revenue</div>
+                  <div className="text-2xl font-bold text-primary">$193,000</div>
+                  <div className="flex gap-1 mt-3">
+                    {[40, 60, 45, 70, 55, 80, 65].map((height, idx) => (
+                      <div
+                        key={idx}
+                        className={`w-4 rounded-full ${idx % 2 === 0 ? 'bg-primary' : 'bg-[#a8d530]'}`}
+                        style={{ height: `${height}px` }}
+                      />
+                    ))}
+                  </div>
+                </div>
+                
+                <div className="absolute bottom-8 left-8 w-32 h-32 bg-[#a8d530] rounded-full flex items-center justify-center shadow-xl border-4 border-card">
+                  <div className="text-center">
+                    <ArrowUpRight className="w-8 h-8 text-black mx-auto mb-1" />
+                    <div className="text-black text-[10px] font-bold uppercase tracking-wider leading-tight" style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}>
+                      BRANDING AND DEVELOPMENT COOL
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Team Members Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {teamMembers.map((member, index) => (
             <div
               key={index}
               className="group bg-card rounded-2xl border border-border hover:border-primary/50 overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-2"
@@ -52,18 +173,18 @@ const Leadership = () => {
               {/* Image */}
               <div className="relative overflow-hidden aspect-square">
                 <img
-                  src={leader.image}
-                  alt={leader.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  src={member.image}
+                  alt={member.name}
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
 
               {/* Content */}
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-1">{leader.name}</h3>
-                <p className="text-primary text-sm mb-3">{leader.position}</p>
-                <p className="text-foreground/60 text-sm mb-4">{leader.bio}</p>
+                <h3 className="text-xl font-bold mb-1">{member.name}</h3>
+                <p className="text-primary text-sm mb-3">{member.position}</p>
+                <p className="text-foreground/60 text-sm mb-4">{member.bio}</p>
 
                 {/* Social Links */}
                 <div className="flex gap-3">
