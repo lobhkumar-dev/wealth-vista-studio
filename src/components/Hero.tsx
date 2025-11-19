@@ -4,68 +4,66 @@ import heroImage from "@/assets/hero-financial.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-cyan-400 via-cyan-500 to-blue-500">
-      {/* Decorative Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Large Text Background */}
-        <div className="absolute bottom-0 left-0 right-0 text-[20rem] font-bold text-white/5 leading-none whitespace-nowrap">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-cyan-400 dark:bg-gray-950">
+      {/* Large Text Watermark at Bottom */}
+      <div className="absolute bottom-0 left-0 right-0 overflow-hidden pointer-events-none">
+        <div className="text-[12rem] md:text-[18rem] lg:text-[22rem] font-bold text-teal-700/40 dark:text-teal-800/40 leading-none whitespace-nowrap">
           moneytree
         </div>
-        
-        {/* Curved Decorative Lines */}
-        <svg className="absolute top-1/2 right-1/4 w-32 h-32 text-white/20" viewBox="0 0 100 100">
-          <path d="M 10 50 Q 30 20, 50 50 T 90 50" stroke="currentColor" strokeWidth="3" fill="none" />
-        </svg>
       </div>
 
+      {/* Decorative Curved Line */}
+      <svg className="absolute top-1/3 right-[55%] w-24 h-24 md:w-32 md:h-32 text-white/30" viewBox="0 0 100 100">
+        <path d="M 20 80 Q 40 20, 80 50" stroke="currentColor" strokeWidth="4" fill="none" strokeLinecap="round" />
+      </svg>
+
       <div className="container mx-auto px-4 py-20 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
-          <div className="text-left animate-fade-in-up">
-            <h1 className="text-6xl md:text-8xl font-bold text-white mb-8 leading-tight">
-              Financial
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-8 lg:gap-4 items-center max-w-7xl mx-auto">
+          {/* Left Content - Text */}
+          <div className="text-left animate-fade-in-up lg:pr-8">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-tight mb-8 lg:mb-12">
+              Insurance
               <br />
-              Management
+              Consulting
               <br />
-              <span className="text-white/90">succeeds</span>
+              succeeds
             </h1>
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4 items-center">
               <Button 
                 size="lg" 
-                variant="outline" 
-                className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-cyan-500 rounded-full px-8 py-6 text-lg font-medium transition-all"
+                className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-cyan-500 dark:hover:text-gray-950 rounded-full px-6 py-5 text-base font-medium transition-all"
               >
                 Get Started
-                <ArrowRight className="ml-2 w-5 h-5" />
+                <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
               
               <button className="flex items-center gap-3 text-white hover:opacity-80 transition-opacity">
-                <div className="w-14 h-14 rounded-full bg-gray-800 flex items-center justify-center">
-                  <Play className="w-6 h-6 text-white ml-1" fill="white" />
+                <div className="w-12 h-12 rounded-full bg-gray-800 dark:bg-teal-900 flex items-center justify-center">
+                  <Play className="w-5 h-5 text-white ml-0.5" fill="white" />
                 </div>
-                <span className="font-medium text-lg">Watch Video</span>
+                <span className="font-medium text-base">Watch Video</span>
               </button>
             </div>
           </div>
 
-          {/* Right Content - Image and Stats */}
-          <div className="relative animate-fade-in-up delay-200">
-            {/* Professional Image */}
-            <div className="relative z-10">
-              <img
-                src={heroImage}
-                alt="Financial Professional"
-                className="w-full max-w-md mx-auto rounded-3xl object-cover aspect-[3/4]"
-              />
-            </div>
+          {/* Center Content - Professional Image */}
+          <div className="relative flex justify-center animate-fade-in-up delay-200 lg:mx-4">
+            <img
+              src={heroImage}
+              alt="Professional"
+              className="w-full max-w-[400px] lg:max-w-[450px] xl:max-w-[500px] h-auto object-contain"
+            />
+          </div>
 
+          {/* Right Content - Stats and Description */}
+          <div className="relative animate-fade-in-up delay-300 lg:pl-8 space-y-6">
             {/* Stats Card */}
-            <div className="absolute top-10 right-0 lg:right-10 bg-white rounded-3xl p-6 shadow-2xl animate-fade-in delay-500 w-64">
-              <div className="flex items-start gap-4">
+            <div className="bg-white dark:bg-gray-900 rounded-2xl p-4 shadow-lg inline-block">
+              <div className="flex items-start gap-3">
                 {/* Circular Image */}
-                <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-cyan-500 flex-shrink-0">
+                <div className="w-16 h-16 rounded-2xl overflow-hidden flex-shrink-0 bg-gray-200">
                   <img
                     src={heroImage}
                     alt="Team"
@@ -74,8 +72,8 @@ const Hero = () => {
                 </div>
                 
                 <div>
-                  <div className="text-5xl font-bold text-gray-800 mb-1">20+</div>
-                  <div className="text-sm text-gray-600 font-medium">
+                  <div className="text-4xl font-bold text-gray-900 dark:text-white mb-0.5">27+</div>
+                  <div className="text-xs text-gray-600 dark:text-gray-400 font-medium leading-tight">
                     Years of
                     <br />
                     Experience
@@ -84,12 +82,10 @@ const Hero = () => {
               </div>
             </div>
 
-            {/* Description Card */}
-            <div className="mt-8 bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
-              <p className="text-gray-700 leading-relaxed">
-                As trusted financial advisors, we don't just manage wealth—we build lasting relationships. 
-                We work exclusively in your best interest to evaluate your financial goals and create 
-                personalized strategies for long-term success.
+            {/* Description Text */}
+            <div className="max-w-sm">
+              <p className="text-white text-sm md:text-base leading-relaxed">
+                As independent insurance consultants, we do not sell insurance products. Instead, we work solely in your best interest to evaluate your current coverage and identify
               </p>
             </div>
           </div>
