@@ -61,10 +61,10 @@ const FAQ = () => {
     <section
       id="faq"
       ref={sectionRef}
-      className="relative py-24 bg-gradient-to-br from-primary via-primary/90 to-primary/80 overflow-hidden"
+      className="relative py-24 bg-gradient-to-br from-[#0a1f3d] via-[#0d2847] to-[#0a1f3d] overflow-hidden"
     >
       {/* Dotted Pattern Background */}
-      <div className="absolute inset-0 opacity-10">
+      <div className="absolute inset-0 opacity-5">
         <div
           className="w-full h-full"
           style={{
@@ -74,9 +74,10 @@ const FAQ = () => {
         />
       </div>
 
-      {/* Green accent circles */}
-      <div className="absolute top-20 right-20 w-40 h-40 bg-[#a8d530] rounded-full blur-3xl opacity-20" />
-      <div className="absolute bottom-40 left-20 w-60 h-60 bg-[#a8d530] rounded-full blur-3xl opacity-15" />
+      {/* Blue glow effects */}
+      <div className="absolute top-20 right-20 w-96 h-96 bg-primary rounded-full blur-[100px] opacity-20" />
+      <div className="absolute bottom-40 left-20 w-80 h-80 bg-[#a8d530] rounded-full blur-[120px] opacity-15" />
+      <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-primary rounded-full blur-[80px] opacity-10" />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -88,17 +89,17 @@ const FAQ = () => {
                 : "opacity-0 -translate-x-12"
             }`}
           >
-            <div className="absolute inset-0 rounded-3xl overflow-hidden shadow-2xl">
+            <div className="absolute inset-0 rounded-3xl overflow-hidden shadow-2xl shadow-primary/20">
               <img
                 src={aboutTeamMeeting}
                 alt="Team collaboration"
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
               />
-              {/* Overlay that fades on hover */}
-              <div className="absolute inset-0 bg-primary/40 group-hover:bg-transparent transition-all duration-700" />
+              {/* Dark overlay that fades on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/60 to-[#0a1f3d]/80 group-hover:from-transparent group-hover:to-transparent transition-all duration-700" />
               
-              {/* Green border glow on hover */}
-              <div className="absolute inset-0 rounded-3xl border-4 border-transparent group-hover:border-[#a8d530] transition-all duration-700" />
+              {/* Green accent border on hover */}
+              <div className="absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-[#a8d530] group-hover:shadow-2xl group-hover:shadow-[#a8d530]/40 transition-all duration-700" />
             </div>
           </div>
 
@@ -129,8 +130,9 @@ const FAQ = () => {
             </h2>
 
             {/* Description */}
+            {/* Description */}
             <p
-              className={`text-white/90 text-lg leading-relaxed transition-all duration-1000 delay-200 ${
+              className={`text-white text-lg leading-relaxed transition-all duration-1000 delay-200 ${
                 isVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-4"
@@ -151,7 +153,7 @@ const FAQ = () => {
             >
               <Button
                 size="lg"
-                className="bg-white text-primary hover:bg-[#a8d530] hover:text-black font-semibold px-8 rounded-md transition-all duration-300"
+                className="bg-[#a8d530] text-black hover:bg-[#a8d530]/90 hover:shadow-lg hover:shadow-[#a8d530]/50 font-bold px-8 rounded-md transition-all duration-300"
               >
                 Get A Quote
               </Button>
@@ -170,12 +172,12 @@ const FAQ = () => {
                   <AccordionItem
                     key={index}
                     value={`item-${index}`}
-                    className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg px-6 py-2 hover:bg-white/15 hover:border-[#a8d530]/50 hover:shadow-lg hover:shadow-[#a8d530]/20 transition-all duration-300"
+                    className="bg-gradient-to-r from-primary/20 to-primary/10 backdrop-blur-sm border-2 border-primary/30 rounded-xl px-6 py-2 hover:border-[#a8d530] hover:shadow-xl hover:shadow-[#a8d530]/30 hover:bg-gradient-to-r hover:from-primary/30 hover:to-primary/20 transition-all duration-300"
                   >
-                    <AccordionTrigger className="text-white hover:text-[#a8d530] text-left font-semibold text-base py-4 hover:no-underline">
+                    <AccordionTrigger className="text-white hover:text-[#a8d530] text-left font-bold text-base py-4 hover:no-underline">
                       {faq.question}
                     </AccordionTrigger>
-                    <AccordionContent className="text-white/80 text-sm leading-relaxed pb-4">
+                    <AccordionContent className="text-white/90 text-sm leading-relaxed pb-4">
                       {faq.answer}
                     </AccordionContent>
                   </AccordionItem>
