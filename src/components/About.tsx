@@ -110,7 +110,7 @@ const About = () => {
                 <img
                   src={aboutTeamMeeting}
                   alt="Office detail"
-                  className="w-full h-[120px] object-cover object-bottom"
+                  className="w-full h-[120px] object-cover object-center"
                 />
               </div>
             </div>
