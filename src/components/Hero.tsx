@@ -16,8 +16,8 @@ const Hero = () => {
         <path d="M 20 80 Q 40 20, 80 50" stroke="currentColor" strokeWidth="4" fill="none" strokeLinecap="round" />
       </svg>
 
-      <div className="container mx-auto px-4 py-20 relative z-5">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-8 lg:gap-4 items-center max-w-7xl mx-auto">
+      <div className="container mx-auto px-4 py-20 relative z-5 h-full">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-8 lg:gap-4 items-end max-w-7xl mx-auto h-full">
           {/* Left Content - Text */}
           <div className="text-left animate-fade-in-up lg:pr-8">
             <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-tight mb-8 lg:mb-12">
@@ -48,11 +48,11 @@ const Hero = () => {
           </div>
 
           {/* Center Content - Professional Image - In Front */}
-          <div className="relative flex justify-center animate-fade-in-up delay-200 lg:mx-4 z-10">
+          <div className="relative flex justify-center items-end animate-fade-in-up delay-200 lg:mx-4 z-10 -mb-20">
             <img
               src="https://res.cloudinary.com/dkgwi1xvx/image/upload/v1763571734/Gemini_Generated_Image_di4uj2di4uj2di4u-removebg-preview_c6cnx0.png"
               alt="Professional"
-              className="w-full max-w-[550px] lg:max-w-[750px] xl:max-w-[900px] h-auto object-contain relative"
+              className="w-full max-w-[550px] lg:max-w-[750px] xl:max-w-[900px] h-auto object-contain relative object-bottom"
             />
           </div>
 
