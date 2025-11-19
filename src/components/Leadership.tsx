@@ -25,24 +25,15 @@ const Leadership = () => {
   const founderCEO = {
     name: "Rajesh Kumar",
     position: "Founder & CEO",
-    bio: "25+ years of experience in wealth management and financial planning. Former VP at leading investment firms. Dedicated to helping clients build thriving financial futures and unlock limitless possibilities through strategic wealth management.",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&h=800&fit=crop",
-    headquarters: {
-      address: "2972 Westheimer Rd. Santa Ana",
-      city: "Illinois 85486"
-    },
-    emails: [
-      "youremail@example.com",
-      "support@gmail.com"
+    description: "With over 25 years of distinguished experience in wealth management and financial planning, Rajesh Kumar has established himself as a visionary leader in the financial services industry. As the Founder and CEO, he brings a wealth of knowledge from his previous role as Vice President at leading investment firms.",
+    philosophy: "Rajesh believes in building long-term relationships based on trust, transparency, and personalized financial strategies. His client-centric approach has helped hundreds of individuals and families achieve their financial goals and secure their future.",
+    achievements: [
+      "Successfully managed portfolios worth over $500M",
+      "Certified Financial Planner (CFP) with specialized expertise in wealth management",
+      "Former Vice President at premier investment firms",
+      "Recognized thought leader with regular contributions to financial publications"
     ],
-    advantages: [
-      "Guiding Your Business Success",
-      "Evaluate Issues Hindering Your Growth",
-      "Strategic Insights for Business Growth",
-      "Available 24/7 to Assist You Anytime",
-      "Expert Consultants Expertise",
-      "Free Consultation to Collaboration"
-    ]
+    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&h=800&fit=crop"
   };
 
   const teamMembers = [
@@ -88,8 +79,8 @@ const Leadership = () => {
         >
           <div className="grid lg:grid-cols-2 gap-8 items-center p-8 lg:p-12">
             {/* Left Content */}
-            <div className="space-y-8">
-              {/* Badge */}
+            <div className="space-y-6">
+              {/* Position Badge */}
               <div 
                 className={`inline-block transition-all duration-700 ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
@@ -97,76 +88,62 @@ const Leadership = () => {
                 style={{ transitionDelay: '100ms' }}
               >
                 <span className="px-6 py-2 bg-[#a8d530] text-black text-sm font-bold rounded-full uppercase tracking-wider">
-                  Why Choose Us
+                  {founderCEO.position}
                 </span>
               </div>
 
-              {/* Heading */}
+              {/* Name */}
               <h3 
                 className={`text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight transition-all duration-700 ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
                 style={{ transitionDelay: '200ms' }}
               >
-                Build A Thriving Community And{" "}
-                <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-                  Unlock Limitless Possibilities.
-                </span>
+                {founderCEO.name}
               </h3>
 
-              {/* Info Cards Grid */}
-              <div className="grid md:grid-cols-2 gap-4">
-                {/* Headquarter Card */}
-                <div 
-                  className={`bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 rounded-2xl p-6 transition-all duration-700 ${
-                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                  }`}
-                  style={{ transitionDelay: '300ms' }}
-                >
-                  <h4 className="text-xl font-bold mb-3">Headquarter -</h4>
-                  <p className="text-foreground/80">
-                    {founderCEO.headquarters.address}
-                  </p>
-                  <p className="text-foreground/80">{founderCEO.headquarters.city}</p>
-                </div>
+              {/* Description */}
+              <p 
+                className={`text-foreground/80 text-lg leading-relaxed transition-all duration-700 ${
+                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
+                style={{ transitionDelay: '300ms' }}
+              >
+                {founderCEO.description}
+              </p>
 
-                {/* Email Card */}
-                <div 
-                  className={`bg-[#a8d530] rounded-2xl p-6 transition-all duration-700 ${
-                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                  }`}
-                  style={{ transitionDelay: '400ms' }}
-                >
-                  <h4 className="text-xl font-bold text-black mb-3">Email Us -</h4>
-                  {founderCEO.emails.map((email, idx) => (
-                    <p key={idx} className="text-black/80">
-                      {email}
-                    </p>
-                  ))}
-                </div>
+              {/* Philosophy */}
+              <div 
+                className={`bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 rounded-2xl p-6 transition-all duration-700 ${
+                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
+                style={{ transitionDelay: '400ms' }}
+              >
+                <h4 className="text-xl font-bold mb-3 text-primary">Philosophy</h4>
+                <p className="text-foreground/80">
+                  {founderCEO.philosophy}
+                </p>
               </div>
 
-              {/* Advantages List */}
+              {/* Key Achievements */}
               <div 
                 className={`bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 rounded-2xl p-6 transition-all duration-700 ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
                 style={{ transitionDelay: '500ms' }}
               >
-                <h4 className="text-xl font-bold mb-4">
-                  The Advantages of Connecting with Us:
-                </h4>
-                <div className="grid md:grid-cols-2 gap-3">
-                  {founderCEO.advantages.map((advantage, idx) => (
+                <h4 className="text-xl font-bold mb-4 text-primary">Key Achievements</h4>
+                <div className="space-y-3">
+                  {founderCEO.achievements.map((achievement, idx) => (
                     <div 
                       key={idx} 
-                      className={`flex items-start gap-2 transition-all duration-500 ${
+                      className={`flex items-start gap-3 transition-all duration-500 ${
                         isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
                       }`}
                       style={{ transitionDelay: `${600 + idx * 100}ms` }}
                     >
                       <CheckCircle className="w-5 h-5 text-[#a8d530] flex-shrink-0 mt-0.5" />
-                      <span className="text-foreground/80 text-sm">{advantage}</span>
+                      <span className="text-foreground/80">{achievement}</span>
                     </div>
                   ))}
                 </div>
@@ -178,7 +155,7 @@ const Leadership = () => {
                 className={`bg-[#a8d530] hover:bg-[#a8d530]/90 text-black font-bold rounded-full px-8 transition-all duration-700 ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
-                style={{ transitionDelay: '1200ms' }}
+                style={{ transitionDelay: '1000ms' }}
               >
                 Get Started <ArrowUpRight className="ml-2 w-5 h-5" />
               </Button>
