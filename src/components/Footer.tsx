@@ -40,7 +40,7 @@ const Footer = () => {
               MoneyTree Wealth
             </h3>
             <p className="text-foreground/70 mb-6 max-w-sm">
-              Building wealth, securing futures. Your trusted partner in financial success since 2020.
+              Smart investment solutions. Your trusted partner in financial success since 2020.
             </p>
             <div className="space-y-3">
               <a href="tel:+919876543210" className="flex items-center gap-2 text-foreground/70 hover:text-primary transition-colors">
@@ -146,7 +146,15 @@ const Footer = () => {
             Investments are subject to market risks. Please read all scheme related documents carefully before investing.
           </p>
           <p className="text-foreground/40 text-xs mt-4">
-            Website designed and developed by <span className="text-primary font-medium hover:text-primary/80 transition-colors">ULMiND</span>
+            Website designed and developed by{" "}
+            <a 
+              href="https://www.ulmind.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-primary font-medium hover:text-primary/80 transition-colors underline-offset-2 hover:underline"
+            >
+              ULMiND
+            </a>
           </p>
         </div>
       </div>
