@@ -76,9 +76,9 @@ const Leadership = () => {
         {/* Featured CEO Section */}
         <div 
           ref={sectionRef}
-          className="mb-20 bg-gradient-to-br from-card via-card/95 to-primary/5 rounded-3xl border border-border overflow-hidden"
+          className="mb-20 rounded-3xl overflow-hidden"
         >
-          <div className="grid lg:grid-cols-2 gap-8 items-center p-8 lg:p-12">
+          <div className="grid lg:grid-cols-2 gap-8 items-center p-8 lg:p-12 bg-gradient-to-br from-card via-card/95 to-primary/5 rounded-3xl border border-border lg:rounded-r-none">
             {/* Left Content */}
             <div className="space-y-6">
               {/* Position Badge */}
