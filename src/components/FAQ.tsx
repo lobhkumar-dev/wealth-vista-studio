@@ -95,8 +95,8 @@ const FAQ = () => {
                 alt="Team collaboration"
                 className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
               />
-              {/* Dark overlay that fades on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/60 to-[#0a1f3d]/80 group-hover:from-transparent group-hover:to-transparent transition-all duration-700" />
+              {/* Subtle dark overlay that fades on hover */}
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all duration-700" />
               
               {/* Green accent border on hover */}
               <div className="absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-[#a8d530] group-hover:shadow-2xl group-hover:shadow-[#a8d530]/40 transition-all duration-700" />
