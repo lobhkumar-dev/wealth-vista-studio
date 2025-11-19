@@ -4,9 +4,9 @@ import { Button } from "@/components/ui/button";
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-cyan-400 dark:bg-gray-950">
-      {/* Large Text Watermark at Bottom */}
-      <div className="absolute bottom-0 left-0 right-0 overflow-hidden pointer-events-none">
-        <div className="text-[12rem] md:text-[18rem] lg:text-[22rem] font-bold text-teal-700/40 dark:text-teal-800/40 leading-none whitespace-nowrap">
+      {/* Large Text Watermark at Bottom - Behind image */}
+      <div className="absolute bottom-0 left-0 right-0 overflow-hidden pointer-events-none z-0">
+        <div className="text-[8rem] md:text-[12rem] lg:text-[14rem] font-bold text-teal-700/30 dark:text-teal-800/30 leading-none whitespace-nowrap">
           moneytree
         </div>
       </div>
@@ -16,7 +16,7 @@ const Hero = () => {
         <path d="M 20 80 Q 40 20, 80 50" stroke="currentColor" strokeWidth="4" fill="none" strokeLinecap="round" />
       </svg>
 
-      <div className="container mx-auto px-4 py-20 relative z-10">
+      <div className="container mx-auto px-4 py-20 relative z-20">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-8 lg:gap-4 items-center max-w-7xl mx-auto">
           {/* Left Content - Text */}
           <div className="text-left animate-fade-in-up lg:pr-8">
@@ -48,11 +48,11 @@ const Hero = () => {
           </div>
 
           {/* Center Content - Professional Image */}
-          <div className="relative flex justify-center animate-fade-in-up delay-200 lg:mx-4">
+          <div className="relative flex justify-center animate-fade-in-up delay-200 lg:mx-4 z-30">
             <img
               src="https://res.cloudinary.com/dkgwi1xvx/image/upload/v1763571734/Gemini_Generated_Image_di4uj2di4uj2di4u-removebg-preview_c6cnx0.png"
               alt="Professional"
-              className="w-full max-w-[400px] lg:max-w-[450px] xl:max-w-[500px] h-auto object-contain"
+              className="w-full max-w-[450px] lg:max-w-[550px] xl:max-w-[600px] h-auto object-contain relative z-30"
             />
           </div>
 
