@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MessageCircle, X, Send } from "lucide-react";
+import { MessageCircle, X, Send, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import whatsappIcon from "@/assets/whatsapp-logo.png";
@@ -8,6 +8,7 @@ const WhatsAppWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState("");
   const adminNumber = "917908288829"; // WhatsApp format: country code + number
+  const phoneNumber = "7908288829"; // Phone number for calls
 
   const handleSend = () => {
     if (message.trim()) {
@@ -22,6 +23,10 @@ const WhatsAppWidget = () => {
     if (e.key === "Enter") {
       handleSend();
     }
+  };
+
+  const handlePhoneCall = () => {
+    window.location.href = `tel:${phoneNumber}`;
   };
 
   return (
@@ -81,6 +86,16 @@ const WhatsAppWidget = () => {
           </div>
         </div>
       )}
+
+      {/* Floating Phone Button */}
+      <button
+        onClick={handlePhoneCall}
+        className="fixed bottom-[7.5rem] right-6 w-16 h-16 bg-[#3B82F6] hover:bg-[#2563EB] text-white rounded-full shadow-2xl flex items-center justify-center z-50 transition-all hover:scale-110 animate-bounce-subtle"
+        aria-label="Call Now"
+        style={{ animationDelay: "0.2s" }}
+      >
+        <Phone className="w-8 h-8" fill="currentColor" />
+      </button>
 
       {/* Floating WhatsApp Button */}
       <button
