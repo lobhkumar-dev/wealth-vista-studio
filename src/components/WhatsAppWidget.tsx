@@ -2,6 +2,7 @@ import { useState } from "react";
 import { MessageCircle, X, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import whatsappIcon from "@/assets/whatsapp-icon.png";
 
 const WhatsAppWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -84,9 +85,10 @@ const WhatsAppWidget = () => {
       {/* Floating WhatsApp Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 w-16 h-16 bg-[#25D366] hover:bg-[#20BA5A] text-white rounded-full shadow-2xl flex items-center justify-center z-50 transition-all hover:scale-110 animate-fade-in"
+        className="fixed bottom-6 right-6 w-16 h-16 rounded-full shadow-2xl flex items-center justify-center z-50 transition-all hover:scale-110 animate-bounce-subtle overflow-hidden"
+        aria-label="Open WhatsApp Chat"
       >
-        <MessageCircle className="w-8 h-8" fill="currentColor" />
+        <img src={whatsappIcon} alt="WhatsApp" className="w-full h-full object-cover" />
       </button>
     </>
   );
