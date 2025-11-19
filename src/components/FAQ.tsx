@@ -138,7 +138,7 @@ const FAQ = () => {
                   : "opacity-0 translate-y-4"
               }`}
             >
-              MoneyTree Wealth is the hub for early adopters and innovation
+              Smart Investment Solutions is the hub for early adopters and innovation
               enthusiasts, offering vibrant, imaginative technology before it
               becomes mainstream.
             </p>

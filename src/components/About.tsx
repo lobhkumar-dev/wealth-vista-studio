@@ -190,7 +190,7 @@ const About = () => {
             </h2>
 
             <p className={`text-foreground/70 text-lg leading-relaxed transition-all duration-1000 ease-out delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
-              MoneyTree Wealth is the go-to hub for early adopters and innovation enthusiasts, 
+              Smart Investment Solutions is the go-to hub for early adopters and innovation enthusiasts, 
               offering cutting-edge financial solutions that drive success.
             </p>
 
