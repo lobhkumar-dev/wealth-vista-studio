@@ -96,6 +96,10 @@ export default {
           "0%, 100%": { boxShadow: "0 0 20px hsl(217 91% 60% / 0.3)" },
           "50%": { boxShadow: "0 0 40px hsl(217 91% 60% / 0.6)" },
         },
+        "float": {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -106,6 +110,7 @@ export default {
         "slide-in-right": "slide-in-right 0.6s ease-out",
         "slide-in-left": "slide-in-left 0.6s ease-out",
         "glow": "glow 3s ease-in-out infinite",
+        "float": "float 3s ease-in-out infinite",
       },
     },
   },

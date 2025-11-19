@@ -71,7 +71,7 @@ const About = () => {
             </div>
 
             {/* Skilled Team Badge */}
-            <div className={`absolute bottom-[220px] left-[35%] transform -translate-x-1/2 bg-[#1a3a3a] backdrop-blur-sm px-6 py-3 rounded-2xl shadow-2xl border border-cyan-500/30 z-20 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}>
+            <div className={`absolute bottom-[220px] left-[35%] -translate-x-1/2 bg-[#1a3a3a] backdrop-blur-sm px-6 py-3 rounded-2xl shadow-2xl border border-cyan-500/30 z-20 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 scale-100 animate-float' : 'opacity-0 scale-90'}`}>
               <p className="text-sm font-semibold text-white mb-2">Skilled Team</p>
               <div className="flex -space-x-2">
                 <img
