@@ -43,7 +43,7 @@ const Hero = () => {
     return () => observer.disconnect();
   }, [hasAnimated]);
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-cyan-400 dark:bg-gray-950">
+    <section className="relative min-h-[100svh] md:min-h-screen flex items-start md:items-center overflow-hidden bg-cyan-400 dark:bg-gray-950">
       {/* Large Text Watermark at Bottom - Behind image - Centered */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 overflow-hidden pointer-events-none z-0">
         <div className="text-[6rem] sm:text-[8rem] md:text-[10rem] lg:text-[12rem] font-bold text-teal-700/25 dark:text-teal-800/25 leading-none whitespace-nowrap">
@@ -65,11 +65,11 @@ const Hero = () => {
         />
       </div>
 
-      <div className="container mx-auto px-4 pt-16 pb-8 sm:pt-6 sm:pb-12 lg:py-20 relative z-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start max-w-7xl mx-auto">
+      <div className="container mx-auto px-4 pt-20 pb-4 md:pt-6 md:pb-12 lg:py-20 relative z-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 items-start max-w-7xl mx-auto">
           {/* Left Content - Text */}
           <div className="text-left animate-fade-in-up">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight mb-6 md:mb-8 lg:mb-10">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight mb-4 md:mb-8 lg:mb-10">
               Insurance
               <br />
               Consulting
@@ -97,7 +97,7 @@ const Hero = () => {
           </div>
 
           {/* Right Content - Stats and Description */}
-          <div className="relative animate-fade-in-up delay-300 space-y-6 lg:ml-auto">
+          <div className="relative animate-fade-in-up delay-300 space-y-3 md:space-y-6 lg:ml-auto">
             {/* Stats Card */}
             <div ref={statsRef} className="bg-white dark:bg-gray-900 rounded-2xl p-3 md:p-4 shadow-lg inline-block">
               <div className="flex items-start gap-2 md:gap-3">
