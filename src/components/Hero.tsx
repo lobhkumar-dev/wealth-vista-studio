@@ -48,11 +48,11 @@ const Hero = () => {
           </div>
 
           {/* Center Content - Professional Image - In Front */}
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-10 animate-fade-in-up delay-200">
+          <div className="relative flex justify-center animate-fade-in-up delay-200 lg:mx-4 z-10">
             <img
               src="https://res.cloudinary.com/dkgwi1xvx/image/upload/v1763571734/Gemini_Generated_Image_di4uj2di4uj2di4u-removebg-preview_c6cnx0.png"
               alt="Professional"
-              className="w-full max-w-[550px] lg:max-w-[750px] xl:max-w-[900px] h-auto object-contain"
+              className="w-full max-w-[550px] lg:max-w-[750px] xl:max-w-[900px] h-auto object-contain relative"
             />
           </div>
 
