@@ -13,7 +13,7 @@ const News = () => {
     {
       date: "Nov 10, 2025",
       category: "Company News",
-      title: "MoneyTree Wealth Expands Services to New Cities",
+      title: "Smart Investment Solutions Expands Services to New Cities",
       excerpt: "We're thrilled to announce our expansion to Mumbai, Delhi, and Bangalore.",
       image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop",
     },

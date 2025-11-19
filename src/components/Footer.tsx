@@ -37,7 +37,7 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="lg:col-span-2">
             <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-              MoneyTree Wealth
+              Smart Investment Solutions
             </h3>
             <p className="text-foreground/70 mb-6 max-w-sm">
               Smart investment solutions. Your trusted partner in financial success since 2020.
@@ -140,7 +140,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="text-center pt-6 border-t border-border">
           <p className="text-foreground/60 text-sm">
-            © {currentYear} MoneyTree Wealth. All rights reserved. | SEBI Registered Investment Advisor
+            © {currentYear} Smart Investment Solutions. All rights reserved. | SEBI Registered Investment Advisor
           </p>
           <p className="text-foreground/50 text-xs mt-2">
             Investments are subject to market risks. Please read all scheme related documents carefully before investing.
