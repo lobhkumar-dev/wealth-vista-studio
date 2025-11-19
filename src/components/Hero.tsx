@@ -29,7 +29,31 @@ const Hero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start max-w-7xl mx-auto">
           {/* Left Content - Text */}
           <div className="text-left animate-fade-in-up">
-...
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight mb-6 md:mb-8 lg:mb-10">
+              Insurance
+              <br />
+              Consulting
+              <br />
+              succeeds
+            </h1>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-wrap gap-3 md:gap-4 items-center">
+              <Button 
+                size="lg" 
+                className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-cyan-500 dark:hover:text-gray-950 rounded-full px-4 py-3 md:px-6 md:py-5 text-sm md:text-base font-medium transition-all"
+              >
+                Get Started
+                <ArrowRight className="ml-2 w-3 h-3 md:w-4 md:h-4" />
+              </Button>
+              
+              <button className="flex items-center gap-2 md:gap-3 text-white hover:opacity-80 transition-opacity">
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gray-800 dark:bg-teal-900 flex items-center justify-center">
+                  <Play className="w-4 h-4 md:w-5 md:h-5 text-white ml-0.5" fill="white" />
+                </div>
+                <span className="font-medium text-sm md:text-base">Watch Video</span>
+              </button>
+            </div>
           </div>
 
           {/* Right Content - Stats and Description */}
