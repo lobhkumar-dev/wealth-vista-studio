@@ -77,11 +77,11 @@ const Testimonials = () => {
   return (
     <section id="testimonials" className="py-20 px-4 bg-gradient-to-br from-background via-background to-muted/20">
       <div className="container mx-auto max-w-7xl">
-        <Carousel setApi={setApi} opts={{ loop: true }} className="w-full">
-          <CarouselContent>
-            {testimonials.map((testimonial) => (
-              <CarouselItem key={testimonial.id}>
-                <div className="bg-gradient-to-br from-blue-500 via-blue-600 to-teal-600 rounded-3xl md:rounded-[2.5rem] p-6 md:p-10 lg:p-16 shadow-2xl">
+        <div className="bg-gradient-to-br from-blue-500 via-blue-600 to-teal-600 rounded-3xl md:rounded-[2.5rem] p-6 md:p-10 lg:p-16 shadow-2xl">
+          <Carousel setApi={setApi} opts={{ loop: true }} className="w-full">
+            <CarouselContent>
+              {testimonials.map((testimonial) => (
+                <CarouselItem key={testimonial.id}>
                   <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
                     {/* Left Content */}
                     <div className="space-y-4 md:space-y-6">
@@ -206,25 +206,25 @@ const Testimonials = () => {
                       <ChevronRight className="w-6 h-6 text-white" />
                     </button>
                   </div>
-                </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
 
-                {/* Dots Indicator */}
-                <div className="flex justify-center gap-2 mt-6">
-                  {testimonials.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => api?.scrollTo(index)}
-                      className={`h-2 rounded-full transition-all ${
-                        index === current ? "w-8 bg-primary" : "w-2 bg-muted-foreground/30"
-                      }`}
-                      aria-label={`Go to testimonial ${index + 1}`}
-                    />
-                  ))}
-                </div>
-              </CarouselItem>
+          {/* Dots Indicator */}
+          <div className="flex justify-center gap-2 mt-6">
+            {testimonials.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => api?.scrollTo(index)}
+                className={`h-2 rounded-full transition-all ${
+                  index === current ? "w-8 bg-lime-400" : "w-2 bg-white/30"
+                }`}
+                aria-label={`Go to testimonial ${index + 1}`}
+              />
             ))}
-          </CarouselContent>
-        </Carousel>
+          </div>
+        </div>
       </div>
     </section>
   );
