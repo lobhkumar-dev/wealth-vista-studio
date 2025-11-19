@@ -43,7 +43,7 @@ const Hero = () => {
     return () => observer.disconnect();
   }, [hasAnimated]);
   return (
-    <section className="relative min-h-[100svh] md:min-h-screen flex items-start md:items-center overflow-hidden bg-cyan-400 dark:bg-gray-950">
+    <section className="relative min-h-auto md:min-h-screen flex items-start md:items-center overflow-hidden bg-cyan-400 dark:bg-gray-950">
       {/* Large Text Watermark at Bottom - Behind image - Centered */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 overflow-hidden pointer-events-none z-0">
         <div className="text-[6rem] sm:text-[8rem] md:text-[10rem] lg:text-[12rem] font-bold text-teal-700/25 dark:text-teal-800/25 leading-none whitespace-nowrap">
@@ -61,11 +61,11 @@ const Hero = () => {
         <img
           src="https://res.cloudinary.com/dkgwi1xvx/image/upload/v1763571734/Gemini_Generated_Image_di4uj2di4uj2di4u-removebg-preview_c6cnx0.png"
           alt="Professional"
-          className="w-full max-w-[350px] sm:max-w-[450px] md:max-w-[550px] lg:max-w-[650px] xl:max-w-[750px] h-auto object-contain object-bottom"
+          className="w-full max-w-[280px] sm:max-w-[350px] md:max-w-[550px] lg:max-w-[650px] xl:max-w-[750px] h-auto object-contain object-bottom"
         />
       </div>
 
-      <div className="container mx-auto px-4 pt-20 pb-4 md:pt-6 md:pb-12 lg:py-20 relative z-20">
+      <div className="container mx-auto px-4 pt-16 pb-0 md:pt-6 md:pb-12 lg:py-20 relative z-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 items-start max-w-7xl mx-auto">
           {/* Left Content - Text */}
           <div className="text-left animate-fade-in-up">
