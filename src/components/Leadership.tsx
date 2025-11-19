@@ -160,11 +160,22 @@ const Leadership = () => {
               style={{ transitionDelay: '300ms' }}
             >
               <div className="relative w-full h-full group lg:h-[700px]">
-                {/* Animated Yellow Circle behind head */}
-                <div className="absolute top-[15%] left-1/2 -translate-x-1/2 w-64 h-64 lg:w-80 lg:h-80 -z-10">
-                  <div className="absolute inset-0 bg-[#a8d530]/20 rounded-full animate-spin" style={{ animationDuration: '20s' }}></div>
-                  <div className="absolute inset-4 bg-[#a8d530]/15 rounded-full animate-spin" style={{ animationDuration: '15s', animationDirection: 'reverse' }}></div>
-                  <div className="absolute inset-8 bg-[#a8d530]/10 rounded-full animate-spin" style={{ animationDuration: '25s' }}></div>
+                {/* Multiple Animated Circles behind head */}
+                <div className="absolute top-[10%] left-1/2 -translate-x-1/2 w-72 h-72 lg:w-96 lg:h-96 -z-10">
+                  {/* Outermost circle - slowest */}
+                  <div className="absolute inset-0 border-4 border-[#a8d530]/20 rounded-full animate-spin" style={{ animationDuration: '30s' }}></div>
+                  
+                  {/* Second circle */}
+                  <div className="absolute inset-8 border-4 border-[#a8d530]/25 rounded-full animate-spin" style={{ animationDuration: '20s', animationDirection: 'reverse' }}></div>
+                  
+                  {/* Third circle */}
+                  <div className="absolute inset-16 border-4 border-[#a8d530]/30 rounded-full animate-spin" style={{ animationDuration: '15s' }}></div>
+                  
+                  {/* Fourth circle */}
+                  <div className="absolute inset-24 border-3 border-[#a8d530]/35 rounded-full animate-spin" style={{ animationDuration: '25s', animationDirection: 'reverse' }}></div>
+                  
+                  {/* Innermost circle - fastest */}
+                  <div className="absolute inset-32 border-2 border-[#a8d530]/40 rounded-full animate-spin" style={{ animationDuration: '10s' }}></div>
                 </div>
                 
                 <img
