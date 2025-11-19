@@ -86,7 +86,7 @@ const About = () => {
   }, [isVisible, progressValue]);
 
   return (
-    <section id="about" className="py-24 bg-background" ref={sectionRef}>
+    <section id="about" className="py-12 sm:py-16 md:py-20 lg:py-24 bg-background" ref={sectionRef}>
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left Side - Images */}

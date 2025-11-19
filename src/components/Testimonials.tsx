@@ -75,7 +75,7 @@ const Testimonials = () => {
   const scrollNext = () => api?.scrollNext();
 
   return (
-    <section id="testimonials" className="py-20 px-4 bg-gradient-to-br from-background via-background to-muted/20">
+    <section id="testimonials" className="py-10 sm:py-14 md:py-16 lg:py-20 px-4 bg-gradient-to-br from-background via-background to-muted/20">
       <div className="container mx-auto max-w-7xl">
         <div className="bg-gradient-to-br from-blue-500 via-blue-600 to-teal-600 rounded-3xl md:rounded-[2.5rem] p-6 md:p-10 lg:p-16 shadow-2xl">
           <Carousel setApi={setApi} opts={{ loop: true }} className="w-full">

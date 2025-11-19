@@ -61,7 +61,7 @@ const FAQ = () => {
     <section
       id="faq"
       ref={sectionRef}
-      className="relative py-24 bg-gradient-to-br from-[#0a1f3d] via-[#0d2847] to-[#0a1f3d] overflow-hidden"
+      className="relative py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-br from-[#0a1f3d] via-[#0d2847] to-[#0a1f3d] overflow-hidden"
     >
       {/* Dotted Pattern Background */}
       <div className="absolute inset-0 opacity-5">
