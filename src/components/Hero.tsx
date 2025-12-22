@@ -81,6 +81,7 @@ const Hero = () => {
             <div className="flex flex-wrap gap-3 md:gap-4 items-center">
               <Button 
                 size="lg" 
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-cyan-500 dark:hover:text-gray-950 rounded-full px-4 py-3 md:px-6 md:py-5 text-sm md:text-base font-medium transition-all"
               >
                 Get Started

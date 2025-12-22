@@ -153,6 +153,7 @@ const FAQ = () => {
             >
               <Button
                 size="lg"
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 className="bg-[#a8d530] text-black hover:bg-[#a8d530]/90 hover:shadow-lg hover:shadow-[#a8d530]/50 font-bold px-8 rounded-md transition-all duration-300"
               >
                 Get A Quote
