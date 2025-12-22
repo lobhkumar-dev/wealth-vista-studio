@@ -1,5 +1,6 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
+import LeadCapturePopup from "@/components/LeadCapturePopup";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Approach from "@/components/Approach";
@@ -16,6 +17,10 @@ import Footer from "@/components/Footer";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
 
 const Index = () => {
+  const [isLeadCaptured, setIsLeadCaptured] = useState(() => {
+    return localStorage.getItem('lead_captured') === 'true';
+  });
+
   useEffect(() => {
     // Advanced scroll animation observer with multiple animation types
     const observerOptions = {
@@ -68,43 +73,51 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Navbar />
-      <Hero />
-      <div data-animate data-animation="fade-in-up">
-        <About />
-      </div>
-      <div data-animate data-animation="slide-in-left">
-        <Approach />
-      </div>
-      <div data-animate data-animation="fade-in-up">
-        <Services />
-      </div>
-      <div data-animate data-animation="zoom-in">
-        <Leadership />
-      </div>
-      <div data-animate data-animation="reveal">
-        <Gallery />
-      </div>
-      <div data-animate data-animation="slide-in-right">
-        <News />
-      </div>
-      <div data-animate data-animation="fade-in-up">
-        <Testimonials />
-      </div>
-      <div data-animate data-animation="slide-in-bottom">
-        <FAQ />
-      </div>
-      <div data-animate data-animation="zoom-in">
-        <Partners />
-      </div>
-      <div data-animate data-animation="fade-in-up">
-        <GroupBands />
-      </div>
-      <div data-animate data-animation="fade-in-up">
-        <Contact />
-      </div>
-      <Footer />
-      <WhatsAppWidget />
+      {!isLeadCaptured && (
+        <LeadCapturePopup onComplete={() => setIsLeadCaptured(true)} />
+      )}
+      
+      {isLeadCaptured && (
+        <>
+          <Navbar />
+          <Hero />
+          <div data-animate data-animation="fade-in-up">
+            <About />
+          </div>
+          <div data-animate data-animation="slide-in-left">
+            <Approach />
+          </div>
+          <div data-animate data-animation="fade-in-up">
+            <Services />
+          </div>
+          <div data-animate data-animation="zoom-in">
+            <Leadership />
+          </div>
+          <div data-animate data-animation="reveal">
+            <Gallery />
+          </div>
+          <div data-animate data-animation="slide-in-right">
+            <News />
+          </div>
+          <div data-animate data-animation="fade-in-up">
+            <Testimonials />
+          </div>
+          <div data-animate data-animation="slide-in-bottom">
+            <FAQ />
+          </div>
+          <div data-animate data-animation="zoom-in">
+            <Partners />
+          </div>
+          <div data-animate data-animation="fade-in-up">
+            <GroupBands />
+          </div>
+          <div data-animate data-animation="fade-in-up">
+            <Contact />
+          </div>
+          <Footer />
+          <WhatsAppWidget />
+        </>
+      )}
     </div>
   );
 };
