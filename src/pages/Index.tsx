@@ -77,47 +77,45 @@ const Index = () => {
         <LeadCapturePopup onComplete={() => setIsLeadCaptured(true)} />
       )}
       
-      {isLeadCaptured && (
-        <>
-          <Navbar />
-          <Hero />
-          <div data-animate data-animation="fade-in-up">
-            <About />
-          </div>
-          <div data-animate data-animation="slide-in-left">
-            <Approach />
-          </div>
-          <div data-animate data-animation="fade-in-up">
-            <Services />
-          </div>
-          <div data-animate data-animation="zoom-in">
-            <Leadership />
-          </div>
-          <div data-animate data-animation="reveal">
-            <Gallery />
-          </div>
-          <div data-animate data-animation="slide-in-right">
-            <News />
-          </div>
-          <div data-animate data-animation="fade-in-up">
-            <Testimonials />
-          </div>
-          <div data-animate data-animation="slide-in-bottom">
-            <FAQ />
-          </div>
-          <div data-animate data-animation="zoom-in">
-            <Partners />
-          </div>
-          <div data-animate data-animation="fade-in-up">
-            <GroupBands />
-          </div>
-          <div data-animate data-animation="fade-in-up">
-            <Contact />
-          </div>
-          <Footer />
-          <WhatsAppWidget />
-        </>
-      )}
+      <div className={!isLeadCaptured ? "blur-sm pointer-events-none select-none" : ""}>
+        <Navbar />
+        <Hero />
+        <div data-animate data-animation="fade-in-up">
+          <About />
+        </div>
+        <div data-animate data-animation="slide-in-left">
+          <Approach />
+        </div>
+        <div data-animate data-animation="fade-in-up">
+          <Services />
+        </div>
+        <div data-animate data-animation="zoom-in">
+          <Leadership />
+        </div>
+        <div data-animate data-animation="reveal">
+          <Gallery />
+        </div>
+        <div data-animate data-animation="slide-in-right">
+          <News />
+        </div>
+        <div data-animate data-animation="fade-in-up">
+          <Testimonials />
+        </div>
+        <div data-animate data-animation="slide-in-bottom">
+          <FAQ />
+        </div>
+        <div data-animate data-animation="zoom-in">
+          <Partners />
+        </div>
+        <div data-animate data-animation="fade-in-up">
+          <GroupBands />
+        </div>
+        <div data-animate data-animation="fade-in-up">
+          <Contact />
+        </div>
+        <Footer />
+        {isLeadCaptured && <WhatsAppWidget />}
+      </div>
     </div>
   );
 };

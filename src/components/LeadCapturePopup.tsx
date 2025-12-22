@@ -96,7 +96,7 @@ const LeadCapturePopup = ({ onComplete }: LeadCapturePopupProps) => {
             <Shield className="w-8 h-8 text-primary" />
           </div>
           <div>
-            <h2 className="text-2xl font-bold text-foreground">Welcome to VK Associates</h2>
+            <h2 className="text-2xl font-bold text-foreground">Welcome to SmartInvest Solutions</h2>
             <p className="text-muted-foreground mt-2">
               Please share your details to explore our insurance solutions
             </p>
