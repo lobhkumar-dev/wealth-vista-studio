@@ -1,29 +1,29 @@
-import { Search, LineChart, Target, CheckCircle } from "lucide-react";
+import { Users, FileText, Settings, HeadphonesIcon } from "lucide-react";
 
 const Approach = () => {
   const steps = [
     {
-      icon: Search,
-      title: "Discovery",
-      description: "We begin by understanding your financial situation, goals, and risk tolerance.",
+      icon: Users,
+      title: "Client-First Understanding",
+      description: "We listen carefully to understand each client's financial goals before suggesting any solution.",
       color: "from-blue-500 to-blue-600",
     },
     {
-      icon: LineChart,
-      title: "Analysis",
-      description: "Comprehensive analysis of your current portfolio and market opportunities.",
+      icon: FileText,
+      title: "Simple & Transparent Advice",
+      description: "We explain plans in easy language with complete transparency—no hidden terms or confusion.",
       color: "from-primary to-primary/80",
     },
     {
-      icon: Target,
-      title: "Strategy",
-      description: "Develop a customized financial plan aligned with your objectives.",
+      icon: Settings,
+      title: "Personalized Solutions",
+      description: "Every recommendation is tailored to the client's needs, budget, and long-term objectives.",
       color: "from-blue-600 to-primary",
     },
     {
-      icon: CheckCircle,
-      title: "Execution",
-      description: "Implement strategies with precision and monitor progress continuously.",
+      icon: HeadphonesIcon,
+      title: "Continuous Support",
+      description: "From policy selection to servicing and claims assistance, we support our clients at every step.",
       color: "from-primary/80 to-blue-500",
     },
   ];
@@ -39,7 +39,7 @@ const Approach = () => {
             </span>
           </h2>
           <p className="text-lg text-foreground/70" data-stagger>
-            A systematic, proven methodology that puts your financial success at the center of everything we do.
+            We combine clear guidance, tailored planning, and ongoing support to help our clients make confident financial decisions.
           </p>
         </div>
 
@@ -77,24 +77,10 @@ const Approach = () => {
 
         <div className="mt-16 bg-card p-8 rounded-2xl border border-border hover:shadow-xl transition-all duration-500" data-stagger>
           <div className="text-center max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4" data-stagger>Why Our Approach Works</h3>
-            <p className="text-foreground/70 mb-6" data-stagger>
-              Our methodology is built on decades of experience and proven results. We combine data-driven insights with personalized attention to create strategies that adapt to market changes while staying true to your goals.
+            <h3 className="text-2xl font-bold mb-4" data-stagger>Why Choose Us</h3>
+            <p className="text-foreground/70" data-stagger>
+              One platform for all your insurance and investment needs—manage, track, and grow everything in one smart place.
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <div className="bg-secondary/50 px-4 py-2 rounded-full text-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 cursor-pointer" data-stagger>
-                Data-Driven Decisions
-              </div>
-              <div className="bg-secondary/50 px-4 py-2 rounded-full text-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 cursor-pointer" data-stagger>
-                Regular Reviews
-              </div>
-              <div className="bg-secondary/50 px-4 py-2 rounded-full text-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 cursor-pointer" data-stagger>
-                Transparent Communication
-              </div>
-              <div className="bg-secondary/50 px-4 py-2 rounded-full text-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 cursor-pointer" data-stagger>
-                Adaptive Strategies
-              </div>
-            </div>
           </div>
         </div>
       </div>
