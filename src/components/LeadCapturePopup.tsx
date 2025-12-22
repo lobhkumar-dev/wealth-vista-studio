@@ -31,13 +31,27 @@ const LeadCapturePopup = ({ onComplete }: LeadCapturePopupProps) => {
     }
   }, [onComplete]);
 
+  const validatePhone = (phone: string) => {
+    const digitsOnly = phone.replace(/\D/g, '');
+    return digitsOnly.length === 10;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.name.trim() || !formData.phone.trim()) {
+    if (!formData.name.trim()) {
       toast({
-        title: "Required Fields",
-        description: "Please fill in your name and phone number.",
+        title: "Name Required",
+        description: "Please enter your name.",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    if (!formData.phone.trim() || !validatePhone(formData.phone)) {
+      toast({
+        title: "Invalid Phone Number",
+        description: "Please enter a valid 10-digit phone number.",
         variant: "destructive"
       });
       return;
