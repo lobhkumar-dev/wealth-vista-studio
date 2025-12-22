@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight, Star, Quote } from "lucide-react";
+import { ChevronLeft, ChevronRight, Star, Quote, MessageSquarePlus } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselApi,
 } from "@/components/ui/carousel";
+import { Button } from "@/components/ui/button";
+import FeedbackPopup from "./FeedbackPopup";
 
 const testimonials = [
   {
@@ -53,6 +55,7 @@ const testimonials = [
 const Testimonials = () => {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
+  const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
 
   useEffect(() => {
     if (!api) return;
@@ -225,7 +228,20 @@ const Testimonials = () => {
             ))}
           </div>
         </div>
+
+        {/* Feedback Button */}
+        <div className="flex justify-center mt-8">
+          <Button
+            onClick={() => setIsFeedbackOpen(true)}
+            className="bg-gradient-to-r from-blue-500 to-teal-500 hover:from-blue-600 hover:to-teal-600 text-white px-6 sm:px-8 py-5 sm:py-6 rounded-full text-base sm:text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+          >
+            <MessageSquarePlus className="w-5 h-5 mr-2" />
+            Share Your Feedback
+          </Button>
+        </div>
       </div>
+
+      <FeedbackPopup isOpen={isFeedbackOpen} onClose={() => setIsFeedbackOpen(false)} />
     </section>
   );
 };
