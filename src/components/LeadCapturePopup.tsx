@@ -48,12 +48,22 @@ const LeadCapturePopup = ({ onComplete }: LeadCapturePopupProps) => {
     try {
       const form = new FormData();
       form.append("access_key", "1217b98a-d1f2-438a-8ce9-2178c354cd57");
+      form.append("subject", "🔔 New Visitor on SmartInvest Solutions Website");
+      form.append("from_name", "SmartInvest Solutions Website");
+      form.append("message", `A new member visit your website. Details below 👇
+
+Name: ${formData.name}
+Phone: ${formData.phone}
+Email: ${formData.email || 'Not provided'}
+Source: Lead Capture Popup
+Time: ${new Date().toLocaleString()}`);
+      
+      // Also include individual fields for structured data
       form.append("name", formData.name);
       form.append("phone", formData.phone);
       if (formData.email) {
         form.append("email", formData.email);
       }
-      form.append("source", "Lead Capture Popup");
 
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
