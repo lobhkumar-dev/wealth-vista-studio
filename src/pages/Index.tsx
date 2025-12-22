@@ -10,6 +10,7 @@ import News from "@/components/News";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import Partners from "@/components/Partners";
+import GroupBands from "@/components/GroupBands";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
@@ -95,6 +96,9 @@ const Index = () => {
       </div>
       <div data-animate data-animation="zoom-in">
         <Partners />
+      </div>
+      <div data-animate data-animation="fade-in-up">
+        <GroupBands />
       </div>
       <div data-animate data-animation="fade-in-up">
         <Contact />
