@@ -77,7 +77,7 @@ const Approach = () => {
 
         <div className="mt-16 bg-card p-8 rounded-2xl border border-border hover:shadow-xl transition-all duration-500" data-stagger>
           <div className="text-center max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4" data-stagger>Why Choose Us</h3>
+            <h3 className="text-2xl font-bold mb-4" data-stagger>Why Choose Us?</h3>
             <p className="text-foreground/70" data-stagger>
               One platform for all your insurance and investment needs—manage, track, and grow everything in one smart place.
             </p>

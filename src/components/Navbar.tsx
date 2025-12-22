@@ -104,7 +104,10 @@ const Navbar = () => {
                 <Moon className="w-4 h-4 text-foreground" />
               )}
             </button>
-            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full">
+            <Button 
+              className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full"
+              onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               Get Started
             </Button>
           </div>
@@ -145,7 +148,13 @@ const Navbar = () => {
                       {link.label}
                     </a>
                   ))}
-                  <Button className="w-full mt-6 bg-primary text-primary-foreground hover:bg-primary/90 rounded-full">
+                  <Button 
+                    className="w-full mt-6 bg-primary text-primary-foreground hover:bg-primary/90 rounded-full"
+                    onClick={() => {
+                      setIsMobileMenuOpen(false);
+                      document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                  >
                     Get Started
                   </Button>
                 </div>
