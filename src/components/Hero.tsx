@@ -88,14 +88,14 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Large Globe at Bottom - Half visible, positioned to fill remaining space */}
+      {/* Globe pinned to bottom (mobile matches desktop spacing) */}
       <div 
-        className={`relative flex-none h-[260px] sm:flex-1 sm:min-h-[180px] md:min-h-[300px] lg:min-h-[400px] mt-0 sm:mt-4 md:mt-8 transition-all duration-1000 ease-out ${
+        className={`pointer-events-auto absolute inset-x-0 bottom-0 z-0 transition-all duration-1000 ease-out ${
           isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-95"
         }`}
         style={{ transitionDelay: "600ms" }}
       >
-        <div className="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-[8%] sm:translate-y-[48%] md:translate-y-[50%] w-[620px] sm:w-[650px] md:w-[800px] lg:w-[1000px] xl:w-[1200px] aspect-square">
+        <div className="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-[50%] sm:translate-y-[50%] w-[240vw] max-w-[1100px] sm:w-[550px] sm:max-w-none md:w-[800px] lg:w-[1000px] xl:w-[1200px] aspect-square">
           <Globe className="!relative !inset-auto !max-w-none w-full h-full" />
         </div>
       </div>
