@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const insuranceOptions = [
   { id: "car", label: "Car", icon: Car },
@@ -19,6 +20,7 @@ const Contact = () => {
   const [result, setResult] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
 
   const toggleInsurance = (id: string) => {
     setSelectedInsurance(prev => 
@@ -76,9 +78,17 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-12 sm:py-16 md:py-20 lg:py-24 bg-secondary/10">
+    <section 
+      id="contact" 
+      ref={ref as React.RefObject<HTMLElement>}
+      className="py-12 sm:py-16 md:py-20 lg:py-24 bg-secondary/10"
+    >
       <div className="container mx-auto px-4 sm:px-6">
-        <div className="max-w-3xl mx-auto text-center mb-8 sm:mb-12 md:mb-16">
+        <div 
+          className={`max-w-3xl mx-auto text-center mb-8 sm:mb-12 md:mb-16 transition-all duration-700 ease-out ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 md:mb-6">
             Get In{" "}
             <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
@@ -92,7 +102,12 @@ const Contact = () => {
 
         <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 max-w-6xl mx-auto">
           {/* Contact Info */}
-          <div className="space-y-4 sm:space-y-6 md:space-y-8">
+          <div 
+            className={`space-y-4 sm:space-y-6 md:space-y-8 transition-all duration-700 ease-out ${
+              isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
+            }`}
+            style={{ transitionDelay: "200ms" }}
+          >
             <div className="bg-card p-5 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl border border-border">
               <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 sm:mb-5 md:mb-6">Contact Information</h3>
 
@@ -153,7 +168,12 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-card p-5 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl border border-border">
+          <div 
+            className={`bg-card p-5 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl border border-border transition-all duration-700 ease-out ${
+              isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
+            }`}
+            style={{ transitionDelay: "400ms" }}
+          >
             <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 sm:mb-5 md:mb-6">Send Us a Message</h3>
 
             <form onSubmit={onSubmit} className="space-y-4 sm:space-y-5 md:space-y-6">

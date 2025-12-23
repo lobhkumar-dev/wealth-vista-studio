@@ -1,8 +1,10 @@
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from "lucide-react";
 import sisLogo from "@/assets/sis-logo.png";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
 
   const footerLinks = {
     company: [
@@ -32,11 +34,18 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-card border-t border-border">
+    <footer 
+      ref={ref as React.RefObject<HTMLElement>}
+      className="bg-card border-t border-border"
+    >
       <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-10 md:py-12">
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8 mb-8 sm:mb-10 md:mb-12">
           {/* Brand Section */}
-          <div className="col-span-2 lg:col-span-2">
+          <div 
+            className={`col-span-2 lg:col-span-2 transition-all duration-700 ease-out ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+          >
             <img src={sisLogo} alt="Smart Investment Solutions" className="h-10 sm:h-12 w-auto object-contain mb-3 sm:mb-4" />
             <p className="text-foreground/70 mb-4 sm:mb-6 max-w-sm text-sm sm:text-base">
               Smart investment solutions. Your trusted partner in financial success since 2020.
@@ -58,7 +67,12 @@ const Footer = () => {
           </div>
 
           {/* Links Sections */}
-          <div>
+          <div 
+            className={`transition-all duration-700 ease-out ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+            style={{ transitionDelay: "100ms" }}
+          >
             <h4 className="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Company</h4>
             <ul className="space-y-1.5 sm:space-y-2">
               {footerLinks.company.map((link, index) => (
@@ -71,7 +85,12 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div>
+          <div 
+            className={`transition-all duration-700 ease-out ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+            style={{ transitionDelay: "200ms" }}
+          >
             <h4 className="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Services</h4>
             <ul className="space-y-1.5 sm:space-y-2">
               {footerLinks.services.map((link, index) => (
@@ -84,7 +103,12 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="col-span-2 sm:col-span-1">
+          <div 
+            className={`col-span-2 sm:col-span-1 transition-all duration-700 ease-out ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+            style={{ transitionDelay: "300ms" }}
+          >
             <h4 className="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Resources</h4>
             <ul className="space-y-1.5 sm:space-y-2">
               {footerLinks.resources.map((link, index) => (
@@ -99,7 +123,12 @@ const Footer = () => {
         </div>
 
         {/* Social Links */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-6 py-4 sm:py-6 border-t border-border">
+        <div 
+          className={`flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-6 py-4 sm:py-6 border-t border-border transition-all duration-700 ease-out ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+          style={{ transitionDelay: "400ms" }}
+        >
           <div className="flex gap-3 sm:gap-4">
             <a
               href="#"
@@ -137,7 +166,12 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <div className="text-center pt-4 sm:pt-6 border-t border-border">
+        <div 
+          className={`text-center pt-4 sm:pt-6 border-t border-border transition-all duration-700 ease-out ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+          style={{ transitionDelay: "500ms" }}
+        >
           <p className="text-foreground/60 text-xs sm:text-sm">
             © {currentYear} Smart Investment Solutions. All rights reserved. | SEBI Registered Investment Advisor
           </p>

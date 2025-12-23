@@ -1,15 +1,28 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Globe } from "@/components/ui/globe";
+import { useEffect, useState } from "react";
 
 const Hero = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    // Trigger animations after component mounts
+    const timer = setTimeout(() => setIsLoaded(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <section className="relative min-h-[100svh] flex flex-col overflow-hidden bg-background">
       {/* Content Container - Positioned at top with proper spacing */}
       <div className="container mx-auto px-4 sm:px-6 pt-24 sm:pt-28 md:pt-32 lg:pt-36 relative z-10">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           {/* Main Heading */}
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground leading-tight mb-3 sm:mb-4 md:mb-5 animate-fade-in">
+          <h1 
+            className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground leading-tight mb-3 sm:mb-4 md:mb-5 transition-all duration-700 ease-out ${
+              isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+          >
             <span className="inline-flex items-center gap-1.5 sm:gap-2 flex-wrap justify-center">
               Manage your
               <svg 
@@ -30,17 +43,32 @@ const Hero = () => {
           </h1>
 
           {/* Brand Name */}
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-primary leading-tight mb-2 sm:mb-3 md:mb-4 animate-fade-in">
+          <h2 
+            className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-primary leading-tight mb-2 sm:mb-3 md:mb-4 transition-all duration-700 ease-out ${
+              isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+            style={{ transitionDelay: "150ms" }}
+          >
             SmartInvest Solutions
           </h2>
 
           {/* Subheading */}
-          <p className="text-xs sm:text-sm md:text-base lg:text-lg text-muted-foreground mb-4 sm:mb-5 md:mb-6 animate-fade-in max-w-md lg:max-w-xl px-2">
+          <p 
+            className={`text-xs sm:text-sm md:text-base lg:text-lg text-muted-foreground mb-4 sm:mb-5 md:mb-6 max-w-md lg:max-w-xl px-2 transition-all duration-700 ease-out ${
+              isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+            style={{ transitionDelay: "300ms" }}
+          >
             One point Solutions for Insurance & Investment
           </p>
 
           {/* CTA Search Bar Style */}
-          <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg animate-fade-in px-2 sm:px-0">
+          <div 
+            className={`w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg px-2 sm:px-0 transition-all duration-700 ease-out ${
+              isLoaded ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-8 scale-95"
+            }`}
+            style={{ transitionDelay: "450ms" }}
+          >
             <div className="flex items-center bg-card border border-border rounded-full p-1 shadow-lg hover:shadow-xl transition-shadow duration-300">
               <input
                 type="text"
@@ -61,7 +89,12 @@ const Hero = () => {
       </div>
 
       {/* Large Globe at Bottom - Half visible, positioned to fill remaining space */}
-      <div className="relative flex-1 min-h-[200px] sm:min-h-[250px] md:min-h-[300px] lg:min-h-[400px] mt-4 sm:mt-6 md:mt-8">
+      <div 
+        className={`relative flex-1 min-h-[200px] sm:min-h-[250px] md:min-h-[300px] lg:min-h-[400px] mt-4 sm:mt-6 md:mt-8 transition-all duration-1000 ease-out ${
+          isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-95"
+        }`}
+        style={{ transitionDelay: "600ms" }}
+      >
         <div className="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-[45%] sm:translate-y-[48%] md:translate-y-[50%] w-[500px] sm:w-[600px] md:w-[800px] lg:w-[1000px] xl:w-[1200px] aspect-square">
           <Globe className="!relative !inset-auto !max-w-none w-full h-full" />
         </div>

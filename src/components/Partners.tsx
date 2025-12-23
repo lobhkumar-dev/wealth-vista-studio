@@ -1,4 +1,8 @@
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+
 const Partners = () => {
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
+
   const partners = [
     { name: "SEBI", logo: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=200&h=100&fit=crop" },
     { name: "NSE", logo: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=200&h=100&fit=crop" },
@@ -9,9 +13,16 @@ const Partners = () => {
   ];
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-b from-background to-secondary/20">
+    <section 
+      ref={ref as React.RefObject<HTMLElement>}
+      className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-b from-background to-secondary/20"
+    >
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center mb-16">
+        <div 
+          className={`max-w-3xl mx-auto text-center mb-16 transition-all duration-700 ease-out ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Empanelled{" "}
             <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
@@ -27,7 +38,10 @@ const Partners = () => {
           {partners.map((partner, index) => (
             <div
               key={index}
-              className="group bg-card p-6 rounded-xl border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1 flex items-center justify-center"
+              className={`group bg-card p-6 rounded-xl border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1 flex items-center justify-center ${
+                isVisible ? "opacity-100 scale-100" : "opacity-0 scale-90"
+              }`}
+              style={{ transitionDelay: `${200 + index * 100}ms` }}
             >
               <div className="relative overflow-hidden rounded-lg">
                 <img
@@ -40,7 +54,12 @@ const Partners = () => {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
+        <div 
+          className={`mt-12 text-center transition-all duration-700 ease-out ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+          style={{ transitionDelay: "900ms" }}
+        >
           <p className="text-foreground/60">
             Regulated and compliant with all major financial authorities in India
           </p>
