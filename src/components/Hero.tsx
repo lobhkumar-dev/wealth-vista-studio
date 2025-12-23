@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { ChartLine } from "lucide-react";
 import SwipeButton from "./SwipeButton";
-import heroIllustration from "@/assets/hero-illustration.png";
 
 const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -30,40 +29,8 @@ const Hero = () => {
       <div className="container mx-auto px-4 sm:px-6 py-20 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           
-          {/* LEFT SIDE - Illustration */}
-          <div 
-            className={`order-2 lg:order-1 flex justify-center lg:justify-start transition-all duration-700 ease-out ${
-              isLoaded ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-12"
-            }`}
-            style={{ transitionDelay: "200ms" }}
-          >
-            <div className="relative">
-              {/* Decorative rings */}
-              <div className="absolute -inset-4 sm:-inset-8 rounded-full border-2 border-dashed border-primary/20 animate-[spin_30s_linear_infinite]" />
-              <div className="absolute -inset-8 sm:-inset-16 rounded-full border border-orange-300/20" />
-              
-              {/* Floating decorative elements */}
-              <div className="absolute -top-4 -right-4 w-12 h-12 rounded-xl bg-gradient-to-br from-green-400 to-emerald-500 shadow-lg flex items-center justify-center animate-float" style={{ animationDelay: "0.5s" }}>
-                <span className="text-white text-lg font-bold">₹</span>
-              </div>
-              <div className="absolute -bottom-2 -left-6 w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-sky-500 shadow-lg flex items-center justify-center animate-float" style={{ animationDelay: "1s" }}>
-                <span className="text-white text-sm font-bold">%</span>
-              </div>
-              <div className="absolute top-1/2 -right-8 w-8 h-8 rounded-lg bg-gradient-to-br from-amber-400 to-orange-500 shadow-lg animate-float" style={{ animationDelay: "1.5s" }} />
-              
-              {/* Main illustration */}
-              <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[420px] lg:h-[420px] rounded-3xl overflow-hidden bg-gradient-to-br from-orange-100/50 to-amber-100/50 dark:from-primary/10 dark:to-primary/5 p-4">
-                <img 
-                  src={heroIllustration} 
-                  alt="Financial planning illustration" 
-                  className="w-full h-full object-contain drop-shadow-xl"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* RIGHT SIDE - Content */}
-          <div className="order-1 lg:order-2 flex flex-col items-center lg:items-start text-center lg:text-left">
+          {/* LEFT SIDE - Content */}
+          <div className="order-1 lg:order-1 flex flex-col items-center lg:items-start text-center lg:text-left">
             
             {/* Badge */}
             <div 
@@ -142,6 +109,38 @@ const Hero = () => {
               <div className="text-center lg:text-left">
                 <div className="text-2xl font-bold text-foreground">5000+</div>
                 <div className="text-xs text-muted-foreground">Happy Clients</div>
+              </div>
+            </div>
+          </div>
+
+          {/* RIGHT SIDE - Illustration */}
+          <div 
+            className={`order-2 lg:order-2 flex justify-center lg:justify-end transition-all duration-700 ease-out ${
+              isLoaded ? "opacity-100 translate-x-0" : "opacity-0 translate-x-12"
+            }`}
+            style={{ transitionDelay: "200ms" }}
+          >
+            <div className="relative">
+              {/* Decorative rings */}
+              <div className="absolute -inset-4 sm:-inset-8 rounded-full border-2 border-dashed border-primary/20 animate-[spin_30s_linear_infinite]" />
+              <div className="absolute -inset-8 sm:-inset-16 rounded-full border border-orange-300/20" />
+              
+              {/* Floating decorative elements */}
+              <div className="absolute -top-4 -right-4 w-12 h-12 rounded-xl bg-gradient-to-br from-green-400 to-emerald-500 shadow-lg flex items-center justify-center animate-float" style={{ animationDelay: "0.5s" }}>
+                <span className="text-white text-lg font-bold">₹</span>
+              </div>
+              <div className="absolute -bottom-2 -left-6 w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-sky-500 shadow-lg flex items-center justify-center animate-float" style={{ animationDelay: "1s" }}>
+                <span className="text-white text-sm font-bold">%</span>
+              </div>
+              <div className="absolute top-1/2 -right-8 w-8 h-8 rounded-lg bg-gradient-to-br from-amber-400 to-orange-500 shadow-lg animate-float" style={{ animationDelay: "1.5s" }} />
+              
+              {/* Main illustration */}
+              <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[420px] lg:h-[420px] rounded-3xl overflow-hidden p-4">
+                <img 
+                  src="https://res.cloudinary.com/dbznj2cof/image/upload/v1766513293/6573_jwaim7.png" 
+                  alt="Financial planning illustration" 
+                  className="w-full h-full object-contain drop-shadow-xl"
+                />
               </div>
             </div>
           </div>
