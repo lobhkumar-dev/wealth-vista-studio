@@ -1,37 +1,19 @@
-import { ArrowRight, TrendingUp, Shield, PiggyBank, ChartLine } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
+import { ChartLine } from "lucide-react";
+import SwipeButton from "./SwipeButton";
+import heroIllustration from "@/assets/hero-illustration.png";
 
 const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [count, setCount] = useState(0);
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoaded(true), 100);
     return () => clearTimeout(timer);
   }, []);
 
-  // Animate counter
-  useEffect(() => {
-    if (!isLoaded) return;
-    const target = 12.4;
-    const duration = 2000;
-    const steps = 60;
-    const increment = target / steps;
-    let current = 0;
-    
-    const interval = setInterval(() => {
-      current += increment;
-      if (current >= target) {
-        setCount(target);
-        clearInterval(interval);
-      } else {
-        setCount(current);
-      }
-    }, duration / steps);
-    
-    return () => clearInterval(interval);
-  }, [isLoaded]);
+  const handleSwipeComplete = () => {
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <section className="relative min-h-[100svh] flex items-center overflow-hidden bg-gradient-to-br from-amber-50/80 via-orange-50/50 to-sky-50/80 dark:from-background dark:via-background dark:to-background">
@@ -46,164 +28,120 @@ const Hero = () => {
       <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px] pointer-events-none" />
 
       <div className="container mx-auto px-4 sm:px-6 py-20 relative z-10">
-        <div className="flex flex-col items-center text-center max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           
-          {/* Badge */}
+          {/* LEFT SIDE - Illustration */}
           <div 
-            className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 dark:bg-primary/20 border border-primary/20 mb-6 transition-all duration-700 ease-out ${
-              isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-          >
-            <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-            <span className="text-sm font-medium text-foreground/80">Trusted by 10,000+ Investors</span>
-          </div>
-
-          {/* Main Heading */}
-          <h1 
-            className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-[1.1] mb-6 transition-all duration-700 ease-out ${
-              isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-            style={{ transitionDelay: "100ms" }}
-          >
-            <span className="inline-flex items-center gap-2 flex-wrap justify-center">
-              Manage your
-              <span className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-xl bg-gradient-to-br from-primary to-orange-500 text-white shadow-lg shadow-primary/30">
-                <ChartLine className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7" />
-              </span>
-            </span>
-            <br />
-            <span className="bg-gradient-to-r from-foreground via-foreground to-foreground/70 bg-clip-text">
-              finance easily with
-            </span>
-            <br />
-            <span className="bg-gradient-to-r from-primary via-orange-500 to-amber-500 bg-clip-text text-transparent">
-              SmartInvest Solutions
-            </span>
-          </h1>
-
-          {/* Subheading */}
-          <p 
-            className={`text-base sm:text-lg md:text-xl text-muted-foreground mb-8 max-w-xl transition-all duration-700 ease-out ${
-              isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            className={`order-2 lg:order-1 flex justify-center lg:justify-start transition-all duration-700 ease-out ${
+              isLoaded ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-12"
             }`}
             style={{ transitionDelay: "200ms" }}
           >
-            One point Solutions for Insurance & Investment
-          </p>
-
-          {/* CTA Search Bar */}
-          <div 
-            className={`w-full max-w-md lg:max-w-lg mb-12 transition-all duration-700 ease-out ${
-              isLoaded ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-8 scale-95"
-            }`}
-            style={{ transitionDelay: "300ms" }}
-          >
-            <div className="flex items-center bg-card/80 backdrop-blur-sm border border-border/50 rounded-full p-1.5 shadow-xl shadow-black/5 hover:shadow-2xl hover:shadow-black/10 transition-all duration-300">
-              <input
-                type="text"
-                placeholder="Start your Investment Journey"
-                className="flex-1 bg-transparent px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none min-w-0"
-                readOnly
-              />
-              <Button
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="rounded-full px-6 py-3 text-sm font-semibold bg-foreground text-background hover:bg-foreground/90 transition-all shadow-lg"
-              >
-                Get Started
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
+            <div className="relative">
+              {/* Decorative rings */}
+              <div className="absolute -inset-4 sm:-inset-8 rounded-full border-2 border-dashed border-primary/20 animate-[spin_30s_linear_infinite]" />
+              <div className="absolute -inset-8 sm:-inset-16 rounded-full border border-orange-300/20" />
+              
+              {/* Floating decorative elements */}
+              <div className="absolute -top-4 -right-4 w-12 h-12 rounded-xl bg-gradient-to-br from-green-400 to-emerald-500 shadow-lg flex items-center justify-center animate-float" style={{ animationDelay: "0.5s" }}>
+                <span className="text-white text-lg font-bold">₹</span>
+              </div>
+              <div className="absolute -bottom-2 -left-6 w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-sky-500 shadow-lg flex items-center justify-center animate-float" style={{ animationDelay: "1s" }}>
+                <span className="text-white text-sm font-bold">%</span>
+              </div>
+              <div className="absolute top-1/2 -right-8 w-8 h-8 rounded-lg bg-gradient-to-br from-amber-400 to-orange-500 shadow-lg animate-float" style={{ animationDelay: "1.5s" }} />
+              
+              {/* Main illustration */}
+              <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[420px] lg:h-[420px] rounded-3xl overflow-hidden bg-gradient-to-br from-orange-100/50 to-amber-100/50 dark:from-primary/10 dark:to-primary/5 p-4">
+                <img 
+                  src={heroIllustration} 
+                  alt="Financial planning illustration" 
+                  className="w-full h-full object-contain drop-shadow-xl"
+                />
+              </div>
             </div>
           </div>
 
-          {/* Floating Cards Grid */}
-          <div 
-            className={`grid grid-cols-1 sm:grid-cols-3 gap-4 w-full max-w-3xl transition-all duration-700 ease-out ${
-              isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-            style={{ transitionDelay: "450ms" }}
-          >
-            {/* Portfolio Growth Card */}
-            <div className="group relative p-5 rounded-2xl bg-card/60 backdrop-blur-md border border-border/50 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-green-500/5 to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="relative">
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Portfolio</span>
-                  <div className="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center">
-                    <TrendingUp className="w-4 h-4 text-green-600" />
-                  </div>
-                </div>
-                <div className="flex items-baseline gap-1">
-                  <span className="text-2xl font-bold text-foreground">+{count.toFixed(1)}%</span>
-                  <span className="text-xs text-green-600 font-medium">this month</span>
-                </div>
-                <div className="mt-2 h-1.5 rounded-full bg-muted overflow-hidden">
-                  <div 
-                    className="h-full rounded-full bg-gradient-to-r from-green-500 to-emerald-400 transition-all duration-1000"
-                    style={{ width: isLoaded ? "72%" : "0%" }}
-                  />
-                </div>
-              </div>
+          {/* RIGHT SIDE - Content */}
+          <div className="order-1 lg:order-2 flex flex-col items-center lg:items-start text-center lg:text-left">
+            
+            {/* Badge */}
+            <div 
+              className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 dark:bg-primary/20 border border-primary/20 mb-6 transition-all duration-700 ease-out ${
+                isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+            >
+              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+              <span className="text-sm font-medium text-foreground/80">Trusted by 10,000+ Investors</span>
             </div>
 
-            {/* Insurance Coverage Card */}
-            <div className="group relative p-5 rounded-2xl bg-card/60 backdrop-blur-md border border-border/50 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/5 to-sky-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="relative">
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Coverage</span>
-                  <div className="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center">
-                    <Shield className="w-4 h-4 text-blue-600" />
-                  </div>
-                </div>
-                <div className="flex items-baseline gap-1">
-                  <span className="text-2xl font-bold text-foreground">₹1 Cr</span>
-                  <span className="text-xs text-blue-600 font-medium">protected</span>
-                </div>
-                <div className="mt-2 flex gap-1">
-                  {[1,2,3,4,5].map((i) => (
-                    <div 
-                      key={i} 
-                      className="h-1.5 flex-1 rounded-full bg-gradient-to-r from-blue-500 to-sky-400 transition-all duration-500"
-                      style={{ 
-                        opacity: isLoaded ? 1 : 0,
-                        transitionDelay: `${i * 100}ms`
-                      }}
-                    />
-                  ))}
-                </div>
-              </div>
+            {/* Main Heading */}
+            <h1 
+              className={`text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold text-foreground leading-[1.1] mb-6 transition-all duration-700 ease-out ${
+                isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+              style={{ transitionDelay: "100ms" }}
+            >
+              <span className="inline-flex items-center gap-2 flex-wrap justify-center lg:justify-start">
+                Manage your
+                <span className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-primary to-orange-500 text-white shadow-lg shadow-primary/30">
+                  <ChartLine className="w-5 h-5 sm:w-6 sm:h-6" />
+                </span>
+              </span>
+              <br />
+              <span className="bg-gradient-to-r from-foreground via-foreground to-foreground/70 bg-clip-text">
+                finance easily with
+              </span>
+              <br />
+              <span className="bg-gradient-to-r from-primary via-orange-500 to-amber-500 bg-clip-text text-transparent">
+                SmartInvest Solutions
+              </span>
+            </h1>
+
+            {/* Subheading */}
+            <p 
+              className={`text-base sm:text-lg md:text-xl text-muted-foreground mb-8 max-w-md transition-all duration-700 ease-out ${
+                isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+              style={{ transitionDelay: "200ms" }}
+            >
+              One point Solutions for Insurance & Investment
+            </p>
+
+            {/* Swipe CTA Button */}
+            <div 
+              className={`w-full max-w-sm transition-all duration-700 ease-out ${
+                isLoaded ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-8 scale-95"
+              }`}
+              style={{ transitionDelay: "300ms" }}
+            >
+              <SwipeButton 
+                onSwipeComplete={handleSwipeComplete}
+                label="Swipe to Get in Touch"
+              />
+              <p className="text-xs text-muted-foreground mt-3 text-center lg:text-left">
+                Drag the button to start your investment journey →
+              </p>
             </div>
 
-            {/* SIP Card */}
-            <div className="group relative p-5 rounded-2xl bg-card/60 backdrop-blur-md border border-border/50 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-amber-500/5 to-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="relative">
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Monthly SIP</span>
-                  <div className="w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center">
-                    <PiggyBank className="w-4 h-4 text-amber-600" />
-                  </div>
-                </div>
-                <div className="flex items-baseline gap-1">
-                  <span className="text-2xl font-bold text-foreground">₹25K</span>
-                  <span className="text-xs text-amber-600 font-medium">active</span>
-                </div>
-                <div className="mt-2 flex items-center gap-2">
-                  <div className="flex -space-x-1">
-                    {[1,2,3].map((i) => (
-                      <div 
-                        key={i}
-                        className="w-4 h-4 rounded-full border-2 border-card bg-gradient-to-br from-amber-400 to-orange-500"
-                        style={{
-                          opacity: isLoaded ? 1 : 0,
-                          transitionDelay: `${i * 150}ms`,
-                          transition: "opacity 0.5s ease"
-                        }}
-                      />
-                    ))}
-                  </div>
-                  <span className="text-xs text-muted-foreground">3 funds</span>
-                </div>
+            {/* Quick Stats */}
+            <div 
+              className={`flex flex-wrap justify-center lg:justify-start gap-6 mt-8 pt-8 border-t border-border/50 transition-all duration-700 ease-out ${
+                isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+              style={{ transitionDelay: "400ms" }}
+            >
+              <div className="text-center lg:text-left">
+                <div className="text-2xl font-bold text-foreground">15+</div>
+                <div className="text-xs text-muted-foreground">Years Experience</div>
+              </div>
+              <div className="text-center lg:text-left">
+                <div className="text-2xl font-bold text-foreground">₹50Cr+</div>
+                <div className="text-xs text-muted-foreground">Assets Managed</div>
+              </div>
+              <div className="text-center lg:text-left">
+                <div className="text-2xl font-bold text-foreground">5000+</div>
+                <div className="text-xs text-muted-foreground">Happy Clients</div>
               </div>
             </div>
           </div>
@@ -212,9 +150,8 @@ const Hero = () => {
       </div>
 
       {/* Decorative Elements */}
-      <div className="absolute bottom-10 left-10 w-20 h-20 border border-primary/20 rounded-2xl rotate-12 hidden lg:block" />
+      <div className="absolute bottom-10 right-10 w-20 h-20 border border-primary/20 rounded-2xl rotate-12 hidden lg:block" />
       <div className="absolute top-1/4 right-10 w-16 h-16 border border-primary/20 rounded-full hidden lg:block" />
-      <div className="absolute bottom-1/3 right-20 w-3 h-3 bg-primary/40 rounded-full animate-pulse hidden lg:block" />
     </section>
   );
 };
