@@ -1,12 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Calculator, TrendingUp, Home, Percent, PiggyBank, Target, Clock, ChevronRight, ChevronLeft, Info } from "lucide-react";
+import { ArrowLeft, Calculator, TrendingUp, Home, Percent, PiggyBank, Target, Clock, ChevronRight, ChevronLeft, Info, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-
+import GuidedTour from "@/components/GuidedTour";
 type CalculatorType = "sip" | "emi" | "compound" | "simple" | "retirement" | "goal";
 
 interface TutorialStep {
@@ -77,11 +77,68 @@ const calculatorInfo: Record<CalculatorType, { title: string; description: strin
   }
 };
 
+// Interactive tour steps
+const tourSteps = [
+  {
+    target: "[data-tour='calculator-tabs']",
+    title: "Choose Your Calculator",
+    content: "Select from 6 different financial calculators: SIP, EMI, Compound Interest, Simple Interest, Retirement, and Goal-Based Savings.",
+    position: "bottom" as const,
+  },
+  {
+    target: "[data-tour='input-fields']",
+    title: "Enter Your Values",
+    content: "Fill in your financial details here. Each calculator has specific inputs like amount, interest rate, and time period.",
+    position: "bottom" as const,
+  },
+  {
+    target: "[data-tour='results-section']",
+    title: "View Your Results",
+    content: "See instant calculations! Results update automatically as you change values. The highlighted box shows your final outcome.",
+    position: "top" as const,
+  },
+  {
+    target: "[data-tour='tutorial-panel']",
+    title: "Step-by-Step Guide",
+    content: "This panel provides detailed instructions for each calculator. Navigate through steps to understand every input field.",
+    position: "right" as const,
+  },
+  {
+    target: "[data-tour='quick-tips']",
+    title: "Financial Tips",
+    content: "Get smart financial advice and tips to help you make better investment decisions.",
+    position: "right" as const,
+  },
+];
+
 const CalculatorPage = () => {
   const [activeCalculator, setActiveCalculator] = useState<CalculatorType>("sip");
   const [tutorialStep, setTutorialStep] = useState(0);
   const [showTutorial, setShowTutorial] = useState(true);
+  const [showTour, setShowTour] = useState(false);
+  const [hasSeenTour, setHasSeenTour] = useState(false);
 
+  // Check if user has seen the tour before
+  useEffect(() => {
+    const seen = localStorage.getItem("calculator-tour-completed");
+    if (!seen) {
+      // Auto-start tour for first-time visitors after a short delay
+      const timer = setTimeout(() => setShowTour(true), 1000);
+      return () => clearTimeout(timer);
+    } else {
+      setHasSeenTour(true);
+    }
+  }, []);
+
+  const handleTourComplete = () => {
+    setShowTour(false);
+    setHasSeenTour(true);
+    localStorage.setItem("calculator-tour-completed", "true");
+  };
+
+  const handleStartTour = () => {
+    setShowTour(true);
+  };
   // SIP Calculator State
   const [sipMonthly, setSipMonthly] = useState<string>("10000");
   const [sipRate, setSipRate] = useState<string>("12");
@@ -266,6 +323,14 @@ const CalculatorPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      {/* Guided Tour */}
+      <GuidedTour
+        steps={tourSteps}
+        isOpen={showTour}
+        onClose={() => setShowTour(false)}
+        onComplete={handleTourComplete}
+      />
+
       {/* Header */}
       <header className="sticky top-0 z-50 bg-background/95 backdrop-blur border-b border-border">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
@@ -273,14 +338,46 @@ const CalculatorPage = () => {
             <ArrowLeft className="w-5 h-5" />
             <span className="font-medium">Back to Home</span>
           </Link>
-          <div className="flex items-center gap-2">
-            <Calculator className="w-6 h-6 text-primary" />
-            <span className="font-bold text-lg text-foreground">Finance Calculator</span>
+          <div className="flex items-center gap-3">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={handleStartTour}
+              className="gap-2 border-primary/30 hover:border-primary hover:bg-primary/10"
+            >
+              <Play className="w-4 h-4" />
+              <span className="hidden sm:inline">Take a Tour</span>
+            </Button>
+            <div className="flex items-center gap-2">
+              <Calculator className="w-6 h-6 text-primary" />
+              <span className="font-bold text-lg text-foreground hidden sm:inline">Finance Calculator</span>
+            </div>
           </div>
         </div>
       </header>
 
       <main className="container mx-auto px-4 py-8">
+        {/* Welcome Banner for first-time users */}
+        {!hasSeenTour && !showTour && (
+          <div className="mb-8 bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 border border-primary/20 rounded-xl p-6 animate-fade-in">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="text-center sm:text-left">
+                <h2 className="text-xl font-bold text-foreground flex items-center gap-2 justify-center sm:justify-start">
+                  <Play className="w-5 h-5 text-primary" />
+                  New to this calculator?
+                </h2>
+                <p className="text-muted-foreground mt-1">
+                  Start a guided walkthrough to see how to enter values and read your results in under a minute.
+                </p>
+              </div>
+              <Button onClick={handleStartTour} className="gap-2 whitespace-nowrap">
+                <Play className="w-4 h-4" />
+                Take a Quick Tour
+              </Button>
+            </div>
+          </div>
+        )}
+
         {/* Page Title */}
         <div className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -294,7 +391,7 @@ const CalculatorPage = () => {
 
         {/* Calculator Tabs */}
         <Tabs value={activeCalculator} onValueChange={handleCalculatorChange} className="w-full">
-          <TabsList className="w-full flex flex-wrap h-auto gap-2 bg-muted/50 p-2 rounded-xl mb-8">
+          <TabsList data-tour="calculator-tabs" className="w-full flex flex-wrap h-auto gap-2 bg-muted/50 p-2 rounded-xl mb-8">
             <TabsTrigger value="sip" className="flex-1 min-w-[120px] gap-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
               <TrendingUp className="w-4 h-4" />
               <span className="hidden sm:inline">SIP</span>
@@ -323,8 +420,8 @@ const CalculatorPage = () => {
 
           <div className="grid lg:grid-cols-3 gap-8">
             {/* Tutorial Section */}
-            <div className="lg:col-span-1">
-              <Card className="bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20">
+            <div className="lg:col-span-1 order-2 lg:order-1">
+              <Card data-tour="tutorial-panel" className="bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20">
                 <CardHeader>
                   <div className="flex items-center justify-between">
                     <CardTitle className="text-lg flex items-center gap-2">
@@ -398,7 +495,7 @@ const CalculatorPage = () => {
               </Card>
 
               {/* Quick Tips */}
-              <Card className="mt-6">
+              <Card data-tour="quick-tips" className="mt-6">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
                     <PiggyBank className="w-5 h-5 text-primary" />
@@ -415,7 +512,7 @@ const CalculatorPage = () => {
             </div>
 
             {/* Calculator Section */}
-            <div className="lg:col-span-2">
+            <div className="lg:col-span-2 order-1 lg:order-2">
               {/* SIP Calculator */}
               <TabsContent value="sip" className="mt-0">
                 <Card>
@@ -429,7 +526,7 @@ const CalculatorPage = () => {
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-6">
-                    <div className="grid sm:grid-cols-3 gap-4">
+                    <div data-tour="input-fields" className="grid sm:grid-cols-3 gap-4">
                       <div className="space-y-2">
                         <Label htmlFor="sip-monthly">Monthly Investment (₹)</Label>
                         <Input
@@ -464,7 +561,7 @@ const CalculatorPage = () => {
                     </div>
 
                     {/* Results */}
-                    <div className="grid sm:grid-cols-3 gap-4 pt-6 border-t border-border">
+                    <div data-tour="results-section" className="grid sm:grid-cols-3 gap-4 pt-6 border-t border-border">
                       <div className="bg-muted/50 rounded-lg p-4 text-center">
                         <p className="text-sm text-muted-foreground mb-1">Invested Amount</p>
                         <p className="text-xl font-bold text-foreground">{formatCurrency(sipResult.invested)}</p>
