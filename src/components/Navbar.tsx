@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Moon, Sun } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Menu, Moon, Sun, Calculator } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -105,10 +106,13 @@ const Navbar = () => {
               )}
             </button>
             <Button 
+              asChild
               className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full"
-              onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              Get Started
+              <Link to="/calculator" className="flex items-center gap-2">
+                <Calculator className="w-4 h-4" />
+                Calculator
+              </Link>
             </Button>
           </div>
 
@@ -149,13 +153,14 @@ const Navbar = () => {
                     </a>
                   ))}
                   <Button 
+                    asChild
                     className="w-full mt-6 bg-primary text-primary-foreground hover:bg-primary/90 rounded-full"
-                    onClick={() => {
-                      setIsMobileMenuOpen(false);
-                      document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
-                    }}
+                    onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    Get Started
+                    <Link to="/calculator" className="flex items-center justify-center gap-2">
+                      <Calculator className="w-4 h-4" />
+                      Calculator
+                    </Link>
                   </Button>
                 </div>
               </SheetContent>
