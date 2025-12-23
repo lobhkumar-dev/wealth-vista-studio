@@ -65,9 +65,6 @@ const Hero = () => {
         <div className="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-[45%] sm:translate-y-[48%] md:translate-y-[50%] w-[500px] sm:w-[600px] md:w-[800px] lg:w-[1000px] xl:w-[1200px] aspect-square">
           <Globe className="!relative !inset-auto !max-w-none w-full h-full" />
         </div>
-        
-        {/* Top gradient fade for smooth transition */}
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-16 sm:h-20 md:h-24 bg-gradient-to-b from-background to-transparent z-10" />
       </div>
 
       {/* Subtle decorative dots - hidden on very small screens */}
