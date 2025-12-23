@@ -18,8 +18,9 @@ interface GuidedTourProps {
 
 const GuidedTour = ({ steps, isOpen, onClose, onComplete }: GuidedTourProps) => {
   const [currentStep, setCurrentStep] = useState(0);
-  const [tooltipPosition, setTooltipPosition] = useState({ top: 0, left: 0 });
+  const [tooltipStyle, setTooltipStyle] = useState<React.CSSProperties>({});
   const [targetRect, setTargetRect] = useState<DOMRect | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     if (!isOpen) {
@@ -28,6 +29,9 @@ const GuidedTour = ({ steps, isOpen, onClose, onComplete }: GuidedTourProps) => 
     }
 
     const updatePosition = () => {
+      const mobile = window.innerWidth < 640;
+      setIsMobile(mobile);
+      
       const step = steps[currentStep];
       const element = document.querySelector(step.target);
       
@@ -35,34 +39,55 @@ const GuidedTour = ({ steps, isOpen, onClose, onComplete }: GuidedTourProps) => 
         const rect = element.getBoundingClientRect();
         setTargetRect(rect);
         
-        const position = step.position || "bottom";
-        let top = 0;
-        let left = 0;
+        // On mobile, always position tooltip at bottom of screen as a modal
+        if (mobile) {
+          setTooltipStyle({
+            position: 'fixed',
+            bottom: '16px',
+            left: '16px',
+            right: '16px',
+            top: 'auto',
+            width: 'auto',
+            maxWidth: 'calc(100vw - 32px)',
+          });
+        } else {
+          // Desktop positioning
+          const tooltipWidth = Math.min(320, window.innerWidth - 32);
+          const position = step.position || "bottom";
+          let top = 0;
+          let left = 0;
 
-        switch (position) {
-          case "top":
-            top = rect.top - 180 + window.scrollY;
-            left = rect.left + rect.width / 2 - 160;
-            break;
-          case "bottom":
-            top = rect.bottom + 16 + window.scrollY;
-            left = rect.left + rect.width / 2 - 160;
-            break;
-          case "left":
-            top = rect.top + rect.height / 2 - 80 + window.scrollY;
-            left = rect.left - 340;
-            break;
-          case "right":
-            top = rect.top + rect.height / 2 - 80 + window.scrollY;
-            left = rect.right + 16;
-            break;
+          switch (position) {
+            case "top":
+              top = rect.top - 200 + window.scrollY;
+              left = rect.left + rect.width / 2 - tooltipWidth / 2;
+              break;
+            case "bottom":
+              top = rect.bottom + 16 + window.scrollY;
+              left = rect.left + rect.width / 2 - tooltipWidth / 2;
+              break;
+            case "left":
+              top = rect.top + rect.height / 2 - 100 + window.scrollY;
+              left = rect.left - tooltipWidth - 16;
+              break;
+            case "right":
+              top = rect.top + rect.height / 2 - 100 + window.scrollY;
+              left = rect.right + 16;
+              break;
+          }
+
+          // Keep tooltip within viewport with proper margins
+          const margin = 16;
+          left = Math.max(margin, Math.min(left, window.innerWidth - tooltipWidth - margin));
+          top = Math.max(margin, Math.min(top, window.innerHeight + window.scrollY - 280));
+
+          setTooltipStyle({
+            position: 'absolute',
+            top: `${top}px`,
+            left: `${left}px`,
+            width: `${tooltipWidth}px`,
+          });
         }
-
-        // Keep tooltip within viewport
-        left = Math.max(16, Math.min(left, window.innerWidth - 340));
-        top = Math.max(16, top);
-
-        setTooltipPosition({ top, left });
         
         // Scroll element into view
         element.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -71,8 +96,12 @@ const GuidedTour = ({ steps, isOpen, onClose, onComplete }: GuidedTourProps) => 
 
     updatePosition();
     window.addEventListener("resize", updatePosition);
+    window.addEventListener("scroll", updatePosition);
     
-    return () => window.removeEventListener("resize", updatePosition);
+    return () => {
+      window.removeEventListener("resize", updatePosition);
+      window.removeEventListener("scroll", updatePosition);
+    };
   }, [isOpen, currentStep, steps]);
 
   const handleNext = () => {
@@ -103,11 +132,11 @@ const GuidedTour = ({ steps, isOpen, onClose, onComplete }: GuidedTourProps) => 
       <div className="fixed inset-0 z-[9998] bg-black/60 transition-opacity duration-300" />
       
       {/* Spotlight on target element */}
-      {targetRect && (
+      {targetRect && !isMobile && (
         <div
           className="fixed z-[9999] pointer-events-none"
           style={{
-            top: targetRect.top - 8 + window.scrollY,
+            top: targetRect.top - 8,
             left: targetRect.left - 8,
             width: targetRect.width + 16,
             height: targetRect.height + 16,
@@ -119,13 +148,24 @@ const GuidedTour = ({ steps, isOpen, onClose, onComplete }: GuidedTourProps) => 
         />
       )}
 
+      {/* Mobile spotlight - simplified */}
+      {targetRect && isMobile && (
+        <div
+          className="fixed z-[9999] pointer-events-none rounded-lg border-2 border-primary"
+          style={{
+            top: targetRect.top - 4,
+            left: targetRect.left - 4,
+            width: targetRect.width + 8,
+            height: targetRect.height + 8,
+            boxShadow: "0 0 0 9999px rgba(0, 0, 0, 0.6)",
+          }}
+        />
+      )}
+
       {/* Tooltip */}
       <div
-        className="fixed z-[10000] w-80 bg-card border border-border rounded-xl shadow-2xl overflow-hidden animate-fade-in"
-        style={{
-          top: tooltipPosition.top,
-          left: tooltipPosition.left,
-        }}
+        className="z-[10000] bg-card border border-border rounded-xl shadow-2xl overflow-hidden animate-fade-in"
+        style={tooltipStyle}
       >
         {/* Header */}
         <div className="bg-gradient-to-r from-primary to-primary/80 px-4 py-3 flex items-center justify-between">
@@ -162,22 +202,22 @@ const GuidedTour = ({ steps, isOpen, onClose, onComplete }: GuidedTourProps) => 
         </div>
 
         {/* Footer */}
-        <div className="p-4 flex items-center justify-between gap-2">
+        <div className="p-3 sm:p-4 flex flex-col sm:flex-row items-center justify-between gap-2">
           <Button
             variant="ghost"
             size="sm"
             onClick={handleSkip}
-            className="text-muted-foreground hover:text-foreground"
+            className="text-muted-foreground hover:text-foreground text-xs sm:text-sm order-2 sm:order-1"
           >
             Skip tour
           </Button>
-          <div className="flex gap-2">
+          <div className="flex gap-2 w-full sm:w-auto order-1 sm:order-2">
             <Button
               variant="outline"
               size="sm"
               onClick={handlePrev}
               disabled={currentStep === 0}
-              className="w-24"
+              className="flex-1 sm:flex-none sm:w-20"
             >
               <ChevronLeft className="w-4 h-4 mr-1" />
               Back
@@ -185,7 +225,7 @@ const GuidedTour = ({ steps, isOpen, onClose, onComplete }: GuidedTourProps) => 
             <Button
               size="sm"
               onClick={handleNext}
-              className="w-24"
+              className="flex-1 sm:flex-none sm:w-20"
             >
               {currentStep === steps.length - 1 ? "Finish" : "Next"}
               {currentStep < steps.length - 1 && <ChevronRight className="w-4 h-4 ml-1" />}
