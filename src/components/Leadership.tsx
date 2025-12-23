@@ -1,28 +1,11 @@
-import { Linkedin, Mail, CheckCircle, ArrowUpRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { useEffect, useRef, useState } from "react";
+import { Linkedin, Mail, CheckCircle } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import founderImage from "@/assets/founder-profile-nobg.png";
 
 const Leadership = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
+  const { ref: teamRef, isVisible: teamVisible } = useScrollAnimation({ threshold: 0.1 });
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
   const founderCEO = {
     name: "Rajesh Kumar",
     position: "Founder & CEO",
@@ -61,7 +44,11 @@ const Leadership = () => {
   return (
     <section id="leadership" className="py-12 sm:py-16 md:py-20 lg:py-24 bg-secondary/10">
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center mb-16">
+        <div 
+          className={`max-w-3xl mx-auto text-center mb-16 transition-all duration-700 ease-out ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Meet Our{" "}
             <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
@@ -75,7 +62,7 @@ const Leadership = () => {
 
         {/* Featured CEO Section */}
         <div 
-          ref={sectionRef}
+          ref={ref as React.RefObject<HTMLDivElement>}
           className="mb-20 rounded-3xl overflow-hidden"
         >
           <div className="grid lg:grid-cols-2 gap-8 items-center p-8 lg:p-12 bg-gradient-to-br from-card via-card/95 to-primary/5 rounded-3xl border border-border lg:rounded-r-none">
@@ -214,11 +201,17 @@ const Leadership = () => {
         </div>
 
         {/* Team Members Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div 
+          ref={teamRef as React.RefObject<HTMLDivElement>}
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
           {teamMembers.map((member, index) => (
             <div
               key={index}
-              className="group bg-card rounded-2xl border border-border hover:border-primary/50 overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-2"
+              className={`group bg-card rounded-2xl border border-border hover:border-primary/50 overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-2 ${
+                teamVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+              style={{ transitionDelay: `${index * 150}ms` }}
             >
               {/* Image */}
               <div className="relative overflow-hidden aspect-square">
