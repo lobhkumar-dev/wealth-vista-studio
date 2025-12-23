@@ -1,4 +1,5 @@
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from "lucide-react";
+import sisLogo from "@/assets/sis-logo.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -36,20 +37,18 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
           {/* Brand Section */}
           <div className="lg:col-span-2">
-            <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-              Smart Investment Solutions
-            </h3>
+            <img src={sisLogo} alt="Smart Investment Solutions" className="h-12 w-auto object-contain mb-4" />
             <p className="text-foreground/70 mb-6 max-w-sm">
               Smart investment solutions. Your trusted partner in financial success since 2020.
             </p>
             <div className="space-y-3">
-              <a href="tel:+919876543210" className="flex items-center gap-2 text-foreground/70 hover:text-primary transition-colors">
+              <a href="https://wa.me/919641166805" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground/70 hover:text-primary transition-colors">
                 <Phone className="w-4 h-4" />
-                <span>+91 98765 43210</span>
+                <span>+91 96411 66805</span>
               </a>
-              <a href="mailto:info@moneytreewealth.co.in" className="flex items-center gap-2 text-foreground/70 hover:text-primary transition-colors">
+              <a href="mailto:smartinvest.solutions.supoort@gmail.com" className="flex items-center gap-2 text-foreground/70 hover:text-primary transition-colors">
                 <Mail className="w-4 h-4" />
-                <span>info@moneytreewealth.co.in</span>
+                <span>smartinvest.solutions.supoort@gmail.com</span>
               </a>
               <div className="flex items-start gap-2 text-foreground/70">
                 <MapPin className="w-4 h-4 mt-1 flex-shrink-0" />

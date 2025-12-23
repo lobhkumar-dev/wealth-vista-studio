@@ -102,9 +102,8 @@ const Contact = () => {
                     <Phone className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-1">Phone</h4>
-                    <p className="text-foreground/70">+91 98765 43210</p>
-                    <p className="text-foreground/70">+91 98765 43211</p>
+                    <h4 className="font-semibold mb-1">WhatsApp</h4>
+                    <a href="https://wa.me/919641166805" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-primary transition-colors">+91 96411 66805</a>
                   </div>
                 </div>
 
@@ -114,8 +113,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold mb-1">Email</h4>
-                    <p className="text-foreground/70">info@moneytreewealth.co.in</p>
-                    <p className="text-foreground/70">support@moneytreewealth.co.in</p>
+                    <a href="mailto:smartinvest.solutions.supoort@gmail.com" className="text-foreground/70 hover:text-primary transition-colors">smartinvest.solutions.supoort@gmail.com</a>
                   </div>
                 </div>
 
