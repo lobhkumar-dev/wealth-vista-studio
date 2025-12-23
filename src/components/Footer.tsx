@@ -33,25 +33,25 @@ const Footer = () => {
 
   return (
     <footer className="bg-card border-t border-border">
-      <div className="container mx-auto px-4 py-8 sm:py-10 md:py-12">
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+      <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-10 md:py-12">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8 mb-8 sm:mb-10 md:mb-12">
           {/* Brand Section */}
-          <div className="lg:col-span-2">
-            <img src={sisLogo} alt="Smart Investment Solutions" className="h-12 w-auto object-contain mb-4" />
-            <p className="text-foreground/70 mb-6 max-w-sm">
+          <div className="col-span-2 lg:col-span-2">
+            <img src={sisLogo} alt="Smart Investment Solutions" className="h-10 sm:h-12 w-auto object-contain mb-3 sm:mb-4" />
+            <p className="text-foreground/70 mb-4 sm:mb-6 max-w-sm text-sm sm:text-base">
               Smart investment solutions. Your trusted partner in financial success since 2020.
             </p>
-            <div className="space-y-3">
-              <a href="https://wa.me/919641166805" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground/70 hover:text-primary transition-colors">
-                <Phone className="w-4 h-4" />
+            <div className="space-y-2 sm:space-y-3">
+              <a href="https://wa.me/919641166805" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground/70 hover:text-primary transition-colors text-sm sm:text-base">
+                <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 <span>+91 96411 66805</span>
               </a>
-              <a href="mailto:smartinvest.solutions.supoort@gmail.com" className="flex items-center gap-2 text-foreground/70 hover:text-primary transition-colors">
-                <Mail className="w-4 h-4" />
-                <span>smartinvest.solutions.supoort@gmail.com</span>
+              <a href="mailto:smartinvest.solutions.supoort@gmail.com" className="flex items-center gap-2 text-foreground/70 hover:text-primary transition-colors text-xs sm:text-sm">
+                <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" />
+                <span className="break-all">smartinvest.solutions.supoort@gmail.com</span>
               </a>
-              <div className="flex items-start gap-2 text-foreground/70">
-                <MapPin className="w-4 h-4 mt-1 flex-shrink-0" />
+              <div className="flex items-start gap-2 text-foreground/70 text-sm sm:text-base">
+                <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 mt-1 flex-shrink-0" />
                 <span>123 Finance Street, Mumbai, Maharashtra 400001</span>
               </div>
             </div>
@@ -59,11 +59,11 @@ const Footer = () => {
 
           {/* Links Sections */}
           <div>
-            <h4 className="font-semibold mb-4">Company</h4>
-            <ul className="space-y-2">
+            <h4 className="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Company</h4>
+            <ul className="space-y-1.5 sm:space-y-2">
               {footerLinks.company.map((link, index) => (
                 <li key={index}>
-                  <a href={link.href} className="text-foreground/70 hover:text-primary transition-colors">
+                  <a href={link.href} className="text-foreground/70 hover:text-primary transition-colors text-xs sm:text-sm">
                     {link.label}
                   </a>
                 </li>
@@ -72,11 +72,11 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">Services</h4>
-            <ul className="space-y-2">
+            <h4 className="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Services</h4>
+            <ul className="space-y-1.5 sm:space-y-2">
               {footerLinks.services.map((link, index) => (
                 <li key={index}>
-                  <a href={link.href} className="text-foreground/70 hover:text-primary transition-colors">
+                  <a href={link.href} className="text-foreground/70 hover:text-primary transition-colors text-xs sm:text-sm">
                     {link.label}
                   </a>
                 </li>
@@ -84,12 +84,12 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div>
-            <h4 className="font-semibold mb-4">Resources</h4>
-            <ul className="space-y-2">
+          <div className="col-span-2 sm:col-span-1">
+            <h4 className="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Resources</h4>
+            <ul className="space-y-1.5 sm:space-y-2">
               {footerLinks.resources.map((link, index) => (
                 <li key={index}>
-                  <a href={link.href} className="text-foreground/70 hover:text-primary transition-colors">
+                  <a href={link.href} className="text-foreground/70 hover:text-primary transition-colors text-xs sm:text-sm">
                     {link.label}
                   </a>
                 </li>
@@ -99,35 +99,35 @@ const Footer = () => {
         </div>
 
         {/* Social Links */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6 py-6 border-t border-border">
-          <div className="flex gap-4">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-6 py-4 sm:py-6 border-t border-border">
+          <div className="flex gap-3 sm:gap-4">
             <a
               href="#"
-              className="w-10 h-10 bg-secondary/50 hover:bg-primary rounded-lg flex items-center justify-center transition-colors group"
+              className="w-8 h-8 sm:w-10 sm:h-10 bg-secondary/50 hover:bg-primary rounded-lg flex items-center justify-center transition-colors group"
             >
-              <Facebook className="w-5 h-5 text-foreground group-hover:text-primary-foreground" />
+              <Facebook className="w-4 h-4 sm:w-5 sm:h-5 text-foreground group-hover:text-primary-foreground" />
             </a>
             <a
               href="#"
-              className="w-10 h-10 bg-secondary/50 hover:bg-primary rounded-lg flex items-center justify-center transition-colors group"
+              className="w-8 h-8 sm:w-10 sm:h-10 bg-secondary/50 hover:bg-primary rounded-lg flex items-center justify-center transition-colors group"
             >
-              <Twitter className="w-5 h-5 text-foreground group-hover:text-primary-foreground" />
+              <Twitter className="w-4 h-4 sm:w-5 sm:h-5 text-foreground group-hover:text-primary-foreground" />
             </a>
             <a
               href="#"
-              className="w-10 h-10 bg-secondary/50 hover:bg-primary rounded-lg flex items-center justify-center transition-colors group"
+              className="w-8 h-8 sm:w-10 sm:h-10 bg-secondary/50 hover:bg-primary rounded-lg flex items-center justify-center transition-colors group"
             >
-              <Linkedin className="w-5 h-5 text-foreground group-hover:text-primary-foreground" />
+              <Linkedin className="w-4 h-4 sm:w-5 sm:h-5 text-foreground group-hover:text-primary-foreground" />
             </a>
             <a
               href="#"
-              className="w-10 h-10 bg-secondary/50 hover:bg-primary rounded-lg flex items-center justify-center transition-colors group"
+              className="w-8 h-8 sm:w-10 sm:h-10 bg-secondary/50 hover:bg-primary rounded-lg flex items-center justify-center transition-colors group"
             >
-              <Instagram className="w-5 h-5 text-foreground group-hover:text-primary-foreground" />
+              <Instagram className="w-4 h-4 sm:w-5 sm:h-5 text-foreground group-hover:text-primary-foreground" />
             </a>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-6 text-sm text-foreground/60">
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6 text-xs sm:text-sm text-foreground/60">
             {footerLinks.legal.map((link, index) => (
               <a key={index} href={link.href} className="hover:text-primary transition-colors">
                 {link.label}
@@ -137,14 +137,14 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <div className="text-center pt-6 border-t border-border">
-          <p className="text-foreground/60 text-sm">
+        <div className="text-center pt-4 sm:pt-6 border-t border-border">
+          <p className="text-foreground/60 text-xs sm:text-sm">
             © {currentYear} Smart Investment Solutions. All rights reserved. | SEBI Registered Investment Advisor
           </p>
-          <p className="text-foreground/50 text-xs mt-2">
+          <p className="text-foreground/50 text-[10px] sm:text-xs mt-1.5 sm:mt-2">
             Investments are subject to market risks. Please read all scheme related documents carefully before investing.
           </p>
-          <p className="text-foreground/40 text-xs mt-4">
+          <p className="text-foreground/40 text-[10px] sm:text-xs mt-3 sm:mt-4">
             Website designed and developed by{" "}
             <a 
               href="https://www.ulmind.com" 

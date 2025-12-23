@@ -70,14 +70,14 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-4 left-4 right-4 z-50 transition-all duration-300 ${
+      className={`fixed top-2 sm:top-4 left-2 sm:left-4 right-2 sm:right-4 z-50 transition-all duration-300 ${
         isScrolled 
           ? "bg-background/70 backdrop-blur-xl shadow-2xl border border-border/50" 
           : "bg-background/40 backdrop-blur-lg border border-border/30"
       } rounded-full`}
     >
-      <div className="container mx-auto px-4 sm:px-6">
-        <div className="flex items-center justify-between h-12 sm:h-16">
+      <div className="mx-auto px-3 sm:px-4 md:px-6">
+        <div className="flex items-center justify-between h-12 sm:h-14 md:h-16">
           <a href="#" className="flex items-center">
             <img src={sisLogo} alt="Smart Investment Solutions" className="h-8 sm:h-10 md:h-12 w-auto object-contain" />
           </a>
