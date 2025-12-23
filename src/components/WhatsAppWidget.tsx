@@ -7,8 +7,8 @@ import whatsappIcon from "@/assets/whatsapp-logo.png";
 const WhatsAppWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState("");
-  const adminNumber = "917908288829"; // WhatsApp format: country code + number
-  const phoneNumber = "7908288829"; // Phone number for calls
+  const adminNumber = "919641166805"; // WhatsApp format: country code + number
+  const phoneNumber = "+919641166805"; // Phone number for calls
 
   const handleSend = () => {
     if (message.trim()) {
@@ -41,8 +41,8 @@ const WhatsAppWidget = () => {
                 <MessageCircle className="w-6 h-6 text-[#00897B]" />
               </div>
               <div>
-                <h3 className="font-semibold text-lg">ULMIND</h3>
-                <p className="text-sm text-white/90">+91 85378 61040</p>
+                <h3 className="font-semibold text-lg">Smart Investment Solutions</h3>
+                <p className="text-sm text-white/90">+91 96411 66805</p>
               </div>
             </div>
             <button

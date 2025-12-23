@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, Moon, Sun, Calculator } from "lucide-react";
+import sisLogo from "@/assets/sis-logo.png";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -77,8 +78,8 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-12 sm:h-16">
-          <a href="#" className="text-sm sm:text-lg md:text-xl lg:text-2xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent leading-tight whitespace-nowrap overflow-hidden text-ellipsis max-w-[60%] sm:max-w-none">
-            Smart Investment Solutions
+          <a href="#" className="flex items-center">
+            <img src={sisLogo} alt="Smart Investment Solutions" className="h-8 sm:h-10 md:h-12 w-auto object-contain" />
           </a>
 
           {/* Desktop Navigation */}
