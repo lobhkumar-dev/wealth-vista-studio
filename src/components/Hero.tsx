@@ -32,14 +32,18 @@ const Hero = () => {
           {/* LEFT SIDE - Content */}
           <div className="order-1 lg:order-1 flex flex-col items-center lg:items-start text-center lg:text-left">
             
-            {/* Badge */}
+            {/* Since 1986 Badge */}
             <div 
-              className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 dark:bg-primary/20 border border-primary/20 mb-6 transition-all duration-700 ease-out ${
+              className={`inline-flex items-center gap-3 px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-orange-500/10 dark:from-primary/20 dark:to-orange-500/20 border border-primary/20 mb-6 transition-all duration-700 ease-out ${
                 isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-              <span className="text-sm font-medium text-foreground/80">Trusted by 10,000+ Investors</span>
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                <span className="text-sm font-semibold text-primary">Since 1986</span>
+              </div>
+              <div className="w-px h-4 bg-border" />
+              <span className="text-sm font-medium text-foreground/80">40+ Years of Trust</span>
             </div>
 
             {/* Main Heading */}
@@ -99,7 +103,7 @@ const Hero = () => {
               style={{ transitionDelay: "400ms" }}
             >
               <div className="text-center lg:text-left">
-                <div className="text-2xl font-bold text-foreground">15+</div>
+                <div className="text-2xl font-bold text-foreground">40+</div>
                 <div className="text-xs text-muted-foreground">Years Experience</div>
               </div>
               <div className="text-center lg:text-left">
