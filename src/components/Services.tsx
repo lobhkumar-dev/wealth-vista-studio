@@ -1,9 +1,23 @@
-import { Wallet, TrendingUp, Shield, PieChart, Building, Users } from "lucide-react";
+import { Wallet, TrendingUp, Shield, PieChart, Building, Car, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { useState } from "react";
+import GetQuotePopup from "./GetQuotePopup";
+
+// Calculate years of experience from 1986
+const FOUNDING_YEAR = 1986;
+const currentYear = new Date().getFullYear();
+const yearsOfExperience = currentYear - FOUNDING_YEAR;
 
 const Services = () => {
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
+  const [isQuotePopupOpen, setIsQuotePopupOpen] = useState(false);
+  const [selectedService, setSelectedService] = useState<string>("");
+
+  const handleGetQuote = (serviceTitle: string) => {
+    setSelectedService(serviceTitle);
+    setIsQuotePopupOpen(true);
+  };
 
   const services = [
     {
@@ -22,7 +36,7 @@ const Services = () => {
       icon: Shield,
       title: "Insurance Solutions",
       description: "Protect what matters most with comprehensive insurance coverage and risk mitigation strategies.",
-      features: ["Life Insurance", "Health Coverage", "Wealth Protection"],
+      features: ["Life Insurance", "Health Coverage", "Motor Insurance", "Wealth Protection"],
     },
     {
       icon: PieChart,
@@ -31,16 +45,16 @@ const Services = () => {
       features: ["Pension Plans", "Retirement Funds", "Income Planning"],
     },
     {
+      icon: Mail,
+      title: "Postal Investment",
+      description: "Secure your wealth with guaranteed returns through trusted government-backed schemes.",
+      features: ["Fixed Deposit", "Recurring Deposit", "Monthly Income Scheme", "National Savings Certificate", "Kisan Vikash Patra"],
+    },
+    {
       icon: Building,
       title: "Tax Planning",
       description: "Optimize your tax efficiency with smart strategies and legal tax-saving instruments.",
       features: ["Tax Optimization", "Legal Compliance", "Strategic Planning"],
-    },
-    {
-      icon: Users,
-      title: "Estate Planning",
-      description: "Secure your legacy and ensure smooth wealth transfer to future generations.",
-      features: ["Wealth Transfer", "Trust Services", "Legacy Planning"],
     },
   ];
 
@@ -108,8 +122,9 @@ const Services = () => {
               <Button
                 variant="outline"
                 className="w-full group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300 group-hover:shadow-lg group-hover:shadow-primary/20"
+                onClick={() => handleGetQuote(service.title)}
               >
-                Learn More
+                Get A Quote
               </Button>
             </div>
           ))}
@@ -121,15 +136,24 @@ const Services = () => {
           }`}
           style={{ transitionDelay: "800ms" }}
         >
-          <p className="text-foreground/70 mb-4 sm:mb-6 text-sm sm:text-base md:text-lg">Need a custom solution?</p>
+          <p className="text-foreground/70 mb-4 sm:mb-6 text-sm sm:text-base md:text-lg">
+            With {yearsOfExperience}+ years of experience, we're here to help!
+          </p>
           <Button 
             size="lg" 
             className="bg-primary text-primary-foreground hover:bg-primary/90 hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-primary/30 text-sm sm:text-base"
+            onClick={() => handleGetQuote("Custom Solution")}
           >
             Schedule a Consultation
           </Button>
         </div>
       </div>
+
+      <GetQuotePopup 
+        isOpen={isQuotePopupOpen} 
+        onClose={() => setIsQuotePopupOpen(false)} 
+        serviceTitle={selectedService}
+      />
     </section>
   );
 };
