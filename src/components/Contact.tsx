@@ -132,19 +132,23 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3 sm:gap-4">
-                  <div className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <a 
+                  href="https://maps.app.goo.gl/GA2SQjgNssceaBmE6" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-3 sm:gap-4 group"
+                >
+                  <div className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
                     <MapPin className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6 text-primary" />
                   </div>
                   <div>
                     <h4 className="font-semibold mb-0.5 sm:mb-1 text-sm sm:text-base">Address</h4>
-                    <p className="text-foreground/70 text-sm sm:text-base">
-                      123 Finance Street, Business District<br />
-                      Mumbai, Maharashtra 400001<br />
-                      India
+                    <p className="text-foreground/70 text-sm sm:text-base group-hover:text-primary transition-colors">
+                      Pakhanna Bus Stand, Bankura,<br />
+                      West Bengal - 722208
                     </p>
                   </div>
-                </div>
+                </a>
               </div>
             </div>
 
