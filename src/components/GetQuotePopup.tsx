@@ -1,4 +1,4 @@
-import { Mail, Phone, Send, Car, Bike, Truck, Heart, Umbrella, TrendingUp } from "lucide-react";
+import { Mail, Phone, Send, Car, Bike, Truck, Heart, Umbrella, TrendingUp, Mail as PostalIcon, Clock, GraduationCap, Calculator } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -18,6 +18,10 @@ const insuranceOptions = [
   { id: "health", label: "Health", icon: Heart },
   { id: "life", label: "Life", icon: Umbrella },
   { id: "mutual-funds", label: "Mutual Funds", icon: TrendingUp },
+  { id: "postal-investment", label: "Postal Investment", icon: PostalIcon },
+  { id: "retirement-planning", label: "Retirement Planning", icon: Clock },
+  { id: "educational-planning", label: "Educational Planning", icon: GraduationCap },
+  { id: "tax-planning", label: "Tax Planning", icon: Calculator },
 ];
 
 interface GetQuotePopupProps {
