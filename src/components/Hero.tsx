@@ -11,7 +11,7 @@ const Hero = () => {
   }, []);
 
   const handleSwipeComplete = () => {
-    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+    window.open('https://fundbazaar.com/', '_blank');
   };
 
   return (
@@ -111,7 +111,7 @@ const Hero = () => {
                 <div className="text-xs text-muted-foreground">Assets Managed</div>
               </div>
               <div className="text-center lg:text-left">
-                <div className="text-2xl font-bold text-foreground">5000+</div>
+                <div className="text-2xl font-bold text-foreground">10,000+</div>
                 <div className="text-xs text-muted-foreground">Happy Clients</div>
               </div>
             </div>

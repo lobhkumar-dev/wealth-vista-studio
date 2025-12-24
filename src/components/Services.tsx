@@ -1,13 +1,8 @@
-import { Wallet, TrendingUp, Shield, PieChart, Building, Car, Mail } from "lucide-react";
+import { Wallet, TrendingUp, Shield, PieChart, Building, Mail, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useState } from "react";
 import GetQuotePopup from "./GetQuotePopup";
-
-// Calculate years of experience from 1986
-const FOUNDING_YEAR = 1986;
-const currentYear = new Date().getFullYear();
-const yearsOfExperience = currentYear - FOUNDING_YEAR;
 
 const Services = () => {
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
@@ -37,6 +32,12 @@ const Services = () => {
       title: "Insurance Solutions",
       description: "Protect what matters most with comprehensive insurance coverage and risk mitigation strategies.",
       features: ["Life Insurance", "Health Coverage", "Motor Insurance", "Wealth Protection"],
+    },
+    {
+      icon: GraduationCap,
+      title: "Educational Planning",
+      description: "Secure your child's future with strategic education funding and investment planning.",
+      features: ["Early Start & Goal Setting", "Inflation Protection", "Right Asset Allocation", "Regular Review & Adjustment"],
     },
     {
       icon: PieChart,
