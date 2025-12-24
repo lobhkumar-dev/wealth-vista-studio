@@ -137,7 +137,7 @@ const Services = () => {
           style={{ transitionDelay: "800ms" }}
         >
           <p className="text-foreground/70 mb-4 sm:mb-6 text-sm sm:text-base md:text-lg">
-            With {yearsOfExperience}+ years of experience, we're here to help!
+            With 40+ years of experience, we're here to help!
           </p>
           <Button 
             size="lg" 
