@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Menu, Moon, Sun, Calculator } from "lucide-react";
+import { Menu, Moon, Sun, Calculator, LogIn, Smartphone, Globe } from "lucide-react";
 import sisLogo from "@/assets/sis-logo.png";
 import { Button } from "@/components/ui/button";
 import {
@@ -10,6 +10,12 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -106,6 +112,41 @@ const Navbar = () => {
                 <Moon className="w-4 h-4 text-foreground" />
               )}
             </button>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button 
+                  variant="outline"
+                  className="rounded-full border-primary/50 hover:bg-primary/10"
+                >
+                  <LogIn className="w-4 h-4 mr-2" />
+                  Login
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-48">
+                <DropdownMenuItem asChild>
+                  <a 
+                    href="https://fundzbazar.com/Link/jKJUH99KgH4" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 cursor-pointer"
+                  >
+                    <Smartphone className="w-4 h-4" />
+                    Mobile App
+                  </a>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <a 
+                    href="https://fundzbazar.com/Link/MjHqZqpf3UQ" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 cursor-pointer"
+                  >
+                    <Globe className="w-4 h-4" />
+                    Website
+                  </a>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
             <Button 
               asChild
               className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full"
@@ -153,9 +194,32 @@ const Navbar = () => {
                       {link.label}
                     </a>
                   ))}
+                  <div className="pt-4 border-t border-border/50 space-y-2">
+                    <p className="text-sm text-foreground/60 px-4">Login to FundzBazar</p>
+                    <a
+                      href="https://fundzbazar.com/Link/jKJUH99KgH4"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 py-3 px-4 text-foreground/80 hover:text-primary hover:bg-muted/50 rounded-lg transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <Smartphone className="w-5 h-5" />
+                      Mobile App
+                    </a>
+                    <a
+                      href="https://fundzbazar.com/Link/MjHqZqpf3UQ"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 py-3 px-4 text-foreground/80 hover:text-primary hover:bg-muted/50 rounded-lg transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <Globe className="w-5 h-5" />
+                      Website
+                    </a>
+                  </div>
                   <Button 
                     asChild
-                    className="w-full mt-6 bg-primary text-primary-foreground hover:bg-primary/90 rounded-full"
+                    className="w-full mt-4 bg-primary text-primary-foreground hover:bg-primary/90 rounded-full"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     <Link to="/calculator" className="flex items-center justify-center gap-2">
