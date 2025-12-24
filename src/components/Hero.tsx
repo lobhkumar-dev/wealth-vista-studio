@@ -56,8 +56,34 @@ const Hero = () => {
                 </span>
               </span>
               <br />
-              <span className="bg-gradient-to-r from-foreground via-foreground to-foreground/70 bg-clip-text">
-                finance easily with
+              <span className="inline-flex items-center gap-2 flex-wrap justify-center lg:justify-start">
+                <span className="relative inline-block">
+                  finance
+                  {/* Hand-drawn circle highlight */}
+                  <svg 
+                    className="absolute -inset-x-3 -inset-y-2 w-[calc(100%+24px)] h-[calc(100%+16px)] pointer-events-none"
+                    viewBox="0 0 120 60" 
+                    fill="none"
+                    preserveAspectRatio="none"
+                  >
+                    <ellipse 
+                      cx="60" 
+                      cy="30" 
+                      rx="55" 
+                      ry="25" 
+                      stroke="hsl(var(--primary))" 
+                      strokeWidth="3" 
+                      strokeLinecap="round"
+                      fill="none"
+                      className="animate-[draw_1s_ease-out_forwards]"
+                      style={{
+                        strokeDasharray: 300,
+                        strokeDashoffset: 0,
+                      }}
+                    />
+                  </svg>
+                </span>
+                <span className="text-foreground">easily with</span>
               </span>
               <br />
               <span className="bg-gradient-to-r from-primary via-orange-500 to-amber-500 bg-clip-text text-transparent">
