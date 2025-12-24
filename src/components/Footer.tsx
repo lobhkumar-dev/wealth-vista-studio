@@ -48,7 +48,7 @@ const Footer = () => {
           >
             <img src={sisLogo} alt="Smart Investment Solutions" className="h-10 sm:h-12 w-auto object-contain mb-3 sm:mb-4" />
             <p className="text-foreground/70 mb-4 sm:mb-6 max-w-sm text-sm sm:text-base">
-              Smart investment solutions. Your trusted partner in financial success since 2020.
+              Smart investment solutions. Your trusted partner in financial success since 1986.
             </p>
             <div className="space-y-2 sm:space-y-3">
               <a href="https://wa.me/919641166805" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground/70 hover:text-primary transition-colors text-sm sm:text-base">
@@ -59,10 +59,10 @@ const Footer = () => {
                 <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" />
                 <span className="break-all">smartinvest.solutions.supoort@gmail.com</span>
               </a>
-              <div className="flex items-start gap-2 text-foreground/70 text-sm sm:text-base">
+              <a href="https://maps.app.goo.gl/GA2SQjgNssceaBmE6" target="_blank" rel="noopener noreferrer" className="flex items-start gap-2 text-foreground/70 hover:text-primary transition-colors text-sm sm:text-base">
                 <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 mt-1 flex-shrink-0" />
-                <span>123 Finance Street, Mumbai, Maharashtra 400001</span>
-              </div>
+                <span>Pakhanna Bus Stand, Bankura, West Bengal - 722208</span>
+              </a>
             </div>
           </div>
 
