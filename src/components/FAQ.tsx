@@ -7,9 +7,11 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import aboutTeamMeeting from "@/assets/about-team-meeting.jpg";
+import GetQuotePopup from "./GetQuotePopup";
 
 const FAQ = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [isQuotePopupOpen, setIsQuotePopupOpen] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -153,12 +155,17 @@ const FAQ = () => {
             >
               <Button
                 size="lg"
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => setIsQuotePopupOpen(true)}
                 className="bg-[#a8d530] text-black hover:bg-[#a8d530]/90 hover:shadow-lg hover:shadow-[#a8d530]/50 font-bold px-8 rounded-md transition-all duration-300"
               >
                 Get A Quote
               </Button>
             </div>
+
+            <GetQuotePopup 
+              isOpen={isQuotePopupOpen} 
+              onClose={() => setIsQuotePopupOpen(false)} 
+            />
 
             {/* FAQ Accordion */}
             <div
