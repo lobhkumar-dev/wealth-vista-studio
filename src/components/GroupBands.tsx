@@ -31,20 +31,20 @@ const GroupBands = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {logos.map((logo, index) => (
             <div
               key={index}
-              className={`group bg-card p-8 rounded-xl border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1 flex items-center justify-center ${
+              className={`group bg-card p-10 md:p-12 rounded-xl border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1 flex items-center justify-center ${
                 isVisible ? "opacity-100 scale-100" : "opacity-0 scale-90"
               }`}
               style={{ transitionDelay: `${200 + index * 100}ms` }}
             >
-              <div className="relative overflow-hidden rounded-lg">
+              <div className="relative overflow-hidden rounded-lg w-full">
                 <img
                   src={logo.image}
                   alt={logo.name}
-                  className="w-full h-20 md:h-24 object-contain grayscale group-hover:grayscale-0 transition-all duration-300 opacity-70 group-hover:opacity-100"
+                  className="w-full h-32 md:h-40 lg:h-48 object-contain grayscale group-hover:grayscale-0 transition-all duration-300 opacity-80 group-hover:opacity-100"
                 />
               </div>
             </div>
