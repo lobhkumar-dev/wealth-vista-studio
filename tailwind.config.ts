@@ -57,6 +57,9 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        financial: {
+          gold: "hsl(45 93% 47%)",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
