@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import LeadCapturePopup from "@/components/LeadCapturePopup";
+import LaunchCountdown, { COUNTDOWN_ENABLED } from "@/components/LaunchCountdown";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Approach from "@/components/Approach";
@@ -20,6 +21,25 @@ const Index = () => {
   const [isLeadCaptured, setIsLeadCaptured] = useState(() => {
     return localStorage.getItem('lead_captured') === 'true';
   });
+  
+  const [isLaunched, setIsLaunched] = useState(() => {
+    // Check if launch date has passed
+    const launchDate = new Date('2026-01-01T00:00:00+05:30');
+    return new Date() >= launchDate;
+  });
+
+  useEffect(() => {
+    // Check launch status every second
+    const checkLaunch = () => {
+      const launchDate = new Date('2026-01-01T00:00:00+05:30');
+      if (new Date() >= launchDate) {
+        setIsLaunched(true);
+      }
+    };
+    
+    const timer = setInterval(checkLaunch, 1000);
+    return () => clearInterval(timer);
+  }, []);
 
   useEffect(() => {
     // Advanced scroll animation observer with multiple animation types
@@ -70,6 +90,11 @@ const Index = () => {
 
     return () => observer.disconnect();
   }, []);
+
+  // Show countdown if enabled and not yet launched
+  if (COUNTDOWN_ENABLED && !isLaunched) {
+    return <LaunchCountdown />;
+  }
 
   return (
     <div className="min-h-screen bg-background text-foreground">
