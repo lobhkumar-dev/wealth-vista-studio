@@ -1,41 +1,66 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { X } from "lucide-react";
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
-  const images = [
+  const allImages = [
     {
-      url: "https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?w=800&h=600&fit=crop",
+      url: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766691464/IMG_20241108_140628_daonnm.jpg",
+      title: "Team Celebration",
+      category: "Events",
+    },
+    {
+      url: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766691462/IMG_20240919_133546_rhxqqh.jpg",
       title: "Client Meeting",
       category: "Events",
     },
     {
-      url: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&h=600&fit=crop",
+      url: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766691462/IMG_20240822_123208_c48yv9.jpg",
       title: "Team Workshop",
       category: "Team",
     },
     {
-      url: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop",
+      url: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766691452/IMG_20240822_121624_ky7xei.jpg",
       title: "Financial Planning",
       category: "Services",
     },
     {
-      url: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop",
-      title: "Office Space",
-      category: "Office",
-    },
-    {
-      url: "https://images.unsplash.com/photo-1573164713988-8665fc963095?w=800&h=600&fit=crop",
+      url: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766691448/IMG-20231219-WA0011_h3v8bx.jpg",
       title: "Client Success",
       category: "Events",
     },
     {
-      url: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&h=600&fit=crop",
+      url: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766691447/IMG_20240726_211846_xosj8m.jpg",
       title: "Strategy Session",
       category: "Team",
     },
+    {
+      url: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766691447/IMG_20240919_133258_bg8qur.jpg",
+      title: "Office Event",
+      category: "Office",
+    },
+    {
+      url: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766691445/FB_IMG_1766681381468_qve1au.jpg",
+      title: "Team Building",
+      category: "Team",
+    },
+    {
+      url: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766691445/FB_IMG_1766681400651_xifhou.jpg",
+      title: "Award Ceremony",
+      category: "Events",
+    },
   ];
+
+  // Shuffle images on each page load
+  const images = useMemo(() => {
+    const shuffled = [...allImages];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  }, []);
 
   return (
     <section id="gallery" className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-b from-background to-secondary/20">
