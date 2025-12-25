@@ -11,7 +11,7 @@ const Hero = () => {
   }, []);
 
   const handleSwipeComplete = () => {
-    window.open('https://fundbazaar.com/', '_blank');
+    window.open('https://fundzbazar.com/Link/MjHqZqpf3UQ', '_blank');
   };
 
   return (
