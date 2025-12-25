@@ -33,19 +33,19 @@ const FAQ = () => {
 
   const faqs = [
     {
-      question: "How Can Business Consulting Benefit My Company?",
+      question: "What services does SmartInvest Solutions provide?",
       answer:
-        "Business consulting provides expert guidance to improve operations, increase efficiency, and drive growth. Our consultants analyze your business processes, identify bottlenecks, and implement strategic solutions tailored to your specific needs.",
+        "We offer a complete range of Insurance and Investment solutions, including Life Insurance (LIC), Child Education Plans, Retirement Plans, Health Insurance, Term Insurance, and long-term investment planning—all under one roof.",
     },
     {
-      question: "What Are the Costs of Your Consulting Services?",
+      question: "How do you help in financial planning?",
       answer:
-        "Our consulting services are customized to your needs, with pricing based on project scope, duration, and complexity. We offer flexible engagement models including hourly rates, project-based fees, and retainer agreements. Contact us for a detailed quote.",
+        "We first understand your income, goals, risk profile, and family responsibilities, then suggest customized investment and insurance solutions to help you achieve short-term and long-term financial goals.",
     },
     {
-      question: "How Do You Measure the Success of a Project?",
+      question: "Can I track all my investments in one place?",
       answer:
-        "We establish clear KPIs and success metrics at the project outset, including ROI, efficiency improvements, revenue growth, and operational benchmarks. Regular progress reports and data-driven insights ensure transparency and accountability throughout the engagement.",
+        "Yes. We aim to provide one-point solutions where you can manage and track your insurance and investment portfolio with ease and proper guidance.",
     },
     {
       question: "Do You Provide Remote Consulting Services?",
