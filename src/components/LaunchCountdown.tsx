@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import sisLogo from '@/assets/sis-logo.png';
+
+const COUNTDOWN_LOGO = "https://res.cloudinary.com/dbznj2cof/image/upload/v1766696133/Picsart_25-12-26_02-23-24-680-removebg-preview_rtwgku.png";
 
 // ⚡ TOGGLE THIS TO ENABLE/DISABLE COUNTDOWN
 export const COUNTDOWN_ENABLED = true;
@@ -79,9 +80,9 @@ const LaunchCountdown = () => {
         {/* Logo */}
         <div className="mb-8 animate-fade-in">
           <img 
-            src={sisLogo} 
+            src={COUNTDOWN_LOGO} 
             alt="Smart Investment Solutions" 
-            className="h-20 md:h-28 mx-auto drop-shadow-2xl"
+            className="h-24 md:h-32 mx-auto drop-shadow-2xl"
           />
         </div>
 
