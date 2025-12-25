@@ -3,83 +3,83 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 const Partners = () => {
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
 
-  // Life Insurance Companies
+  // Life Insurance Companies with proper logos
   const lifeInsurance = [
-    { name: "LIC", image: "https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Life_Insurance_Corporation_of_India_logo.svg/200px-Life_Insurance_Corporation_of_India_logo.svg.png" },
-    { name: "Max Life", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Max_Life_Insurance_logo.svg/200px-Max_Life_Insurance_logo.svg.png" },
-    { name: "HDFC Life", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/HDFC_Life_Insurance_Logo.svg/200px-HDFC_Life_Insurance_Logo.svg.png" },
-    { name: "ICICI Prudential", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/ICICI_Prudential_Life_logo.svg/200px-ICICI_Prudential_Life_logo.svg.png" },
-    { name: "Kotak Life", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Kotak_Mahindra_Group_logo.svg/200px-Kotak_Mahindra_Group_logo.svg.png" },
-    { name: "Aditya Birla Sun Life", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Aditya_Birla_Group_Logo.svg/200px-Aditya_Birla_Group_Logo.svg.png" },
-    { name: "TATA AIA", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Tata_logo.svg/200px-Tata_logo.svg.png" },
-    { name: "SBI Life", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/SBI-logo.svg/200px-SBI-logo.svg.png" },
-    { name: "Bajaj Life", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Bajaj_Auto_logo.svg/200px-Bajaj_Auto_logo.svg.png" },
-    { name: "PNB MetLife", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/MetLife_logo.svg/200px-MetLife_logo.svg.png" },
-    { name: "Reliance Nippon Life", image: "https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Reliance_Industries_Logo.svg/200px-Reliance_Industries_Logo.svg.png" },
-    { name: "Aviva Life", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Aviva_Logo.svg/200px-Aviva_Logo.svg.png" },
-    { name: "Shriram Life", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Shriram_Group_Logo.svg/200px-Shriram_Group_Logo.svg.png" },
-    { name: "Bharti AXA Life", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/AXA_Logo.svg/200px-AXA_Logo.svg.png" },
-    { name: "Canara HSBC Life", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/HSBC_logo_%282018%29.svg/200px-HSBC_logo_%282018%29.svg.png" },
-    { name: "Bandhan Life", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Bandhan_Bank_Logo.svg/200px-Bandhan_Bank_Logo.svg.png" },
-    { name: "Star Union Dai-Ichi", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Bank_of_India_logo.svg/200px-Bank_of_India_logo.svg.png" },
-    { name: "IndiaFirst Life", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Bank_of_Baroda_logo.svg/200px-Bank_of_Baroda_logo.svg.png" },
-    { name: "Edelweiss Life", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Edelweiss_Logo.svg/200px-Edelweiss_Logo.svg.png" },
-    { name: "Acko Life", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Acko_logo.svg/200px-Acko_logo.svg.png" },
-    { name: "Go Digit Life", image: "https://upload.wikimedia.org/wikipedia/en/thumb/8/8f/Go_Digit_Insurance_logo.svg/200px-Go_Digit_Insurance_logo.svg.png" },
+    { name: "LIC", image: "https://companieslogo.com/img/orig/LICI.NS-47be1c98.png?t=1647270408" },
+    { name: "Max Life", image: "https://companieslogo.com/img/orig/MAXHEALTH.NS-30ab9cfe.png?t=1720244492" },
+    { name: "HDFC Life", image: "https://companieslogo.com/img/orig/HDFCLIFE.NS-d6dd6428.png?t=1720244492" },
+    { name: "ICICI Prudential", image: "https://companieslogo.com/img/orig/ICICIPRULI.NS-29281503.png?t=1720244492" },
+    { name: "Kotak Life", image: "https://companieslogo.com/img/orig/KOTAKBANK.NS-19038e20.png?t=1720244493" },
+    { name: "Aditya Birla Sun Life", image: "https://companieslogo.com/img/orig/ABSLAMC.NS-8d2af5f6.png?t=1720244490" },
+    { name: "TATA AIA", image: "https://companieslogo.com/img/orig/TATACONSUM.NS-c7f01ac4.png?t=1720244494" },
+    { name: "SBI Life", image: "https://companieslogo.com/img/orig/SBILIFE.NS-6b285ceb.png?t=1720244493" },
+    { name: "Bajaj Allianz Life", image: "https://companieslogo.com/img/orig/BAJFINANCE.NS-5b55eb98.png?t=1720244490" },
+    { name: "PNB MetLife", image: "https://companieslogo.com/img/orig/PNB.NS-fa8f4a28.png?t=1720244493" },
+    { name: "Reliance Nippon Life", image: "https://companieslogo.com/img/orig/RELIANCE.NS-aeebfcef.png?t=1720244493" },
+    { name: "Aviva Life", image: "https://companieslogo.com/img/orig/AV.L-ec0a7cae.png?t=1720244490" },
+    { name: "Shriram Life", image: "https://companieslogo.com/img/orig/SHRIRAMFIN.NS-ede17ac3.png?t=1720244494" },
+    { name: "Bharti AXA Life", image: "https://companieslogo.com/img/orig/BHARTIARTL.NS-0f3cc799.png?t=1720244490" },
+    { name: "Canara HSBC Life", image: "https://companieslogo.com/img/orig/CANBK.NS-7f9e6ba0.png?t=1720244491" },
+    { name: "Bandhan Life", image: "https://companieslogo.com/img/orig/BANDHANBNK.NS-fb05c3f5.png?t=1720244490" },
+    { name: "Star Union Dai-Ichi", image: "https://companieslogo.com/img/orig/BANKINDIA.NS-a66f8a93.png?t=1720244490" },
+    { name: "IndiaFirst Life", image: "https://companieslogo.com/img/orig/BANKBARODA.NS-28866f2c.png?t=1720244490" },
+    { name: "Edelweiss Life", image: "https://companieslogo.com/img/orig/EDELWEISS.NS-e3ed38d9.png?t=1720244491" },
+    { name: "Acko Life", image: "https://cdn.worldvectorlogo.com/logos/acko-2.svg" },
+    { name: "Go Digit Life", image: "https://companieslogo.com/img/orig/DIGI.NS-8e70a5e8.png?t=1720244491" },
   ];
 
   // General Insurance Companies
   const generalInsurance = [
-    { name: "National Insurance", image: "https://upload.wikimedia.org/wikipedia/en/thumb/f/f9/National_Insurance_Company_Limited_logo.svg/200px-National_Insurance_Company_Limited_logo.svg.png" },
-    { name: "New India Assurance", image: "https://upload.wikimedia.org/wikipedia/en/thumb/d/da/The_New_India_Assurance_Co._Ltd._logo.svg/200px-The_New_India_Assurance_Co._Ltd._logo.svg.png" },
-    { name: "Oriental Insurance", image: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c9/Oriental_Insurance_Company_logo.svg/200px-Oriental_Insurance_Company_logo.svg.png" },
-    { name: "United India Insurance", image: "https://upload.wikimedia.org/wikipedia/en/thumb/a/a7/United_India_Insurance_logo.svg/200px-United_India_Insurance_logo.svg.png" },
-    { name: "Acko General", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Acko_logo.svg/200px-Acko_logo.svg.png" },
-    { name: "Bajaj Allianz", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Allianz_logo.svg/200px-Allianz_logo.svg.png" },
-    { name: "Cholamandalam MS", image: "https://upload.wikimedia.org/wikipedia/en/thumb/2/2d/Cholamandalam_Investment_and_Finance_Company_logo.svg/200px-Cholamandalam_Investment_and_Finance_Company_logo.svg.png" },
-    { name: "Go Digit General", image: "https://upload.wikimedia.org/wikipedia/en/thumb/8/8f/Go_Digit_Insurance_logo.svg/200px-Go_Digit_Insurance_logo.svg.png" },
-    { name: "HDFC ERGO", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/HDFC_Life_Insurance_Logo.svg/200px-HDFC_Life_Insurance_Logo.svg.png" },
-    { name: "ICICI Lombard", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/ICICI_Prudential_Life_logo.svg/200px-ICICI_Prudential_Life_logo.svg.png" },
-    { name: "IFFCO-TOKIO", image: "https://upload.wikimedia.org/wikipedia/en/thumb/5/5a/IFFCO-Tokio_logo.svg/200px-IFFCO-Tokio_logo.svg.png" },
-    { name: "Zurich Kotak", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Zurich_Logo_new.svg/200px-Zurich_Logo_new.svg.png" },
-    { name: "Liberty General", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Liberty_Mutual_logo.svg/200px-Liberty_Mutual_logo.svg.png" },
-    { name: "Navi General", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Navi_Technologies_Logo.svg/200px-Navi_Technologies_Logo.svg.png" },
-    { name: "Reliance General", image: "https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Reliance_Industries_Logo.svg/200px-Reliance_Industries_Logo.svg.png" },
-    { name: "Royal Sundaram", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Sundaram_Finance_logo.svg/200px-Sundaram_Finance_logo.svg.png" },
-    { name: "SBI General", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/SBI-logo.svg/200px-SBI-logo.svg.png" },
-    { name: "Shriram General", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Shriram_Group_Logo.svg/200px-Shriram_Group_Logo.svg.png" },
-    { name: "TATA AIG", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Tata_logo.svg/200px-Tata_logo.svg.png" },
-    { name: "Universal Sompo", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Sompo_Holdings_logo.svg/200px-Sompo_Holdings_logo.svg.png" },
+    { name: "National Insurance", image: "https://www.nationalinsurance.nic.co.in/sites/default/files/inline-images/nic_logo.png" },
+    { name: "New India Assurance", image: "https://companieslogo.com/img/orig/NIACL.NS-19e2a5b2.png?t=1720244493" },
+    { name: "Oriental Insurance", image: "https://orientalinsurance.org.in/en/images/logo.png" },
+    { name: "United India Insurance", image: "https://companieslogo.com/img/orig/UIIC.NS_BIG-b0b05f87.png?t=1720244494" },
+    { name: "Acko General", image: "https://cdn.worldvectorlogo.com/logos/acko-2.svg" },
+    { name: "Bajaj Allianz", image: "https://companieslogo.com/img/orig/BAJFINANCE.NS-5b55eb98.png?t=1720244490" },
+    { name: "Cholamandalam MS", image: "https://companieslogo.com/img/orig/CHOLAFIN.NS-df9b2e67.png?t=1720244491" },
+    { name: "Go Digit General", image: "https://companieslogo.com/img/orig/DIGI.NS-8e70a5e8.png?t=1720244491" },
+    { name: "HDFC ERGO", image: "https://companieslogo.com/img/orig/HDFCLIFE.NS-d6dd6428.png?t=1720244492" },
+    { name: "ICICI Lombard", image: "https://companieslogo.com/img/orig/ICICIGI.NS-20ed1c7c.png?t=1720244492" },
+    { name: "IFFCO-TOKIO", image: "https://www.iffcotokio.co.in/themes/custom/iffco_tokio/logo.svg" },
+    { name: "Zurich Kotak", image: "https://companieslogo.com/img/orig/ZURN.SW-3a7b5019.png?t=1720244494" },
+    { name: "Liberty General", image: "https://companieslogo.com/img/orig/LFC-c3b8ea15.png?t=1720244493" },
+    { name: "Navi General", image: "https://companieslogo.com/img/orig/NAVI.NS-d97b2e0a.png?t=1720244493" },
+    { name: "Reliance General", image: "https://companieslogo.com/img/orig/RELIANCE.NS-aeebfcef.png?t=1720244493" },
+    { name: "Royal Sundaram", image: "https://companieslogo.com/img/orig/SUNDARMFIN.NS-09d03a1d.png?t=1720244494" },
+    { name: "SBI General", image: "https://companieslogo.com/img/orig/SBIN.NS-dc50524e.png?t=1720244493" },
+    { name: "Shriram General", image: "https://companieslogo.com/img/orig/SHRIRAMFIN.NS-ede17ac3.png?t=1720244494" },
+    { name: "TATA AIG", image: "https://companieslogo.com/img/orig/TATACONSUM.NS-c7f01ac4.png?t=1720244494" },
+    { name: "Universal Sompo", image: "https://companieslogo.com/img/orig/INDUSINDBK.NS-72c40a90.png?t=1720244492" },
   ];
 
-  // Mutual Fund Companies (AMCs)
+  // Mutual Fund Companies (AMCs) and India Post
   const mutualFunds = [
-    { name: "Aditya Birla Sun Life MF", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Aditya_Birla_Group_Logo.svg/200px-Aditya_Birla_Group_Logo.svg.png" },
-    { name: "Axis MF", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Axis_Bank_logo.svg/200px-Axis_Bank_logo.svg.png" },
-    { name: "Bajaj Finserv MF", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Bajaj_Auto_logo.svg/200px-Bajaj_Auto_logo.svg.png" },
-    { name: "Bandhan MF", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Bandhan_Bank_Logo.svg/200px-Bandhan_Bank_Logo.svg.png" },
-    { name: "Bank of India MF", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Bank_of_India_logo.svg/200px-Bank_of_India_logo.svg.png" },
-    { name: "Baroda BNP Paribas MF", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Bank_of_Baroda_logo.svg/200px-Bank_of_Baroda_logo.svg.png" },
-    { name: "Canara Robeco MF", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Canara_Bank_Logo.svg/200px-Canara_Bank_Logo.svg.png" },
-    { name: "DSP MF", image: "https://upload.wikimedia.org/wikipedia/en/thumb/a/a8/DSP_Mutual_Fund_logo.svg/200px-DSP_Mutual_Fund_logo.svg.png" },
-    { name: "Edelweiss MF", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Edelweiss_Logo.svg/200px-Edelweiss_Logo.svg.png" },
-    { name: "Franklin Templeton MF", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Franklin_Templeton_Investments_logo.svg/200px-Franklin_Templeton_Investments_logo.svg.png" },
-    { name: "Groww MF", image: "https://upload.wikimedia.org/wikipedia/en/thumb/5/5f/Groww_app_logo.svg/200px-Groww_app_logo.svg.png" },
-    { name: "HDFC MF", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/HDFC_Life_Insurance_Logo.svg/200px-HDFC_Life_Insurance_Logo.svg.png" },
-    { name: "HSBC MF", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/HSBC_logo_%282018%29.svg/200px-HSBC_logo_%282018%29.svg.png" },
-    { name: "ICICI Prudential MF", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/ICICI_Prudential_Life_logo.svg/200px-ICICI_Prudential_Life_logo.svg.png" },
-    { name: "IDBI MF", image: "https://upload.wikimedia.org/wikipedia/en/thumb/2/25/IDBI_Bank_logo.svg/200px-IDBI_Bank_logo.svg.png" },
-    { name: "Invesco MF", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Invesco_logo.svg/200px-Invesco_logo.svg.png" },
-    { name: "ITI MF", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/ITI_Limited_Logo.svg/200px-ITI_Limited_Logo.svg.png" },
-    { name: "JM Financial MF", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/JM_Financial_logo.svg/200px-JM_Financial_logo.svg.png" },
-    { name: "Kotak Mahindra MF", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Kotak_Mahindra_Group_logo.svg/200px-Kotak_Mahindra_Group_logo.svg.png" },
-    { name: "LIC MF", image: "https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Life_Insurance_Corporation_of_India_logo.svg/200px-Life_Insurance_Corporation_of_India_logo.svg.png" },
-    { name: "Mirae Asset MF", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Mirae_Asset_Global_Investments_logo.svg/200px-Mirae_Asset_Global_Investments_logo.svg.png" },
-    { name: "Motilal Oswal MF", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Motilal_Oswal_Financial_Services_logo.svg/200px-Motilal_Oswal_Financial_Services_logo.svg.png" },
-    { name: "Navi MF", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Navi_Technologies_Logo.svg/200px-Navi_Technologies_Logo.svg.png" },
-    { name: "Nippon India MF", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Nippon_Life_logo.svg/200px-Nippon_Life_logo.svg.png" },
-    { name: "SBI MF", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/SBI-logo.svg/200px-SBI-logo.svg.png" },
-    { name: "India Post", image: "https://upload.wikimedia.org/wikipedia/en/thumb/e/e6/India_Post_Logo.svg/200px-India_Post_Logo.svg.png" },
+    { name: "Aditya Birla Sun Life MF", image: "https://companieslogo.com/img/orig/ABSLAMC.NS-8d2af5f6.png?t=1720244490" },
+    { name: "Axis MF", image: "https://companieslogo.com/img/orig/AXISBANK.NS-55cb2d5c.png?t=1720244490" },
+    { name: "Bajaj Finserv MF", image: "https://companieslogo.com/img/orig/BAJFINANCE.NS-5b55eb98.png?t=1720244490" },
+    { name: "Bandhan MF", image: "https://companieslogo.com/img/orig/BANDHANBNK.NS-fb05c3f5.png?t=1720244490" },
+    { name: "Bank of India MF", image: "https://companieslogo.com/img/orig/BANKINDIA.NS-a66f8a93.png?t=1720244490" },
+    { name: "Baroda BNP Paribas MF", image: "https://companieslogo.com/img/orig/BANKBARODA.NS-28866f2c.png?t=1720244490" },
+    { name: "Canara Robeco MF", image: "https://companieslogo.com/img/orig/CANBK.NS-7f9e6ba0.png?t=1720244491" },
+    { name: "DSP MF", image: "https://www.dspim.com/content/dam/dspim/svg/DSP_logo.svg" },
+    { name: "Edelweiss MF", image: "https://companieslogo.com/img/orig/EDELWEISS.NS-e3ed38d9.png?t=1720244491" },
+    { name: "Franklin Templeton MF", image: "https://companieslogo.com/img/orig/BEN-26a79f24.png?t=1720244490" },
+    { name: "Groww MF", image: "https://companieslogo.com/img/orig/GROWW-1ad17bdb.png?t=1720244492" },
+    { name: "HDFC MF", image: "https://companieslogo.com/img/orig/HDFCAMC.NS-03da3e89.png?t=1720244492" },
+    { name: "HSBC MF", image: "https://companieslogo.com/img/orig/HSBC-0b0f228d.png?t=1720244492" },
+    { name: "ICICI Prudential MF", image: "https://companieslogo.com/img/orig/ICICIPRULI.NS-29281503.png?t=1720244492" },
+    { name: "IDBI MF", image: "https://companieslogo.com/img/orig/IDBI.NS-ad58a23b.png?t=1720244492" },
+    { name: "Invesco MF", image: "https://companieslogo.com/img/orig/IVZ-55cc1c39.png?t=1720244492" },
+    { name: "ITI MF", image: "https://companieslogo.com/img/orig/ITI.NS-07e12cb9.png?t=1720244492" },
+    { name: "JM Financial MF", image: "https://companieslogo.com/img/orig/JMFINANCIL.NS-e18ba0b9.png?t=1720244492" },
+    { name: "Kotak Mahindra MF", image: "https://companieslogo.com/img/orig/KOTAKBANK.NS-19038e20.png?t=1720244493" },
+    { name: "LIC MF", image: "https://companieslogo.com/img/orig/LICI.NS-47be1c98.png?t=1647270408" },
+    { name: "Mirae Asset MF", image: "https://companieslogo.com/img/orig/055550.KS-b155ecae.png?t=1720244490" },
+    { name: "Motilal Oswal MF", image: "https://companieslogo.com/img/orig/MOTILALOFS.NS-bd0e63c9.png?t=1720244493" },
+    { name: "Navi MF", image: "https://companieslogo.com/img/orig/NAVI.NS-d97b2e0a.png?t=1720244493" },
+    { name: "Nippon India MF", image: "https://companieslogo.com/img/orig/NAM-INDIA.NS-d5da08c5.png?t=1720244493" },
+    { name: "SBI MF", image: "https://companieslogo.com/img/orig/SBIN.NS-dc50524e.png?t=1720244493" },
+    { name: "India Post", image: "https://www.indiapost.gov.in/VAS/PublishingImages/ippost.png" },
   ];
 
   const MarqueeRow = ({ 
@@ -105,6 +105,7 @@ const Partners = () => {
             <div
               key={`row-${index}`}
               className="flex-shrink-0 bg-card/90 backdrop-blur-sm border border-border/50 rounded-xl px-3 sm:px-4 py-2 sm:py-3 min-w-[90px] sm:min-w-[120px] h-12 sm:h-14 flex items-center justify-center hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300"
+              title={partner.name}
             >
               <img 
                 src={partner.image} 
@@ -113,7 +114,7 @@ const Partners = () => {
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
                   target.style.display = 'none';
-                  target.parentElement!.innerHTML = `<span class="text-xs text-foreground/60 font-medium text-center">${partner.name}</span>`;
+                  target.parentElement!.innerHTML = `<span class="text-xs text-foreground/60 font-medium text-center leading-tight">${partner.name}</span>`;
                 }}
               />
             </div>
@@ -124,6 +125,7 @@ const Partners = () => {
             <div
               key={`row-dup-${index}`}
               className="flex-shrink-0 bg-card/90 backdrop-blur-sm border border-border/50 rounded-xl px-3 sm:px-4 py-2 sm:py-3 min-w-[90px] sm:min-w-[120px] h-12 sm:h-14 flex items-center justify-center hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300"
+              title={partner.name}
             >
               <img 
                 src={partner.image} 
@@ -132,7 +134,7 @@ const Partners = () => {
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
                   target.style.display = 'none';
-                  target.parentElement!.innerHTML = `<span class="text-xs text-foreground/60 font-medium text-center">${partner.name}</span>`;
+                  target.parentElement!.innerHTML = `<span class="text-xs text-foreground/60 font-medium text-center leading-tight">${partner.name}</span>`;
                 }}
               />
             </div>
