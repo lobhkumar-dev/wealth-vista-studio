@@ -3,61 +3,144 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 const Partners = () => {
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
 
-  const partners = [
-    { name: "Microsoft", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/200px-Microsoft_logo.svg.png" },
-    { name: "IBM", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/200px-IBM_logo.svg.png" },
-    { name: "HP", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/HP_logo_2012.svg/200px-HP_logo_2012.svg.png" },
-    { name: "Cisco", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/200px-Cisco_logo_blue_2016.svg.png" },
-    { name: "Dell", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Dell_Logo.svg/200px-Dell_Logo.svg.png" },
-    { name: "Intel", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Intel_logo_%282006-2020%29.svg/200px-Intel_logo_%282006-2020%29.svg.png" },
-    { name: "Oracle", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Oracle_logo.svg/200px-Oracle_logo.svg.png" },
-    { name: "SAP", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/SAP_2011_logo.svg/200px-SAP_2011_logo.svg.png" },
-    { name: "Salesforce", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Salesforce.com_logo.svg/200px-Salesforce.com_logo.svg.png" },
-    { name: "Adobe", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Adobe_Corporate_Logo.svg/200px-Adobe_Corporate_Logo.svg.png" },
-    { name: "VMware", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Vmware.svg/200px-Vmware.svg.png" },
-    { name: "Nvidia", image: "https://upload.wikimedia.org/wikipedia/sco/thumb/2/21/Nvidia_logo.svg/200px-Nvidia_logo.svg.png" },
-    { name: "AMD", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/AMD_Logo.svg/200px-AMD_Logo.svg.png" },
-    { name: "Qualcomm", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Qualcomm-Logo.svg/200px-Qualcomm-Logo.svg.png" },
-    { name: "Broadcom", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Broadcom_Corporation_logo.svg/200px-Broadcom_Corporation_logo.svg.png" },
-    { name: "PayPal", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/200px-PayPal.svg.png" },
-    { name: "Visa", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/200px-Visa_Inc._logo.svg.png" },
-    { name: "Mastercard", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/200px-Mastercard-logo.svg.png" },
-    { name: "Google", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/200px-Google_2015_logo.svg.png" },
-    { name: "Amazon", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/200px-Amazon_logo.svg.png" },
-    { name: "Meta", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Meta_Platforms_Inc._logo.svg/200px-Meta_Platforms_Inc._logo.svg.png" },
-    { name: "Apple", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/200px-Apple_logo_black.svg.png" },
-    { name: "Netflix", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/200px-Netflix_2015_logo.svg.png" },
-    { name: "Spotify", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/200px-Spotify_logo_without_text.svg.png" },
-    { name: "Uber", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Uber_logo_2018.svg/200px-Uber_logo_2018.svg.png" },
+  // Life Insurance Companies
+  const lifeInsurance = [
+    { name: "LIC", image: "https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Life_Insurance_Corporation_of_India_logo.svg/200px-Life_Insurance_Corporation_of_India_logo.svg.png" },
+    { name: "Max Life", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Max_Life_Insurance_logo.svg/200px-Max_Life_Insurance_logo.svg.png" },
+    { name: "HDFC Life", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/HDFC_Life_Insurance_Logo.svg/200px-HDFC_Life_Insurance_Logo.svg.png" },
+    { name: "ICICI Prudential", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/ICICI_Prudential_Life_logo.svg/200px-ICICI_Prudential_Life_logo.svg.png" },
+    { name: "Kotak Life", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Kotak_Mahindra_Group_logo.svg/200px-Kotak_Mahindra_Group_logo.svg.png" },
+    { name: "Aditya Birla Sun Life", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Aditya_Birla_Group_Logo.svg/200px-Aditya_Birla_Group_Logo.svg.png" },
+    { name: "TATA AIA", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Tata_logo.svg/200px-Tata_logo.svg.png" },
+    { name: "SBI Life", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/SBI-logo.svg/200px-SBI-logo.svg.png" },
+    { name: "Bajaj Life", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Bajaj_Auto_logo.svg/200px-Bajaj_Auto_logo.svg.png" },
+    { name: "PNB MetLife", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/MetLife_logo.svg/200px-MetLife_logo.svg.png" },
+    { name: "Reliance Nippon Life", image: "https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Reliance_Industries_Logo.svg/200px-Reliance_Industries_Logo.svg.png" },
+    { name: "Aviva Life", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Aviva_Logo.svg/200px-Aviva_Logo.svg.png" },
+    { name: "Shriram Life", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Shriram_Group_Logo.svg/200px-Shriram_Group_Logo.svg.png" },
+    { name: "Bharti AXA Life", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/AXA_Logo.svg/200px-AXA_Logo.svg.png" },
+    { name: "Canara HSBC Life", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/HSBC_logo_%282018%29.svg/200px-HSBC_logo_%282018%29.svg.png" },
+    { name: "Bandhan Life", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Bandhan_Bank_Logo.svg/200px-Bandhan_Bank_Logo.svg.png" },
+    { name: "Star Union Dai-Ichi", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Bank_of_India_logo.svg/200px-Bank_of_India_logo.svg.png" },
+    { name: "IndiaFirst Life", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Bank_of_Baroda_logo.svg/200px-Bank_of_Baroda_logo.svg.png" },
+    { name: "Edelweiss Life", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Edelweiss_Logo.svg/200px-Edelweiss_Logo.svg.png" },
+    { name: "Acko Life", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Acko_logo.svg/200px-Acko_logo.svg.png" },
+    { name: "Go Digit Life", image: "https://upload.wikimedia.org/wikipedia/en/thumb/8/8f/Go_Digit_Insurance_logo.svg/200px-Go_Digit_Insurance_logo.svg.png" },
   ];
 
-  const partners2 = [
-    { name: "Airbnb", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Airbnb_Logo_B%C3%A9lo.svg/200px-Airbnb_Logo_B%C3%A9lo.svg.png" },
-    { name: "Twitter", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_of_Twitter.svg/200px-Logo_of_Twitter.svg.png" },
-    { name: "LinkedIn", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/200px-LinkedIn_logo_initials.png" },
-    { name: "Slack", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Slack_icon_2019.svg/200px-Slack_icon_2019.svg.png" },
-    { name: "Zoom", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Zoom_Communications_Logo.svg/200px-Zoom_Communications_Logo.svg.png" },
-    { name: "Dropbox", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Dropbox_Icon.svg/200px-Dropbox_Icon.svg.png" },
-    { name: "Atlassian", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Atlassian_logo.svg/200px-Atlassian_logo.svg.png" },
-    { name: "Twilio", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Twilio-logo-red.svg/200px-Twilio-logo-red.svg.png" },
-    { name: "Square", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Square%2C_Inc._-_Square_logo.svg/200px-Square%2C_Inc._-_Square_logo.svg.png" },
-    { name: "Stripe", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Stripe_Logo%2C_revised_2016.svg/200px-Stripe_Logo%2C_revised_2016.svg.png" },
-    { name: "Shopify", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Shopify_logo_2018.svg/200px-Shopify_logo_2018.svg.png" },
-    { name: "HubSpot", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/HubSpot_Logo.svg/200px-HubSpot_Logo.svg.png" },
-    { name: "Zendesk", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Zendesk_logo.svg/200px-Zendesk_logo.svg.png" },
-    { name: "DocuSign", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Docusign_logo.svg/200px-Docusign_logo.svg.png" },
-    { name: "Workday", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Workday_logo.svg/200px-Workday_logo.svg.png" },
-    { name: "ServiceNow", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/ServiceNow_logo.svg/200px-ServiceNow_logo.svg.png" },
-    { name: "Splunk", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Splunk_logo.svg/200px-Splunk_logo.svg.png" },
-    { name: "Intuit", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Intuit_Logo.svg/200px-Intuit_Logo.svg.png" },
-    { name: "Autodesk", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Autodesk%2C_Inc._logo.svg/200px-Autodesk%2C_Inc._logo.svg.png" },
-    { name: "Figma", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Figma-logo.svg/200px-Figma-logo.svg.png" },
-    { name: "Canva", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Canva_icon_2021.svg/200px-Canva_icon_2021.svg.png" },
-    { name: "GitHub", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/200px-Octicons-mark-github.svg.png" },
-    { name: "GitLab", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/GitLab_logo.svg/200px-GitLab_logo.svg.png" },
-    { name: "MongoDB", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/MongoDB_Logo.svg/200px-MongoDB_Logo.svg.png" },
-    { name: "Snowflake", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Snowflake_Logo.svg/200px-Snowflake_Logo.svg.png" },
+  // General Insurance Companies
+  const generalInsurance = [
+    { name: "National Insurance", image: "https://upload.wikimedia.org/wikipedia/en/thumb/f/f9/National_Insurance_Company_Limited_logo.svg/200px-National_Insurance_Company_Limited_logo.svg.png" },
+    { name: "New India Assurance", image: "https://upload.wikimedia.org/wikipedia/en/thumb/d/da/The_New_India_Assurance_Co._Ltd._logo.svg/200px-The_New_India_Assurance_Co._Ltd._logo.svg.png" },
+    { name: "Oriental Insurance", image: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c9/Oriental_Insurance_Company_logo.svg/200px-Oriental_Insurance_Company_logo.svg.png" },
+    { name: "United India Insurance", image: "https://upload.wikimedia.org/wikipedia/en/thumb/a/a7/United_India_Insurance_logo.svg/200px-United_India_Insurance_logo.svg.png" },
+    { name: "Acko General", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Acko_logo.svg/200px-Acko_logo.svg.png" },
+    { name: "Bajaj Allianz", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Allianz_logo.svg/200px-Allianz_logo.svg.png" },
+    { name: "Cholamandalam MS", image: "https://upload.wikimedia.org/wikipedia/en/thumb/2/2d/Cholamandalam_Investment_and_Finance_Company_logo.svg/200px-Cholamandalam_Investment_and_Finance_Company_logo.svg.png" },
+    { name: "Go Digit General", image: "https://upload.wikimedia.org/wikipedia/en/thumb/8/8f/Go_Digit_Insurance_logo.svg/200px-Go_Digit_Insurance_logo.svg.png" },
+    { name: "HDFC ERGO", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/HDFC_Life_Insurance_Logo.svg/200px-HDFC_Life_Insurance_Logo.svg.png" },
+    { name: "ICICI Lombard", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/ICICI_Prudential_Life_logo.svg/200px-ICICI_Prudential_Life_logo.svg.png" },
+    { name: "IFFCO-TOKIO", image: "https://upload.wikimedia.org/wikipedia/en/thumb/5/5a/IFFCO-Tokio_logo.svg/200px-IFFCO-Tokio_logo.svg.png" },
+    { name: "Zurich Kotak", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Zurich_Logo_new.svg/200px-Zurich_Logo_new.svg.png" },
+    { name: "Liberty General", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Liberty_Mutual_logo.svg/200px-Liberty_Mutual_logo.svg.png" },
+    { name: "Navi General", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Navi_Technologies_Logo.svg/200px-Navi_Technologies_Logo.svg.png" },
+    { name: "Reliance General", image: "https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Reliance_Industries_Logo.svg/200px-Reliance_Industries_Logo.svg.png" },
+    { name: "Royal Sundaram", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Sundaram_Finance_logo.svg/200px-Sundaram_Finance_logo.svg.png" },
+    { name: "SBI General", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/SBI-logo.svg/200px-SBI-logo.svg.png" },
+    { name: "Shriram General", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Shriram_Group_Logo.svg/200px-Shriram_Group_Logo.svg.png" },
+    { name: "TATA AIG", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Tata_logo.svg/200px-Tata_logo.svg.png" },
+    { name: "Universal Sompo", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Sompo_Holdings_logo.svg/200px-Sompo_Holdings_logo.svg.png" },
   ];
+
+  // Mutual Fund Companies (AMCs)
+  const mutualFunds = [
+    { name: "Aditya Birla Sun Life MF", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Aditya_Birla_Group_Logo.svg/200px-Aditya_Birla_Group_Logo.svg.png" },
+    { name: "Axis MF", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Axis_Bank_logo.svg/200px-Axis_Bank_logo.svg.png" },
+    { name: "Bajaj Finserv MF", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Bajaj_Auto_logo.svg/200px-Bajaj_Auto_logo.svg.png" },
+    { name: "Bandhan MF", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Bandhan_Bank_Logo.svg/200px-Bandhan_Bank_Logo.svg.png" },
+    { name: "Bank of India MF", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Bank_of_India_logo.svg/200px-Bank_of_India_logo.svg.png" },
+    { name: "Baroda BNP Paribas MF", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Bank_of_Baroda_logo.svg/200px-Bank_of_Baroda_logo.svg.png" },
+    { name: "Canara Robeco MF", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Canara_Bank_Logo.svg/200px-Canara_Bank_Logo.svg.png" },
+    { name: "DSP MF", image: "https://upload.wikimedia.org/wikipedia/en/thumb/a/a8/DSP_Mutual_Fund_logo.svg/200px-DSP_Mutual_Fund_logo.svg.png" },
+    { name: "Edelweiss MF", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Edelweiss_Logo.svg/200px-Edelweiss_Logo.svg.png" },
+    { name: "Franklin Templeton MF", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Franklin_Templeton_Investments_logo.svg/200px-Franklin_Templeton_Investments_logo.svg.png" },
+    { name: "Groww MF", image: "https://upload.wikimedia.org/wikipedia/en/thumb/5/5f/Groww_app_logo.svg/200px-Groww_app_logo.svg.png" },
+    { name: "HDFC MF", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/HDFC_Life_Insurance_Logo.svg/200px-HDFC_Life_Insurance_Logo.svg.png" },
+    { name: "HSBC MF", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/HSBC_logo_%282018%29.svg/200px-HSBC_logo_%282018%29.svg.png" },
+    { name: "ICICI Prudential MF", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/ICICI_Prudential_Life_logo.svg/200px-ICICI_Prudential_Life_logo.svg.png" },
+    { name: "IDBI MF", image: "https://upload.wikimedia.org/wikipedia/en/thumb/2/25/IDBI_Bank_logo.svg/200px-IDBI_Bank_logo.svg.png" },
+    { name: "Invesco MF", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Invesco_logo.svg/200px-Invesco_logo.svg.png" },
+    { name: "ITI MF", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/ITI_Limited_Logo.svg/200px-ITI_Limited_Logo.svg.png" },
+    { name: "JM Financial MF", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/JM_Financial_logo.svg/200px-JM_Financial_logo.svg.png" },
+    { name: "Kotak Mahindra MF", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Kotak_Mahindra_Group_logo.svg/200px-Kotak_Mahindra_Group_logo.svg.png" },
+    { name: "LIC MF", image: "https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Life_Insurance_Corporation_of_India_logo.svg/200px-Life_Insurance_Corporation_of_India_logo.svg.png" },
+    { name: "Mirae Asset MF", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Mirae_Asset_Global_Investments_logo.svg/200px-Mirae_Asset_Global_Investments_logo.svg.png" },
+    { name: "Motilal Oswal MF", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Motilal_Oswal_Financial_Services_logo.svg/200px-Motilal_Oswal_Financial_Services_logo.svg.png" },
+    { name: "Navi MF", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Navi_Technologies_Logo.svg/200px-Navi_Technologies_Logo.svg.png" },
+    { name: "Nippon India MF", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Nippon_Life_logo.svg/200px-Nippon_Life_logo.svg.png" },
+    { name: "SBI MF", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/SBI-logo.svg/200px-SBI-logo.svg.png" },
+    { name: "India Post", image: "https://upload.wikimedia.org/wikipedia/en/thumb/e/e6/India_Post_Logo.svg/200px-India_Post_Logo.svg.png" },
+  ];
+
+  const MarqueeRow = ({ 
+    partners, 
+    label, 
+    reverse = false 
+  }: { 
+    partners: { name: string; image: string }[]; 
+    label: string;
+    reverse?: boolean;
+  }) => (
+    <div className="mb-8">
+      <div className="flex items-center justify-center gap-3 mb-4">
+        <div className="h-px flex-1 max-w-[100px] bg-gradient-to-r from-transparent to-primary/30" />
+        <span className="text-sm font-semibold text-primary uppercase tracking-wider px-4 py-1 bg-primary/10 rounded-full">
+          {label}
+        </span>
+        <div className="h-px flex-1 max-w-[100px] bg-gradient-to-l from-transparent to-primary/30" />
+      </div>
+      <div className={`flex ${reverse ? 'animate-marquee-reverse' : 'animate-marquee'}`}>
+        <div className="flex shrink-0 gap-4 sm:gap-6 items-center">
+          {partners.map((partner, index) => (
+            <div
+              key={`row-${index}`}
+              className="flex-shrink-0 bg-card/90 backdrop-blur-sm border border-border/50 rounded-xl px-3 sm:px-4 py-2 sm:py-3 min-w-[90px] sm:min-w-[120px] h-12 sm:h-14 flex items-center justify-center hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300"
+            >
+              <img 
+                src={partner.image} 
+                alt={partner.name}
+                className="max-h-6 sm:max-h-8 max-w-[70px] sm:max-w-[90px] object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
+                  target.parentElement!.innerHTML = `<span class="text-xs text-foreground/60 font-medium text-center">${partner.name}</span>`;
+                }}
+              />
+            </div>
+          ))}
+        </div>
+        <div className="flex shrink-0 gap-4 sm:gap-6 items-center ml-4 sm:ml-6">
+          {partners.map((partner, index) => (
+            <div
+              key={`row-dup-${index}`}
+              className="flex-shrink-0 bg-card/90 backdrop-blur-sm border border-border/50 rounded-xl px-3 sm:px-4 py-2 sm:py-3 min-w-[90px] sm:min-w-[120px] h-12 sm:h-14 flex items-center justify-center hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300"
+            >
+              <img 
+                src={partner.image} 
+                alt={partner.name}
+                className="max-h-6 sm:max-h-8 max-w-[70px] sm:max-w-[90px] object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
+                  target.parentElement!.innerHTML = `<span class="text-xs text-foreground/60 font-medium text-center">${partner.name}</span>`;
+                }}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 
   return (
     <section 
@@ -85,72 +168,17 @@ const Partners = () => {
       {/* Marquee Container */}
       <div className="relative">
         {/* Strong gradient overlays for smooth fade/glassmorphism effect */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 sm:w-48 md:w-64 bg-gradient-to-r from-background via-background/80 to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-32 sm:w-48 md:w-64 bg-gradient-to-l from-background via-background/80 to-transparent z-10 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-24 sm:w-32 md:w-48 bg-gradient-to-r from-background via-background/80 to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 sm:w-32 md:w-48 bg-gradient-to-l from-background via-background/80 to-transparent z-10 pointer-events-none" />
 
-        {/* First row - scrolling left */}
-        <div className="flex animate-marquee mb-6">
-          <div className="flex shrink-0 gap-6 sm:gap-8 items-center">
-            {partners.map((partner, index) => (
-              <div
-                key={`row1-${index}`}
-                className="flex-shrink-0 bg-card/90 backdrop-blur-sm border border-border/50 rounded-xl px-4 sm:px-6 py-3 sm:py-4 min-w-[100px] sm:min-w-[140px] h-14 sm:h-18 flex items-center justify-center hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300"
-              >
-                <img 
-                  src={partner.image} 
-                  alt={partner.name}
-                  className="max-h-8 sm:max-h-10 max-w-[80px] sm:max-w-[100px] object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
-                />
-              </div>
-            ))}
-          </div>
-          <div className="flex shrink-0 gap-6 sm:gap-8 items-center ml-6 sm:ml-8">
-            {partners.map((partner, index) => (
-              <div
-                key={`row1-dup-${index}`}
-                className="flex-shrink-0 bg-card/90 backdrop-blur-sm border border-border/50 rounded-xl px-4 sm:px-6 py-3 sm:py-4 min-w-[100px] sm:min-w-[140px] h-14 sm:h-18 flex items-center justify-center hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300"
-              >
-                <img 
-                  src={partner.image} 
-                  alt={partner.name}
-                  className="max-h-8 sm:max-h-10 max-w-[80px] sm:max-w-[100px] object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
+        {/* First row - Life Insurance */}
+        <MarqueeRow partners={lifeInsurance} label="Life Insurance" />
 
-        {/* Second row - scrolling right */}
-        <div className="flex animate-marquee-reverse">
-          <div className="flex shrink-0 gap-6 sm:gap-8 items-center">
-            {partners2.map((partner, index) => (
-              <div
-                key={`row2-${index}`}
-                className="flex-shrink-0 bg-card/90 backdrop-blur-sm border border-border/50 rounded-xl px-4 sm:px-6 py-3 sm:py-4 min-w-[100px] sm:min-w-[140px] h-14 sm:h-18 flex items-center justify-center hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300"
-              >
-                <img 
-                  src={partner.image} 
-                  alt={partner.name}
-                  className="max-h-8 sm:max-h-10 max-w-[80px] sm:max-w-[100px] object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
-                />
-              </div>
-            ))}
-          </div>
-          <div className="flex shrink-0 gap-6 sm:gap-8 items-center ml-6 sm:ml-8">
-            {partners2.map((partner, index) => (
-              <div
-                key={`row2-dup-${index}`}
-                className="flex-shrink-0 bg-card/90 backdrop-blur-sm border border-border/50 rounded-xl px-4 sm:px-6 py-3 sm:py-4 min-w-[100px] sm:min-w-[140px] h-14 sm:h-18 flex items-center justify-center hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300"
-              >
-                <img 
-                  src={partner.image} 
-                  alt={partner.name}
-                  className="max-h-8 sm:max-h-10 max-w-[80px] sm:max-w-[100px] object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
+        {/* Second row - General Insurance */}
+        <MarqueeRow partners={generalInsurance} label="General Insurance" reverse />
+
+        {/* Third row - India Post & Mutual Fund */}
+        <MarqueeRow partners={mutualFunds} label="India Post & Mutual Fund" />
       </div>
     </section>
   );
