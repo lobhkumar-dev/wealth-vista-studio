@@ -31,7 +31,7 @@ const Gallery = () => {
       category: "Events",
     },
     {
-      url: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766691447/IMG_20240726_211846_xosj8m.jpg",
+      url: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766692081/IMG_20240726_211846_jt2t6p.jpg",
       title: "Strategy Session",
       category: "Team",
     },
