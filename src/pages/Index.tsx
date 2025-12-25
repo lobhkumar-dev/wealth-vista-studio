@@ -7,7 +7,7 @@ import Approach from "@/components/Approach";
 import Services from "@/components/Services";
 import Leadership from "@/components/Leadership";
 import Gallery from "@/components/Gallery";
-import News from "@/components/News";
+import Achievements from "@/components/Achievements";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import Partners from "@/components/Partners";
@@ -96,7 +96,7 @@ const Index = () => {
           <Gallery />
         </div>
         <div data-animate data-animation="slide-in-right">
-          <News />
+          <Achievements />
         </div>
         <div data-animate data-animation="fade-in-up">
           <Testimonials />

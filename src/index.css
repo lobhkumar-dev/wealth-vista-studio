@@ -1,4 +1,13 @@
 @tailwind base;
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.animate-shimmer {
+  animation: shimmer 3s ease-in-out infinite;
+}
 @tailwind components;
 @tailwind utilities;
 
