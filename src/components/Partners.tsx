@@ -112,13 +112,13 @@ const Partners = () => {
           {partners.map((partner, index) => (
             <div
               key={`row-${index}`}
-              className="flex-shrink-0 bg-card/90 backdrop-blur-sm border border-border/50 rounded-xl px-3 sm:px-4 py-2 sm:py-3 min-w-[90px] sm:min-w-[120px] h-12 sm:h-14 flex items-center justify-center hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300"
+              className="flex-shrink-0 bg-white dark:bg-card/90 backdrop-blur-sm border border-border/50 rounded-xl px-3 sm:px-4 py-2 sm:py-3 min-w-[100px] sm:min-w-[140px] h-14 sm:h-16 flex items-center justify-center hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300"
               title={partner.name}
             >
               <img 
                 src={partner.image} 
                 alt={partner.name}
-                className="max-h-6 sm:max-h-8 max-w-[70px] sm:max-w-[90px] object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+                className="max-h-8 sm:max-h-10 max-w-[80px] sm:max-w-[110px] object-contain transition-opacity duration-300"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
                   target.style.display = 'none';
@@ -132,13 +132,13 @@ const Partners = () => {
           {partners.map((partner, index) => (
             <div
               key={`row-dup-${index}`}
-              className="flex-shrink-0 bg-card/90 backdrop-blur-sm border border-border/50 rounded-xl px-3 sm:px-4 py-2 sm:py-3 min-w-[90px] sm:min-w-[120px] h-12 sm:h-14 flex items-center justify-center hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300"
+              className="flex-shrink-0 bg-white dark:bg-card/90 backdrop-blur-sm border border-border/50 rounded-xl px-3 sm:px-4 py-2 sm:py-3 min-w-[100px] sm:min-w-[140px] h-14 sm:h-16 flex items-center justify-center hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300"
               title={partner.name}
             >
               <img 
                 src={partner.image} 
                 alt={partner.name}
-                className="max-h-6 sm:max-h-8 max-w-[70px] sm:max-w-[90px] object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+                className="max-h-8 sm:max-h-10 max-w-[80px] sm:max-w-[110px] object-contain transition-opacity duration-300"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
                   target.style.display = 'none';
