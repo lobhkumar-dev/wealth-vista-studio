@@ -88,7 +88,7 @@ const Hero = () => {
             >
               <SwipeButton 
                 onSwipeComplete={handleSwipeComplete}
-                label="Swipe to Get in Touch"
+                label="Swipe to Get Started"
               />
               <p className="text-xs text-muted-foreground mt-3 text-center lg:text-left">
                 Drag the button to start your investment journey →
