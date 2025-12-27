@@ -3,6 +3,7 @@ import { MessageCircle, X, Send, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import whatsappIcon from "@/assets/whatsapp-logo.png";
+import sisLogo from "@/assets/sis-logo.png";
 
 const WhatsAppWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,8 +38,8 @@ const WhatsAppWidget = () => {
           {/* Header */}
           <div className="bg-[#00897B] text-white p-4 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
-                <MessageCircle className="w-6 h-6 text-[#00897B]" />
+              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center overflow-hidden p-1">
+                <img src={sisLogo} alt="Smart Investment Solutions" className="w-full h-full object-contain" />
               </div>
               <div>
                 <h3 className="font-semibold text-lg">Smart Investment Solutions</h3>
@@ -74,7 +75,7 @@ const WhatsAppWidget = () => {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               onKeyPress={handleKeyPress}
-              className="flex-1 bg-white border-none shadow-sm"
+              className="flex-1 bg-white border-none shadow-sm text-gray-900 placeholder:text-gray-500"
             />
             <Button
               onClick={handleSend}
@@ -87,23 +88,23 @@ const WhatsAppWidget = () => {
         </div>
       )}
 
+      {/* Floating WhatsApp Button */}
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="fixed bottom-[7.5rem] right-6 w-16 h-16 rounded-full shadow-2xl flex items-center justify-center z-50 transition-all hover:scale-110 animate-bounce-subtle overflow-hidden"
+        aria-label="Open WhatsApp Chat"
+      >
+        <img src={whatsappIcon} alt="WhatsApp" className="w-full h-full object-cover" />
+      </button>
+
       {/* Floating Phone Button */}
       <button
         onClick={handlePhoneCall}
-        className="fixed bottom-[7.5rem] right-6 w-16 h-16 bg-[#3B82F6] hover:bg-[#2563EB] text-white rounded-full shadow-2xl flex items-center justify-center z-50 transition-all hover:scale-110 animate-bounce-subtle"
+        className="fixed bottom-6 right-6 w-16 h-16 bg-[#3B82F6] hover:bg-[#2563EB] text-white rounded-full shadow-2xl flex items-center justify-center z-50 transition-all hover:scale-110 animate-bounce-subtle"
         aria-label="Call Now"
         style={{ animationDelay: "0.2s" }}
       >
         <Phone className="w-8 h-8" fill="currentColor" />
-      </button>
-
-      {/* Floating WhatsApp Button */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 w-16 h-16 rounded-full shadow-2xl flex items-center justify-center z-50 transition-all hover:scale-110 animate-bounce-subtle overflow-hidden"
-        aria-label="Open WhatsApp Chat"
-      >
-        <img src={whatsappIcon} alt="WhatsApp" className="w-full h-full object-cover" />
       </button>
     </>
   );
