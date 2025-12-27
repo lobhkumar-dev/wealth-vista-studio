@@ -1,9 +1,24 @@
-import { Mail, Phone, Send, Car, Bike, Truck, Heart, Umbrella, TrendingUp, Mail as PostalIcon, Clock, GraduationCap, Calculator } from "lucide-react";
+import { Mail, Phone, Send, Car, Bike, Truck, Heart, Umbrella, TrendingUp, Mail as PostalIcon, Clock, GraduationCap, Calculator, CalendarIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { format } from "date-fns";
+import { cn } from "@/lib/utils";
+import { Calendar } from "@/components/ui/calendar";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import {
   Dialog,
   DialogContent,
@@ -34,7 +49,17 @@ const GetQuotePopup = ({ isOpen, onClose, serviceTitle }: GetQuotePopupProps) =>
   const [selectedInsurance, setSelectedInsurance] = useState<string[]>([]);
   const [result, setResult] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [selectedDate, setSelectedDate] = useState<Date>();
+  const [selectedTime, setSelectedTime] = useState<string>("");
   const { toast } = useToast();
+
+  const isConsultation = serviceTitle === "Custom Solution";
+
+  const timeSlots = [
+    "09:00 AM", "09:30 AM", "10:00 AM", "10:30 AM", "11:00 AM", "11:30 AM",
+    "12:00 PM", "12:30 PM", "02:00 PM", "02:30 PM", "03:00 PM", "03:30 PM",
+    "04:00 PM", "04:30 PM", "05:00 PM", "05:30 PM", "06:00 PM"
+  ];
 
   const toggleInsurance = (id: string) => {
     setSelectedInsurance(prev => 
@@ -57,6 +82,12 @@ const GetQuotePopup = ({ isOpen, onClose, serviceTitle }: GetQuotePopupProps) =>
     if (serviceTitle) {
       formData.append("service_inquiry", serviceTitle);
     }
+    if (isConsultation && selectedDate) {
+      formData.append("preferred_date", format(selectedDate, "PPP"));
+    }
+    if (isConsultation && selectedTime) {
+      formData.append("preferred_time", selectedTime);
+    }
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -74,6 +105,8 @@ const GetQuotePopup = ({ isOpen, onClose, serviceTitle }: GetQuotePopupProps) =>
         });
         (event.target as HTMLFormElement).reset();
         setSelectedInsurance([]);
+        setSelectedDate(undefined);
+        setSelectedTime("");
         setTimeout(() => {
           onClose();
           setResult("");
@@ -161,6 +194,54 @@ const GetQuotePopup = ({ isOpen, onClose, serviceTitle }: GetQuotePopupProps) =>
             <label className="text-xs sm:text-sm font-medium mb-1.5 block">Phone</label>
             <Input type="tel" name="phone" placeholder="+91 98765 43210" className="bg-background text-sm" required />
           </div>
+
+          {/* Date & Time Selection for Consultation */}
+          {isConsultation && (
+            <div className="grid grid-cols-2 gap-3">
+              <div>
+                <label className="text-xs sm:text-sm font-medium mb-1.5 block">Preferred Date</label>
+                <Popover>
+                  <PopoverTrigger asChild>
+                    <Button
+                      variant="outline"
+                      className={cn(
+                        "w-full justify-start text-left font-normal bg-background text-sm",
+                        !selectedDate && "text-muted-foreground"
+                      )}
+                    >
+                      <CalendarIcon className="mr-2 h-4 w-4" />
+                      {selectedDate ? format(selectedDate, "PPP") : <span>Pick a date</span>}
+                    </Button>
+                  </PopoverTrigger>
+                  <PopoverContent className="w-auto p-0" align="start">
+                    <Calendar
+                      mode="single"
+                      selected={selectedDate}
+                      onSelect={setSelectedDate}
+                      disabled={(date) => date < new Date() || date < new Date("1900-01-01")}
+                      initialFocus
+                      className={cn("p-3 pointer-events-auto")}
+                    />
+                  </PopoverContent>
+                </Popover>
+              </div>
+              <div>
+                <label className="text-xs sm:text-sm font-medium mb-1.5 block">Preferred Time</label>
+                <Select value={selectedTime} onValueChange={setSelectedTime}>
+                  <SelectTrigger className="bg-background text-sm">
+                    <SelectValue placeholder="Select time" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {timeSlots.map((time) => (
+                      <SelectItem key={time} value={time}>
+                        {time}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+            </div>
+          )}
 
           <div>
             <label className="text-xs sm:text-sm font-medium mb-1.5 block">Message</label>
