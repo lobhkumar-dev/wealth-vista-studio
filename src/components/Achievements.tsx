@@ -163,6 +163,7 @@ const Achievements = () => {
             { value: "40+", label: "Years Experience" },
             { value: "₹50Cr+", label: "Assets Managed" },
             { value: "10,000+", label: "Happy Clients" },
+            { value: "50+", label: "Awards Won" },
           ].map((stat, index) => (
             <div 
               key={index}
