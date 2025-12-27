@@ -22,22 +22,16 @@ const Leadership = () => {
 
   const teamMembers = [
     {
-      name: "Priya Sharma",
-      position: "Chief Investment Officer",
-      bio: "Expert in portfolio management with a track record of consistent returns. Certified Financial Planner.",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop",
+      name: "Biren Ch Datta",
+      position: "Prospective MDRT Insurance Advisor",
+      bio: "With 40+ years of insurance expertise, ranked All-India No. 1 Insurance Advisor (One Day) and a distinguished member of LIC Chairman's Club.",
+      image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766828671/ChatGPT_Image_Dec_26_2025_02_45_52_AM_yhsxjr.png",
     },
     {
-      name: "Amit Patel",
-      position: "Head of Operations",
-      bio: "20+ years in financial operations and compliance. Ensures seamless service delivery and regulatory adherence.",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop",
-    },
-    {
-      name: "Sneha Reddy",
-      position: "Director of Client Relations",
-      bio: "Passionate about building lasting client relationships. Expert in personalized wealth management solutions.",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop",
+      name: "Rajib Sir",
+      position: "Customer Relationship Manager",
+      bio: "Ensures seamless client onboarding and complete support across the entire investment and redemption process.",
+      image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766828676/ChatGPT_Image_Dec_26_2025_02_40_36_AM_nmztie.png",
     },
   ];
 
@@ -203,7 +197,7 @@ const Leadership = () => {
         {/* Team Members Grid */}
         <div 
           ref={teamRef as React.RefObject<HTMLDivElement>}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto"
         >
           {teamMembers.map((member, index) => (
             <div
