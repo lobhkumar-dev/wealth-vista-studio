@@ -1,3 +1,4 @@
+import React from "react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Partners = () => {
@@ -98,63 +99,111 @@ const Partners = () => {
     partners: { name: string; image: string }[]; 
     label: string;
     reverse?: boolean;
-  }) => (
-    <div className="mb-8">
-      <div className="flex items-center justify-center gap-3 mb-4">
-        <div className="h-px flex-1 max-w-[100px] bg-gradient-to-r from-transparent to-primary/30" />
-        <span className="text-sm font-semibold text-primary uppercase tracking-wider px-4 py-1 bg-primary/10 rounded-full">
-          {label}
-        </span>
-        <div className="h-px flex-1 max-w-[100px] bg-gradient-to-l from-transparent to-primary/30" />
-      </div>
-      <div className={`flex ${reverse ? 'animate-marquee-reverse' : 'animate-marquee'}`}>
-        <div className="flex shrink-0 gap-4 sm:gap-6 items-center">
-          {partners.map((partner, index) => (
-            <div
-              key={`row-${index}`}
-              className="flex-shrink-0 bg-muted/30 border border-border/60 rounded-xl px-4 sm:px-5 py-3 sm:py-4 min-w-[130px] sm:min-w-[180px] h-16 sm:h-20 flex items-center justify-center hover:border-primary/50 hover:bg-muted/40 transition-all duration-300"
-              title={partner.name}
-            >
-              <img 
-                src={partner.image} 
-                alt={partner.name}
-                loading="lazy"
-                decoding="async"
-                className="max-h-10 sm:max-h-12 max-w-[110px] sm:max-w-[150px] object-contain [filter:drop-shadow(0_2px_6px_hsl(var(--foreground)/0.25))]"
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.style.display = 'none';
-                  target.parentElement!.innerHTML = `<span class="text-xs text-foreground/60 font-medium text-center leading-tight">${partner.name}</span>`;
-                }}
-              />
-            </div>
-          ))}
+  }) => {
+    const [isPaused, setIsPaused] = React.useState(false);
+    const [selectedPartner, setSelectedPartner] = React.useState<string | null>(null);
+
+    const handleCardClick = (partnerName: string) => {
+      if (selectedPartner === partnerName) {
+        setSelectedPartner(null);
+        setIsPaused(false);
+      } else {
+        setSelectedPartner(partnerName);
+        setIsPaused(true);
+      }
+    };
+
+    return (
+      <div className="mb-8">
+        <div className="flex items-center justify-center gap-3 mb-4">
+          <div className="h-px flex-1 max-w-[100px] bg-gradient-to-r from-transparent to-primary/30" />
+          <span className="text-sm font-semibold text-primary uppercase tracking-wider px-4 py-1 bg-primary/10 rounded-full">
+            {label}
+          </span>
+          <div className="h-px flex-1 max-w-[100px] bg-gradient-to-l from-transparent to-primary/30" />
         </div>
-        <div className="flex shrink-0 gap-4 sm:gap-6 items-center ml-4 sm:ml-6">
-          {partners.map((partner, index) => (
-            <div
-              key={`row-dup-${index}`}
-              className="flex-shrink-0 bg-muted/30 border border-border/60 rounded-xl px-4 sm:px-5 py-3 sm:py-4 min-w-[130px] sm:min-w-[180px] h-16 sm:h-20 flex items-center justify-center hover:border-primary/50 hover:bg-muted/40 transition-all duration-300"
-              title={partner.name}
-            >
-              <img 
-                src={partner.image} 
-                alt={partner.name}
-                loading="lazy"
-                decoding="async"
-                className="max-h-10 sm:max-h-12 max-w-[110px] sm:max-w-[150px] object-contain [filter:drop-shadow(0_2px_6px_hsl(var(--foreground)/0.25))]"
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.style.display = 'none';
-                  target.parentElement!.innerHTML = `<span class="text-xs text-foreground/60 font-medium text-center leading-tight">${partner.name}</span>`;
-                }}
-              />
-            </div>
-          ))}
+        <div 
+          className={`flex ${reverse ? 'animate-marquee-reverse' : 'animate-marquee'}`}
+          style={{ animationPlayState: isPaused ? 'paused' : 'running' }}
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => { setIsPaused(false); setSelectedPartner(null); }}
+        >
+          <div className="flex shrink-0 gap-4 sm:gap-6 items-center">
+            {partners.map((partner, index) => (
+              <div
+                key={`row-${index}`}
+                onClick={() => handleCardClick(partner.name)}
+                className={`flex-shrink-0 bg-muted/30 border rounded-xl px-4 sm:px-5 py-3 sm:py-4 min-w-[130px] sm:min-w-[180px] h-16 sm:h-20 flex flex-col items-center justify-center cursor-pointer transition-all duration-300 ${
+                  selectedPartner === partner.name 
+                    ? 'border-primary bg-primary/10 scale-105' 
+                    : 'border-border/60 hover:border-primary/50 hover:bg-muted/40'
+                }`}
+                title={partner.name}
+              >
+                <img 
+                  src={partner.image} 
+                  alt={partner.name}
+                  loading="lazy"
+                  decoding="async"
+                  className={`object-contain [filter:drop-shadow(0_2px_6px_hsl(var(--foreground)/0.25))] transition-all duration-300 ${
+                    selectedPartner === partner.name 
+                      ? 'max-h-6 sm:max-h-8 max-w-[90px] sm:max-w-[120px]' 
+                      : 'max-h-10 sm:max-h-12 max-w-[110px] sm:max-w-[150px]'
+                  }`}
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                    target.parentElement!.innerHTML = `<span class="text-xs text-foreground/60 font-medium text-center leading-tight">${partner.name}</span>`;
+                  }}
+                />
+                {selectedPartner === partner.name && (
+                  <span className="text-[10px] sm:text-xs font-medium text-primary mt-1 text-center leading-tight animate-fade-in">
+                    {partner.name}
+                  </span>
+                )}
+              </div>
+            ))}
+          </div>
+          <div className="flex shrink-0 gap-4 sm:gap-6 items-center ml-4 sm:ml-6">
+            {partners.map((partner, index) => (
+              <div
+                key={`row-dup-${index}`}
+                onClick={() => handleCardClick(partner.name)}
+                className={`flex-shrink-0 bg-muted/30 border rounded-xl px-4 sm:px-5 py-3 sm:py-4 min-w-[130px] sm:min-w-[180px] h-16 sm:h-20 flex flex-col items-center justify-center cursor-pointer transition-all duration-300 ${
+                  selectedPartner === partner.name 
+                    ? 'border-primary bg-primary/10 scale-105' 
+                    : 'border-border/60 hover:border-primary/50 hover:bg-muted/40'
+                }`}
+                title={partner.name}
+              >
+                <img 
+                  src={partner.image} 
+                  alt={partner.name}
+                  loading="lazy"
+                  decoding="async"
+                  className={`object-contain [filter:drop-shadow(0_2px_6px_hsl(var(--foreground)/0.25))] transition-all duration-300 ${
+                    selectedPartner === partner.name 
+                      ? 'max-h-6 sm:max-h-8 max-w-[90px] sm:max-w-[120px]' 
+                      : 'max-h-10 sm:max-h-12 max-w-[110px] sm:max-w-[150px]'
+                  }`}
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                    target.parentElement!.innerHTML = `<span class="text-xs text-foreground/60 font-medium text-center leading-tight">${partner.name}</span>`;
+                  }}
+                />
+                {selectedPartner === partner.name && (
+                  <span className="text-[10px] sm:text-xs font-medium text-primary mt-1 text-center leading-tight animate-fade-in">
+                    {partner.name}
+                  </span>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   return (
     <section 
