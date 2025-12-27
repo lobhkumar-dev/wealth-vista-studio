@@ -136,10 +136,15 @@ const GetQuotePopup = ({ isOpen, onClose, serviceTitle }: GetQuotePopupProps) =>
       <DialogContent className="max-w-lg max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="text-xl sm:text-2xl font-bold">
-            Get A Quote
-            {serviceTitle && (
+            {isConsultation ? "Schedule a Consultation" : "Get A Quote"}
+            {serviceTitle && !isConsultation && (
               <span className="block text-sm font-normal text-foreground/70 mt-1">
                 Inquiry for: {serviceTitle}
+              </span>
+            )}
+            {isConsultation && (
+              <span className="block text-sm font-normal text-foreground/70 mt-1">
+                Book your free consultation with our experts
               </span>
             )}
           </DialogTitle>
