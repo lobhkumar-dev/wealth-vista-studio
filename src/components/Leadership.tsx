@@ -7,17 +7,17 @@ const Leadership = () => {
   const { ref: teamRef, isVisible: teamVisible } = useScrollAnimation({ threshold: 0.1 });
 
   const founderCEO = {
-    name: "Rajesh Kumar",
+    name: "Soumyajit Datta",
     position: "Founder & CEO",
-    description: "With over 25 years of distinguished experience in wealth management and financial planning, Rajesh Kumar has established himself as a visionary leader in the financial services industry. As the Founder and CEO, he brings a wealth of knowledge from his previous role as Vice President at leading investment firms.",
-    philosophy: "Rajesh believes in building long-term relationships based on trust, transparency, and personalized financial strategies. His client-centric approach has helped hundreds of individuals and families achieve their financial goals and secure their future.",
+    description: "With over 25 years of distinguished experience in wealth management and financial planning, Soumyajit Datta has established himself as a visionary leader in the financial services industry. As the Founder and CEO, he brings a wealth of knowledge from his previous role as Vice President at leading investment firms.",
+    philosophy: "Soumyajit believes in building long-term relationships based on trust, transparency, and personalized financial strategies. His client-centric approach has helped hundreds of individuals and families achieve their financial goals and secure their future.",
     achievements: [
-      "Successfully managed portfolios worth over $500M",
-      "Certified Financial Planner (CFP) with specialized expertise in wealth management",
-      "Former Vice President at premier investment firms",
-      "Recognized thought leader with regular contributions to financial publications"
+      "Successfully managed portfolios worth over 25 cr",
+      "Certified Financial Planner (CFP) with specialized expertise in wealth management by SEBI",
+      "IRDAI-Certified Insurance Advisor with Specialized Expertise",
+      "Former Vice President at premier investment firms"
     ],
-    image: founderImage
+    image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766827936/WhatsApp_Image_2025-12-27_at_12.00.55_AM-removebg-preview_x542tr.png"
   };
 
   const teamMembers = [
