@@ -160,10 +160,9 @@ const Achievements = () => {
         {/* Stats bar */}
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
           {[
-            { value: "50+", label: "Awards Won" },
-            { value: "1000+", label: "Happy Clients" },
-            { value: "15+", label: "Years Experience" },
-            { value: "₹100Cr+", label: "Assets Managed" },
+            { value: "40+", label: "Years Experience" },
+            { value: "₹50Cr+", label: "Assets Managed" },
+            { value: "10,000+", label: "Happy Clients" },
           ].map((stat, index) => (
             <div 
               key={index}
