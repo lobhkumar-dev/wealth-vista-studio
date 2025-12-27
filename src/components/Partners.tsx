@@ -52,34 +52,42 @@ const Partners = () => {
     { name: "Universal Sompo", image: "https://companieslogo.com/img/orig/INDUSINDBK.NS-72c40a90.png?t=1720244492" },
   ];
 
-  // Mutual Fund Companies (AMCs) and India Post
+  // Mutual Fund Companies (AMCs)
   const mutualFunds = [
-    { name: "Aditya Birla Sun Life MF", image: "https://companieslogo.com/img/orig/ABSLAMC.NS-8d2af5f6.png?t=1720244490" },
-    { name: "Axis MF", image: "https://companieslogo.com/img/orig/AXISBANK.NS-55cb2d5c.png?t=1720244490" },
-    { name: "Bajaj Finserv MF", image: "https://companieslogo.com/img/orig/BAJFINANCE.NS-5b55eb98.png?t=1720244490" },
-    { name: "Bandhan MF", image: "https://companieslogo.com/img/orig/BANDHANBNK.NS-fb05c3f5.png?t=1720244490" },
-    { name: "Bank of India MF", image: "https://companieslogo.com/img/orig/BANKINDIA.NS-a66f8a93.png?t=1720244490" },
-    { name: "Baroda BNP Paribas MF", image: "https://companieslogo.com/img/orig/BANKBARODA.NS-28866f2c.png?t=1720244490" },
-    { name: "Canara Robeco MF", image: "https://companieslogo.com/img/orig/CANBK.NS-7f9e6ba0.png?t=1720244491" },
-    { name: "DSP MF", image: "https://www.dspim.com/content/dam/dspim/svg/DSP_logo.svg" },
-    { name: "Edelweiss MF", image: "https://companieslogo.com/img/orig/EDELWEISS.NS-e3ed38d9.png?t=1720244491" },
-    { name: "Franklin Templeton MF", image: "https://companieslogo.com/img/orig/BEN-26a79f24.png?t=1720244490" },
-    { name: "Groww MF", image: "https://companieslogo.com/img/orig/GROWW-1ad17bdb.png?t=1720244492" },
-    { name: "HDFC MF", image: "https://companieslogo.com/img/orig/HDFCAMC.NS-03da3e89.png?t=1720244492" },
-    { name: "HSBC MF", image: "https://companieslogo.com/img/orig/HSBC-0b0f228d.png?t=1720244492" },
-    { name: "ICICI Prudential MF", image: "https://companieslogo.com/img/orig/ICICIPRULI.NS-29281503.png?t=1720244492" },
-    { name: "IDBI MF", image: "https://companieslogo.com/img/orig/IDBI.NS-ad58a23b.png?t=1720244492" },
-    { name: "Invesco MF", image: "https://companieslogo.com/img/orig/IVZ-55cc1c39.png?t=1720244492" },
-    { name: "ITI MF", image: "https://companieslogo.com/img/orig/ITI.NS-07e12cb9.png?t=1720244492" },
-    { name: "JM Financial MF", image: "https://companieslogo.com/img/orig/JMFINANCIL.NS-e18ba0b9.png?t=1720244492" },
-    { name: "Kotak Mahindra MF", image: "https://companieslogo.com/img/orig/KOTAKBANK.NS-19038e20.png?t=1720244493" },
-    { name: "LIC MF", image: "https://companieslogo.com/img/orig/LICI.NS-47be1c98.png?t=1647270408" },
-    { name: "Mirae Asset MF", image: "https://companieslogo.com/img/orig/055550.KS-b155ecae.png?t=1720244490" },
-    { name: "Motilal Oswal MF", image: "https://companieslogo.com/img/orig/MOTILALOFS.NS-bd0e63c9.png?t=1720244493" },
-    { name: "Navi MF", image: "https://companieslogo.com/img/orig/NAVI.NS-d97b2e0a.png?t=1720244493" },
-    { name: "Nippon India MF", image: "https://companieslogo.com/img/orig/NAM-INDIA.NS-d5da08c5.png?t=1720244493" },
-    { name: "SBI MF", image: "https://companieslogo.com/img/orig/SBIN.NS-dc50524e.png?t=1720244493" },
-    { name: "India Post", image: "https://www.indiapost.gov.in/VAS/PublishingImages/ippost.png" },
+    { name: "360 ONE MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830285/360_ONE_MUTUAL_FUND_votcpk.png" },
+    { name: "Abakkus MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830285/Abakkus_Mutual_Fund_msu5cv.png" },
+    { name: "Aditya Birla Sun Life MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830285/Aditya_Birla_Sun_Life_Mutual_Fund_gribmb.png" },
+    { name: "Angel One MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830285/Angel_One_Mutual_Fund_lyykn0.png" },
+    { name: "Axis MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830285/Axis_Mutual_Fund_jpxvr4.png" },
+    { name: "Bajaj Finserv MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830286/Bajaj_Finserv_Mutual_Fund_cgv8j6.png" },
+    { name: "Bandhan MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830285/Bandhan_Mutual_Fund_gbbpp2.png" },
+    { name: "Bank of India MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830286/Bank_of_India_Mutual_Fund_ijzte5.png" },
+    { name: "Baroda BNP Paribas MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830286/Baroda_BNP_Paribas_Mutual_Fund_p46or8.png" },
+    { name: "Canara Robeco MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830286/Canara_Robeco_Mutual_Fund_zwxyeb.png" },
+    { name: "Capitalmind MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830286/Capitalmind_Mutual_Fund_hjfixb.png" },
+    { name: "DSP MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830286/DSP_Mutual_Fund_yek60i.png" },
+    { name: "Edelweiss MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830287/Edelweiss_Mutual_Fund_oingif.png" },
+    { name: "Franklin Templeton MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830286/Franklin_Templeton_Mutual_Fund_jdrbpr.png" },
+    { name: "Goldman Sachs MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830288/Goldman_Sachs_Mutual_Fund_usiere.png" },
+    { name: "Groww MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830294/Groww_Mutual_Fund_uakalz.png" },
+    { name: "HDFC MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830294/HDFC_Mutual_Fund_fmq6yu.png" },
+    { name: "Helios MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830295/Helios_Mutual_Fund_hegrza.png" },
+    { name: "HSBC MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830295/HSBC_Mutual_Fund_udqdde.png" },
+    { name: "ICICI Prudential MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830295/ICICI_Prudential_Mutual_Fund_eoyhng.png" },
+    { name: "IDBI MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830295/IDBI_Mutual_Fund_mbjavx.png" },
+    { name: "IIFCL MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830296/IIFCL_Mutual_Fund_jtual9.png" },
+    { name: "IL&FS MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830296/IL_FS_Mutual_Fund_umicx7.png" },
+    { name: "Invesco MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830298/Invesco_Mutual_Fund_ydiy48.png" },
+    { name: "ITI MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830300/ITI_Mutual_Fund_xwck1p.png" },
+    { name: "Jio BlackRock MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830301/Jio_BlackRock_Mutual_Fund_gd9ma4.png" },
+    { name: "JM Financial MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830301/JM_Financial_Mutual_Fund_wddtds.png" },
+    { name: "Kotak Mahindra MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830301/Kotak_Mahindra_Mutual_Fund_xjhw3r.png" },
+    { name: "LIC MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830301/LIC_Mutual_Fund_zzqp4s.png" },
+    { name: "Mirae Asset MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830301/Mirae_Asset_Mutual_Fund_yd70vt.png" },
+    { name: "Motilal Oswal MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830301/Motilal_Oswal_Mutual_Fund_tfvbuw.png" },
+    { name: "Navi MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830301/Navi_Mutual_Fund_fx7mjq.png" },
+    { name: "Nippon India MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830301/Nippon_India_Mutual_Fund_hrarjs.png" },
+    { name: "NJ MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830302/NJ_Mutual_Fund_nrhe1c.png" },
   ];
 
   const MarqueeRow = ({ 
@@ -179,8 +187,8 @@ const Partners = () => {
         {/* Second row - General Insurance */}
         <MarqueeRow partners={generalInsurance} label="General Insurance" reverse />
 
-        {/* Third row - India Post & Mutual Fund */}
-        <MarqueeRow partners={mutualFunds} label="India Post & Mutual Fund" />
+        {/* Third row - Mutual Fund */}
+        <MarqueeRow partners={mutualFunds} label="Mutual Funds" />
       </div>
     </section>
   );
