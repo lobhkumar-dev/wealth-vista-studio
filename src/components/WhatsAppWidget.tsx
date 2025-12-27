@@ -89,13 +89,15 @@ const WhatsAppWidget = () => {
       )}
 
       {/* Floating WhatsApp Button */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-[7.5rem] right-6 w-16 h-16 rounded-full shadow-2xl flex items-center justify-center z-50 transition-all hover:scale-110 animate-bounce-subtle overflow-hidden"
-        aria-label="Open WhatsApp Chat"
-      >
-        <img src={whatsappIcon} alt="WhatsApp" className="w-full h-full object-cover" />
-      </button>
+      {!isOpen && (
+        <button
+          onClick={() => setIsOpen(true)}
+          className="fixed bottom-[7.5rem] right-6 w-16 h-16 rounded-full shadow-2xl flex items-center justify-center z-50 transition-all hover:scale-110 animate-bounce-subtle overflow-hidden"
+          aria-label="Open WhatsApp Chat"
+        >
+          <img src={whatsappIcon} alt="WhatsApp" className="w-full h-full object-cover" />
+        </button>
+      )}
 
       {/* Floating Phone Button */}
       <button
