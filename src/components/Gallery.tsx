@@ -6,48 +6,33 @@ const Gallery = () => {
 
   const allImages = [
     {
-      url: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766691464/IMG_20241108_140628_daonnm.jpg",
-      title: "Team Celebration",
-      category: "Events",
-    },
-    {
       url: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766691462/IMG_20240919_133546_rhxqqh.jpg",
-      title: "Client Meeting",
+      title: "Meet with Sr. DM sir",
       category: "Events",
-    },
-    {
-      url: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766691462/IMG_20240822_123208_c48yv9.jpg",
-      title: "Team Workshop",
-      category: "Team",
-    },
-    {
-      url: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766691452/IMG_20240822_121624_ky7xei.jpg",
-      title: "Financial Planning",
-      category: "Services",
-    },
-    {
-      url: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766691448/IMG-20231219-WA0011_h3v8bx.jpg",
-      title: "Client Success",
-      category: "Events",
-    },
-    {
-      url: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766692081/IMG_20240726_211846_jt2t6p.jpg",
-      title: "Strategy Session",
-      category: "Team",
-    },
-    {
-      url: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766691447/IMG_20240919_133258_bg8qur.jpg",
-      title: "Office Event",
-      category: "Office",
-    },
-    {
-      url: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766691445/FB_IMG_1766681381468_qve1au.jpg",
-      title: "Team Building",
-      category: "Team",
     },
     {
       url: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766691445/FB_IMG_1766681400651_xifhou.jpg",
-      title: "Award Ceremony",
+      title: "Meet with Zonal Manager Sir",
+      category: "Events",
+    },
+    {
+      url: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766691464/IMG_20241108_140628_daonnm.jpg",
+      title: "Meet with Sr. DM sir",
+      category: "Events",
+    },
+    {
+      url: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766691448/IMG-20231219-WA0011_h3v8bx.jpg",
+      title: "Unit Meeting",
+      category: "Events",
+    },
+    {
+      url: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766691447/IMG_20240919_133258_bg8qur.jpg",
+      title: "Meet with Mktg. Manager Sir",
+      category: "Events",
+    },
+    {
+      url: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766691445/FB_IMG_1766681381468_qve1au.jpg",
+      title: "Joining day in LIC",
       category: "Events",
     },
   ];
