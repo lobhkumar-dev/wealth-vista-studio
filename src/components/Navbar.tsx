@@ -70,7 +70,7 @@ const Navbar = () => {
     { href: "#services", label: "Services" },
     { href: "#leadership", label: "Leadership" },
     { href: "#gallery", label: "Gallery" },
-    { href: "#news", label: "News" },
+    { href: "#achievements", label: "Awards" },
     { href: "#contact", label: "Contact" },
   ];
 
