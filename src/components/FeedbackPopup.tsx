@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
-import { User, Phone, Mail, MessageSquare, Star } from 'lucide-react';
+import { User, Phone, Mail, MessageSquare, Star, ImagePlus, X } from 'lucide-react';
 
 interface FeedbackPopupProps {
   isOpen: boolean;
@@ -16,6 +16,9 @@ const FeedbackPopup = ({ isOpen, onClose }: FeedbackPopupProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [rating, setRating] = useState(0);
   const [hoverRating, setHoverRating] = useState(0);
+  const [selectedImage, setSelectedImage] = useState<File | null>(null);
+  const [imagePreview, setImagePreview] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -23,6 +26,34 @@ const FeedbackPopup = ({ isOpen, onClose }: FeedbackPopupProps) => {
     feedback: ''
   });
   const { toast } = useToast();
+
+  const handleImageSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      if (file.size > 5 * 1024 * 1024) {
+        toast({
+          title: "File too large",
+          description: "Please select an image under 5MB.",
+          variant: "destructive"
+        });
+        return;
+      }
+      setSelectedImage(file);
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImagePreview(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const removeImage = () => {
+    setSelectedImage(null);
+    setImagePreview(null);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = '';
+    }
+  };
 
   const validatePhone = (phone: string) => {
     const digitsOnly = phone.replace(/\D/g, '');
@@ -82,6 +113,7 @@ Phone: ${formData.phone}
 Email: ${formData.email || 'Not provided'}
 Rating: ${'⭐'.repeat(rating)} (${rating}/5)
 Feedback: ${formData.feedback}
+Image Attached: ${selectedImage ? 'Yes' : 'No'}
 Time: ${new Date().toLocaleString()}`);
       
       form.append("name", formData.name);
@@ -90,6 +122,9 @@ Time: ${new Date().toLocaleString()}`);
       form.append("feedback", formData.feedback);
       if (formData.email) {
         form.append("email", formData.email);
+      }
+      if (selectedImage) {
+        form.append("attachment", selectedImage);
       }
 
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -106,6 +141,8 @@ Time: ${new Date().toLocaleString()}`);
         });
         setFormData({ name: '', phone: '', email: '', feedback: '' });
         setRating(0);
+        setSelectedImage(null);
+        setImagePreview(null);
         onClose();
       } else {
         throw new Error('Submission failed');
@@ -226,7 +263,46 @@ Time: ${new Date().toLocaleString()}`);
             </div>
           </div>
 
-          <Button 
+          {/* Image Upload - Optional */}
+          <div className="space-y-2">
+            <Label className="text-foreground">
+              Upload Image <span className="text-muted-foreground text-sm">(Optional)</span>
+            </Label>
+            <input
+              type="file"
+              ref={fileInputRef}
+              accept="image/*"
+              onChange={handleImageSelect}
+              className="hidden"
+            />
+            {!imagePreview ? (
+              <button
+                type="button"
+                onClick={() => fileInputRef.current?.click()}
+                className="w-full flex items-center justify-center gap-2 p-4 border-2 border-dashed border-border rounded-lg hover:border-primary/50 hover:bg-primary/5 transition-colors"
+              >
+                <ImagePlus className="w-5 h-5 text-muted-foreground" />
+                <span className="text-muted-foreground text-sm">Click to upload your photo</span>
+              </button>
+            ) : (
+              <div className="relative inline-block">
+                <img
+                  src={imagePreview}
+                  alt="Preview"
+                  className="w-24 h-24 object-cover rounded-lg border border-border"
+                />
+                <button
+                  type="button"
+                  onClick={removeImage}
+                  className="absolute -top-2 -right-2 w-6 h-6 bg-destructive text-destructive-foreground rounded-full flex items-center justify-center hover:bg-destructive/80 transition-colors"
+                >
+                  <X className="w-3 h-3" />
+                </button>
+              </div>
+            )}
+          </div>
+
+          <Button
             type="submit" 
             className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
             disabled={isSubmitting}
