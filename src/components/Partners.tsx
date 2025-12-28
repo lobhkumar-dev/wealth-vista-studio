@@ -36,26 +36,31 @@ const Partners = () => {
 
   // General Insurance Companies
   const generalInsurance = [
-    { name: "National Insurance", image: "https://www.nationalinsurance.nic.co.in/sites/default/files/inline-images/nic_logo.png" },
-    { name: "New India Assurance", image: "https://companieslogo.com/img/orig/NIACL.NS-19e2a5b2.png?t=1720244493" },
-    { name: "Oriental Insurance", image: "https://orientalinsurance.org.in/en/images/logo.png" },
-    { name: "United India Insurance", image: "https://companieslogo.com/img/orig/UIIC.NS_BIG-b0b05f87.png?t=1720244494" },
-    { name: "Acko General", image: "https://cdn.worldvectorlogo.com/logos/acko-2.svg" },
-    { name: "Bajaj Allianz", image: "https://companieslogo.com/img/orig/BAJFINANCE.NS-5b55eb98.png?t=1720244490" },
-    { name: "Cholamandalam MS", image: "https://companieslogo.com/img/orig/CHOLAFIN.NS-df9b2e67.png?t=1720244491" },
-    { name: "Go Digit General", image: "https://companieslogo.com/img/orig/DIGI.NS-8e70a5e8.png?t=1720244491" },
-    { name: "HDFC ERGO", image: "https://companieslogo.com/img/orig/HDFCLIFE.NS-d6dd6428.png?t=1720244492" },
-    { name: "ICICI Lombard", image: "https://companieslogo.com/img/orig/ICICIGI.NS-20ed1c7c.png?t=1720244492" },
-    { name: "IFFCO-TOKIO", image: "https://www.iffcotokio.co.in/themes/custom/iffco_tokio/logo.svg" },
-    { name: "Zurich Kotak", image: "https://companieslogo.com/img/orig/ZURN.SW-3a7b5019.png?t=1720244494" },
-    { name: "Liberty General", image: "https://companieslogo.com/img/orig/LFC-c3b8ea15.png?t=1720244493" },
-    { name: "Navi General", image: "https://companieslogo.com/img/orig/NAVI.NS-d97b2e0a.png?t=1720244493" },
-    { name: "Reliance General", image: "https://companieslogo.com/img/orig/RELIANCE.NS-aeebfcef.png?t=1720244493" },
-    { name: "Royal Sundaram", image: "https://companieslogo.com/img/orig/SUNDARMFIN.NS-09d03a1d.png?t=1720244494" },
-    { name: "SBI General", image: "https://companieslogo.com/img/orig/SBIN.NS-dc50524e.png?t=1720244493" },
-    { name: "Shriram General", image: "https://companieslogo.com/img/orig/SHRIRAMFIN.NS-ede17ac3.png?t=1720244494" },
-    { name: "TATA AIG", image: "https://companieslogo.com/img/orig/TATACONSUM.NS-c7f01ac4.png?t=1720244494" },
-    { name: "Universal Sompo", image: "https://companieslogo.com/img/orig/INDUSINDBK.NS-72c40a90.png?t=1720244492" },
+    { name: "Zuno General", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766933172/zuno-general-insurance_is0uze.png" },
+    { name: "TATA AIG", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766933168/TATA_z9q7nj.png" },
+    { name: "Universal Sompo", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766933167/Universal_Sompo_General_Insurance_Company_Ltd._bbhqyq.png" },
+    { name: "United India", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766933167/United_India_ifqnm5.png" },
+    { name: "Oriental Insurance", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766933167/The_Oriental_Insurance_Company_Ltd.-removebg-preview_zqvgrk.png" },
+    { name: "SBI General", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766933166/SBI_General_Insurance_Company_Ltd._gru8bc.png" },
+    { name: "Shriram General", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766933165/Shriram-General-Insurance-_ombhli.png" },
+    { name: "New India Assurance", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766933166/The_New_India_Assurance_Company_Ltd.-removebg-preview_pvwdug.png" },
+    { name: "Royal Sundaram", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766933165/Royal_Sundaram_General_Insurance_Co._Ltd._t1stun.png" },
+    { name: "Liberty General", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766933158/Liberty-General-Insurance-Logo_r2hdvl.png" },
+    { name: "Raheja QBE", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766933158/Raheja_lrhrju.png" },
+    { name: "Reliance General", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766933159/reliance-general-insurance-logo_bld2jq.png" },
+    { name: "IFFCO-TOKIO", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766933158/IFFCO-TOKIO_General_Insurance_cdx0pl.png" },
+    { name: "Navi General", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766933158/Navi_General_Insurance_ql6aax.png" },
+    { name: "Kshema General", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766933158/Kshema_General_Insurance_Ltd._xyfrdu.png" },
+    { name: "Navi General Ltd", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766933158/Navi_General_Insurance_Ltd._hnvfxh.png" },
+    { name: "Private", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766933158/Private-removebg-preview_jryv76.png" },
+    { name: "ICICI Lombard", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766933157/icici-lombard_f04bls.png" },
+    { name: "Magma HDI", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766933158/magma-removebg_qtjunf.png" },
+    { name: "Godrej", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766933157/Godrej_yb0ytk.png" },
+    { name: "Generali", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766933157/Generali_tlbqqh.png" },
+    { name: "HDFC ERGO", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766933157/HDFC_ERGO_General_Insurance_Co._Ltd.-removebg-preview_xbhwvy.png" },
+    { name: "Cholamandalam MS", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766933156/Cholamandalam_MS_General_Insurance_Co._Ltd.-removebg-preview_p5mxld.png" },
+    { name: "Bajaj Allianz", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766933156/Bajaj_Allianz_General_Insurance_Co._Ltd.-removebg-preview_xgzk4z.png" },
+    { name: "Go Digit", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766933156/Go-Digit-Logo_pxczdw.png" },
   ];
 
   // Mutual Fund Companies (AMCs)
@@ -138,7 +143,7 @@ const Partners = () => {
               <div
                 key={`row-${index}`}
                 onClick={() => handleCardClick(partner.name)}
-                className={`flex-shrink-0 bg-muted/30 border rounded-xl px-4 sm:px-5 py-3 sm:py-4 min-w-[130px] sm:min-w-[180px] h-16 sm:h-20 flex flex-col items-center justify-center cursor-pointer transition-all duration-300 ${
+                className={`flex-shrink-0 bg-muted/30 border rounded-xl px-5 sm:px-6 py-4 sm:py-5 min-w-[150px] sm:min-w-[200px] h-20 sm:h-24 flex flex-col items-center justify-center cursor-pointer transition-all duration-300 ${
                   selectedPartner === partner.name 
                     ? 'border-primary bg-primary/10 scale-105' 
                     : 'border-border/60 hover:border-primary/50 hover:bg-muted/40'
@@ -152,8 +157,8 @@ const Partners = () => {
                   decoding="async"
                   className={`object-contain [filter:drop-shadow(0_2px_6px_hsl(var(--foreground)/0.25))] transition-all duration-300 ${
                     selectedPartner === partner.name 
-                      ? 'max-h-6 sm:max-h-8 max-w-[90px] sm:max-w-[120px]' 
-                      : 'max-h-10 sm:max-h-12 max-w-[110px] sm:max-w-[150px]'
+                      ? 'max-h-8 sm:max-h-10 max-w-[100px] sm:max-w-[140px]' 
+                      : 'max-h-14 sm:max-h-16 max-w-[130px] sm:max-w-[170px]'
                   }`}
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
@@ -174,7 +179,7 @@ const Partners = () => {
               <div
                 key={`row-dup-${index}`}
                 onClick={() => handleCardClick(partner.name)}
-                className={`flex-shrink-0 bg-muted/30 border rounded-xl px-4 sm:px-5 py-3 sm:py-4 min-w-[130px] sm:min-w-[180px] h-16 sm:h-20 flex flex-col items-center justify-center cursor-pointer transition-all duration-300 ${
+                className={`flex-shrink-0 bg-muted/30 border rounded-xl px-5 sm:px-6 py-4 sm:py-5 min-w-[150px] sm:min-w-[200px] h-20 sm:h-24 flex flex-col items-center justify-center cursor-pointer transition-all duration-300 ${
                   selectedPartner === partner.name 
                     ? 'border-primary bg-primary/10 scale-105' 
                     : 'border-border/60 hover:border-primary/50 hover:bg-muted/40'
@@ -188,8 +193,8 @@ const Partners = () => {
                   decoding="async"
                   className={`object-contain [filter:drop-shadow(0_2px_6px_hsl(var(--foreground)/0.25))] transition-all duration-300 ${
                     selectedPartner === partner.name 
-                      ? 'max-h-6 sm:max-h-8 max-w-[90px] sm:max-w-[120px]' 
-                      : 'max-h-10 sm:max-h-12 max-w-[110px] sm:max-w-[150px]'
+                      ? 'max-h-8 sm:max-h-10 max-w-[100px] sm:max-w-[140px]' 
+                      : 'max-h-14 sm:max-h-16 max-w-[130px] sm:max-w-[170px]'
                   }`}
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
