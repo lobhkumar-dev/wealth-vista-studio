@@ -6,7 +6,7 @@ const Partners = () => {
 
   // Life Insurance Companies with proper logos
   const lifeInsurance = [
-    { name: "LIC", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766932569/Lic-removebg-preview_ejpizp.png" },
+    { name: "LIC", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766946582/Lic-removebg-preview_zwhztx.png" },
     { name: "HDFC Life", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766932568/HDFC_Life-removebg-preview_roonq6.png" },
     { name: "ICICI Prudential", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766932569/ICICIPrudential-removebg-preview_kafum0.png" },
     { name: "SBI Life", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766932575/sbilife-removebg-preview_frimpq.png" },
@@ -99,7 +99,7 @@ const Partners = () => {
     { name: "Navi MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830301/Navi_Mutual_Fund_fx7mjq.png" },
     { name: "Nippon India MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830301/Nippon_India_Mutual_Fund_hrarjs.png" },
     { name: "NJ MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830302/NJ_Mutual_Fund_nrhe1c.png" },
-    { name: "Indian Post", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766944802/post-office-logo-clipart-26_wyq3f3.jpg" },
+    { name: "Indian Post", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766946542/india-post-logo-png_seeklogo-304806_vkyyj3.png" },
   ];
 
   const MarqueeRow = ({ 
