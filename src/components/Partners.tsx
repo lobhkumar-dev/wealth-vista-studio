@@ -251,7 +251,7 @@ const Partners = () => {
         <MarqueeRow partners={generalInsurance} label="General Insurance" reverse />
 
         {/* Third row - Mutual Fund */}
-        <MarqueeRow partners={mutualFunds} label="Mutual Funds" />
+        <MarqueeRow partners={mutualFunds} label="Mutual Funds & Indian Post" />
       </div>
     </section>
   );
