@@ -168,7 +168,7 @@ const Footer = () => {
           style={{ transitionDelay: "500ms" }}
         >
           <p className="text-foreground/60 text-xs sm:text-sm">
-            © {currentYear} Smart Investment Solutions. All rights reserved. | IRDAI & SEBI
+            © {currentYear} Smart Investment Solutions. All rights reserved. | IRDAI & SEBI Registered Investment Advisor
           </p>
           <p className="text-foreground/50 text-[10px] sm:text-xs mt-1.5 sm:mt-2">
             Investments are subject to market risks. Please read all scheme related documents carefully before investing.
