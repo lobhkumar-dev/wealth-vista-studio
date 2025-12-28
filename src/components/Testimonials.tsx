@@ -22,13 +22,13 @@ const testimonials = [
   },
   {
     id: 2,
-    name: "Priya Sharma",
-    role: "IT Professional",
-    text: "Working with MoneyTree has been a game-changer for my retirement planning. Their comprehensive approach to wealth management and transparent communication have given me complete confidence in my financial future. Highly recommend their services to anyone serious about growing their wealth.",
-    rating: 4.9,
+    name: "Shatadip Mukherjee",
+    role: "Medical Representative",
+    text: "Very Good Guidance & services. SmartInvest Solutions helped me understand my financial options clearly. Their professional approach and dedicated support made the entire process seamless. Highly recommended for anyone seeking reliable investment guidance.",
+    rating: 5,
     reviews: 68,
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop",
-    quote: "Excellent Guidance"
+    image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766944415/IMG_8758_-_Shatadip_Mukherjee_bwipjx.jpg",
+    quote: "Very Good Guidance"
   },
   {
     id: 3,

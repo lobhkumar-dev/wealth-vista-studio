@@ -93,7 +93,7 @@ const FAQ = () => {
           >
             <div className="absolute inset-0 rounded-3xl overflow-hidden shadow-2xl shadow-primary/20">
               <img
-                src={aboutTeamMeeting}
+                src="https://res.cloudinary.com/dbznj2cof/image/upload/v1766944590/WhatsApp_Image_2025-12-28_at_11.22.47_PM_ttfqoy.jpg"
                 alt="Team collaboration"
                 className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
               />
