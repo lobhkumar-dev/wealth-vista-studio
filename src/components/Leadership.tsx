@@ -9,7 +9,7 @@ const Leadership = () => {
   const founderCEO = {
     name: "Soumyajit Datta",
     position: "Founder & CEO",
-    description: "With over 25 years of distinguished experience in wealth management and financial planning, Soumyajit Datta has established himself as a visionary leader in the financial services industry. As the Founder and CEO, he brings a wealth of knowledge from his previous role as Vice President at leading investment firms.",
+    description: "With over 5 years of distinguished experience in wealth management and financial planning, Soumyajit Datta has established himself as a visionary leader in the financial services industry. As the Founder and CEO, he brings a wealth of knowledge from his previous role as Vice President at leading investment firms.",
     philosophy: "Soumyajit believes in building long-term relationships based on trust, transparency, and personalized financial strategies. His client-centric approach has helped hundreds of individuals and families achieve their financial goals and secure their future.",
     achievements: [
       "Successfully managed portfolios worth over 25 cr",
