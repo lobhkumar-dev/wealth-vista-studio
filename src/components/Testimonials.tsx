@@ -12,13 +12,13 @@ import FeedbackPopup from "./FeedbackPopup";
 const testimonials = [
   {
     id: 1,
-    name: "Rajesh Kumar",
-    role: "Business Owner",
-    text: "Smart Investment Solutions has transformed how I approach financial planning. Their expertise in portfolio management and personalized investment strategies have consistently delivered results beyond my expectations. The team's dedication to understanding my financial goals is truly commendable.",
-    rating: 4.8,
+    name: "Surya Dutta",
+    role: "Professor",
+    text: "I had a good experience with SmartInvest Solutions. The team explained everything clearly and helped me choose the right investment and insurance options. Their service is professional, supportive, and trustworthy. I am satisfied with their guidance and support.",
+    rating: 4,
     reviews: 52,
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop",
-    quote: "Outstanding Service"
+    image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766934315/IMG-20251228-WA0053_mgaxs0.jpg",
+    quote: "Good Experience"
   },
   {
     id: 2,
