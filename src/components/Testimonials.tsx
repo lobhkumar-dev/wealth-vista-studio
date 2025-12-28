@@ -32,13 +32,13 @@ const testimonials = [
   },
   {
     id: 3,
-    name: "Amit Patel",
-    role: "Entrepreneur",
-    text: "The financial advisory services provided by Smart Investment Solutions are unparalleled. They helped me navigate complex investment decisions and tax planning strategies that have significantly optimized my wealth. Their professionalism and market insights are truly world-class.",
-    rating: 4.7,
+    name: "Sayan Bagdi",
+    role: "Engineer",
+    text: "Very Good Guidance & Services.",
+    rating: 5,
     reviews: 45,
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop",
-    quote: "Trusted Advisor"
+    image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766935249/IMG_20231124_222416_-_Sayan_Bagdi_jjojvd.jpg",
+    quote: "Very Good Guidance"
   },
   {
     id: 4,
