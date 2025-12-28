@@ -34,7 +34,7 @@ const testimonials = [
     id: 3,
     name: "Sayan Bagdi",
     role: "Engineer",
-    text: "Very Good Guidance & Services.",
+    text: "SmartInvest Solutions provided clear guidance and timely support for my investment and insurance needs. The process was smooth and well explained. I appreciate their honest advice and professional service.",
     rating: 5,
     reviews: 45,
     image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766935249/IMG_20231124_222416_-_Sayan_Bagdi_jjojvd.jpg",
@@ -42,13 +42,13 @@ const testimonials = [
   },
   {
     id: 4,
-    name: "Sneha Reddy",
-    role: "Doctor",
-    text: "MoneyTree's holistic approach to financial planning has helped me achieve my investment goals while maintaining a balanced portfolio. Their team is responsive, knowledgeable, and always available to address my concerns. I feel secure knowing my finances are in expert hands.",
-    rating: 4.9,
+    name: "Ayan Bagdi",
+    role: "Engineer",
+    text: "Very satisfied with the service of SmartInvest Solutions. Proper guidance, quick response, and smooth process. Thank you for your support.",
+    rating: 5,
     reviews: 71,
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop",
-    quote: "Highly Professional"
+    image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766940323/IMG-20251008-WA0002_-_Ayan_Bagdi_myaost.jpg",
+    quote: "Very Satisfied"
   }
 ];
 
@@ -88,9 +88,6 @@ const Testimonials = () => {
                   <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
                     {/* Left Content */}
                     <div className="space-y-4 md:space-y-6">
-                      <div className="inline-block bg-lime-400 text-black px-4 md:px-6 py-1.5 md:py-2 rounded-full text-xs md:text-sm font-semibold">
-                        TESTIMONIAL
-                      </div>
 
                       <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
                         <div className="flex-1">
