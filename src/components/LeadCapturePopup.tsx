@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
-import { User, Phone, Mail, Shield } from 'lucide-react';
+import { User, Phone, Mail } from 'lucide-react';
 
 const STORAGE_KEY = 'lead_captured';
 
@@ -116,8 +116,12 @@ Time: ${new Date().toLocaleString()}`);
         onEscapeKeyDown={(e) => e.preventDefault()}
       >
         <div className="flex flex-col items-center text-center space-y-4 pt-4">
-          <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
-            <Shield className="w-8 h-8 text-primary" />
+          <div className="w-20 h-20 rounded-full overflow-hidden">
+            <img 
+              src="https://res.cloudinary.com/dbznj2cof/image/upload/v1766931648/Picsart_25-12-28_00-37-21-307_zs5tar.jpg" 
+              alt="SmartInvest Solutions"
+              className="w-full h-full object-cover"
+            />
           </div>
           <div>
             <h2 className="text-2xl font-bold text-foreground">Welcome to SmartInvest Solutions</h2>

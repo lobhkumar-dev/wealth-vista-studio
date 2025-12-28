@@ -18,6 +18,9 @@ const Footer = () => {
       { label: "Investment Planning", href: "#services" },
       { label: "Insurance Solutions", href: "#services" },
       { label: "Retirement Planning", href: "#services" },
+      { label: "Educational Planning", href: "#services" },
+      { label: "Postal Investment", href: "#services" },
+      { label: "Tax Planning", href: "#services" },
     ],
     resources: [
       { label: "Latest News", href: "#news" },

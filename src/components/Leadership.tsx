@@ -1,4 +1,4 @@
-import { Linkedin, Mail, CheckCircle } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import founderImage from "@/assets/founder-profile-nobg.png";
 
@@ -221,17 +221,7 @@ const Leadership = () => {
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-1">{member.name}</h3>
                 <p className="text-primary text-sm mb-3">{member.position}</p>
-                <p className="text-foreground/60 text-sm mb-4">{member.bio}</p>
-
-                {/* Social Links */}
-                <div className="flex gap-3">
-                  <button className="w-9 h-9 bg-secondary/50 hover:bg-primary hover:text-primary-foreground rounded-lg flex items-center justify-center transition-colors">
-                    <Linkedin className="w-4 h-4" />
-                  </button>
-                  <button className="w-9 h-9 bg-secondary/50 hover:bg-primary hover:text-primary-foreground rounded-lg flex items-center justify-center transition-colors">
-                    <Mail className="w-4 h-4" />
-                  </button>
-                </div>
+                <p className="text-foreground/60 text-sm">{member.bio}</p>
               </div>
             </div>
           ))}
