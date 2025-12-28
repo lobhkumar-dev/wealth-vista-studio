@@ -1,4 +1,4 @@
-import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Linkedin, Mail, Phone, MapPin } from "lucide-react";
 import sisLogo from "@/assets/sis-logo.png";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
@@ -134,28 +134,20 @@ const Footer = () => {
         >
           <div className="flex gap-3 sm:gap-4">
             <a
-              href="#"
+              href="https://www.facebook.com/share/17aZjbfJhf/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-8 h-8 sm:w-10 sm:h-10 bg-secondary/50 hover:bg-primary rounded-lg flex items-center justify-center transition-colors group"
             >
               <Facebook className="w-4 h-4 sm:w-5 sm:h-5 text-foreground group-hover:text-primary-foreground" />
             </a>
             <a
-              href="#"
-              className="w-8 h-8 sm:w-10 sm:h-10 bg-secondary/50 hover:bg-primary rounded-lg flex items-center justify-center transition-colors group"
-            >
-              <Twitter className="w-4 h-4 sm:w-5 sm:h-5 text-foreground group-hover:text-primary-foreground" />
-            </a>
-            <a
-              href="#"
+              href="https://www.linkedin.com/in/smartinvest-solutions-93609b320?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-8 h-8 sm:w-10 sm:h-10 bg-secondary/50 hover:bg-primary rounded-lg flex items-center justify-center transition-colors group"
             >
               <Linkedin className="w-4 h-4 sm:w-5 sm:h-5 text-foreground group-hover:text-primary-foreground" />
-            </a>
-            <a
-              href="#"
-              className="w-8 h-8 sm:w-10 sm:h-10 bg-secondary/50 hover:bg-primary rounded-lg flex items-center justify-center transition-colors group"
-            >
-              <Instagram className="w-4 h-4 sm:w-5 sm:h-5 text-foreground group-hover:text-primary-foreground" />
             </a>
           </div>
 

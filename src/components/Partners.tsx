@@ -134,16 +134,19 @@ const Partners = () => {
         </div>
         <div 
           className={`flex ${reverse ? 'animate-marquee-reverse' : 'animate-marquee'}`}
-          style={{ animationPlayState: isPaused ? 'paused' : 'running' }}
+          style={{ 
+            animationPlayState: isPaused ? 'paused' : 'running',
+            width: 'max-content'
+          }}
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => { setIsPaused(false); setSelectedPartner(null); }}
         >
-          <div className="flex shrink-0 gap-4 sm:gap-6 items-center">
+          <div className="flex shrink-0 gap-3 sm:gap-4 md:gap-6 items-center">
             {partners.map((partner, index) => (
               <div
                 key={`row-${index}`}
                 onClick={() => handleCardClick(partner.name)}
-                className={`flex-shrink-0 bg-muted/30 border rounded-xl px-5 sm:px-6 py-4 sm:py-5 min-w-[150px] sm:min-w-[200px] h-20 sm:h-24 flex flex-col items-center justify-center cursor-pointer transition-all duration-300 ${
+                className={`flex-shrink-0 bg-muted/30 border rounded-xl px-3 sm:px-5 md:px-6 py-3 sm:py-4 md:py-5 min-w-[120px] sm:min-w-[150px] md:min-w-[200px] h-16 sm:h-20 md:h-24 flex flex-col items-center justify-center cursor-pointer transition-all duration-300 ${
                   selectedPartner === partner.name 
                     ? 'border-primary bg-primary/10 scale-105' 
                     : 'border-border/60 hover:border-primary/50 hover:bg-muted/40'
@@ -157,8 +160,8 @@ const Partners = () => {
                   decoding="async"
                   className={`object-contain [filter:drop-shadow(0_2px_6px_hsl(var(--foreground)/0.25))] transition-all duration-300 ${
                     selectedPartner === partner.name 
-                      ? 'max-h-8 sm:max-h-10 max-w-[100px] sm:max-w-[140px]' 
-                      : 'max-h-14 sm:max-h-16 max-w-[130px] sm:max-w-[170px]'
+                      ? 'max-h-6 sm:max-h-8 md:max-h-10 max-w-[80px] sm:max-w-[100px] md:max-w-[140px]' 
+                      : 'max-h-10 sm:max-h-14 md:max-h-16 max-w-[100px] sm:max-w-[130px] md:max-w-[170px]'
                   }`}
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
@@ -174,12 +177,12 @@ const Partners = () => {
               </div>
             ))}
           </div>
-          <div className="flex shrink-0 gap-4 sm:gap-6 items-center ml-4 sm:ml-6">
+          <div className="flex shrink-0 gap-3 sm:gap-4 md:gap-6 items-center ml-3 sm:ml-4 md:ml-6">
             {partners.map((partner, index) => (
               <div
                 key={`row-dup-${index}`}
                 onClick={() => handleCardClick(partner.name)}
-                className={`flex-shrink-0 bg-muted/30 border rounded-xl px-5 sm:px-6 py-4 sm:py-5 min-w-[150px] sm:min-w-[200px] h-20 sm:h-24 flex flex-col items-center justify-center cursor-pointer transition-all duration-300 ${
+                className={`flex-shrink-0 bg-muted/30 border rounded-xl px-3 sm:px-5 md:px-6 py-3 sm:py-4 md:py-5 min-w-[120px] sm:min-w-[150px] md:min-w-[200px] h-16 sm:h-20 md:h-24 flex flex-col items-center justify-center cursor-pointer transition-all duration-300 ${
                   selectedPartner === partner.name 
                     ? 'border-primary bg-primary/10 scale-105' 
                     : 'border-border/60 hover:border-primary/50 hover:bg-muted/40'
@@ -193,8 +196,8 @@ const Partners = () => {
                   decoding="async"
                   className={`object-contain [filter:drop-shadow(0_2px_6px_hsl(var(--foreground)/0.25))] transition-all duration-300 ${
                     selectedPartner === partner.name 
-                      ? 'max-h-8 sm:max-h-10 max-w-[100px] sm:max-w-[140px]' 
-                      : 'max-h-14 sm:max-h-16 max-w-[130px] sm:max-w-[170px]'
+                      ? 'max-h-6 sm:max-h-8 md:max-h-10 max-w-[80px] sm:max-w-[100px] md:max-w-[140px]' 
+                      : 'max-h-10 sm:max-h-14 md:max-h-16 max-w-[100px] sm:max-w-[130px] md:max-w-[170px]'
                   }`}
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
