@@ -1,40 +1,14 @@
-import { useState } from "react";
-import { Award, Star, Sparkles } from "lucide-react";
+import { Award, Sparkles } from "lucide-react";
 
 const Achievements = () => {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
-  const achievements = [
-    {
-      image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766691464/IMG_20241108_140628_daonnm.jpg",
-      title: "Excellence Award 2024",
-      category: "Recognition",
-    },
-    {
-      image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766691462/IMG_20240919_133546_rhxqqh.jpg",
-      title: "Top Performer",
-      category: "Achievement",
-    },
-    {
-      image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766691462/IMG_20240822_123208_c48yv9.jpg",
-      title: "Client Milestone",
-      category: "Success",
-    },
-    {
-      image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766691452/IMG_20240822_121624_ky7xei.jpg",
-      title: "Industry Leader",
-      category: "Recognition",
-    },
-    {
-      image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766691448/IMG-20231219-WA0011_h3v8bx.jpg",
-      title: "Best Service Award",
-      category: "Excellence",
-    },
-    {
-      image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766691445/FB_IMG_1766681381468_qve1au.jpg",
-      title: "Community Impact",
-      category: "Social",
-    },
+  const achievementImages = [
+    "https://res.cloudinary.com/dbznj2cof/image/upload/v1766932430/WhatsApp_Image_2025-12-27_at_4.20.11_PM_agpvoq.jpg",
+    "https://res.cloudinary.com/dbznj2cof/image/upload/v1766932430/WhatsApp_Image_2025-12-27_at_4.20.30_PM_pbpegy.jpg",
+    "https://res.cloudinary.com/dbznj2cof/image/upload/v1766932427/WhatsApp_Image_2025-12-27_at_4.20.07_PM_jylrsa.jpg",
+    "https://res.cloudinary.com/dbznj2cof/image/upload/v1766932410/WhatsApp_Image_2025-12-27_at_4.19.49_PM_ik0qvm.jpg",
+    "https://res.cloudinary.com/dbznj2cof/image/upload/v1766932409/WhatsApp_Image_2025-12-27_at_4.17.57_PM_hakwd7.jpg",
+    "https://res.cloudinary.com/dbznj2cof/image/upload/v1766932409/WhatsApp_Image_2025-12-27_at_4.20.05_PM_fc6bk2.jpg",
+    "https://res.cloudinary.com/dbznj2cof/image/upload/v1766932409/WhatsApp_Image_2025-12-27_at_4.17.55_PM_mprsow.jpg",
   ];
 
   return (
@@ -73,85 +47,42 @@ const Achievements = () => {
         {/* Bento Grid Gallery */}
         <div className="grid grid-cols-12 gap-4 md:gap-6 max-w-6xl mx-auto">
           {/* Large featured card */}
-          <div 
-            className="col-span-12 md:col-span-8 row-span-2 group relative rounded-3xl overflow-hidden cursor-pointer"
-            onMouseEnter={() => setHoveredIndex(0)}
-            onMouseLeave={() => setHoveredIndex(null)}
-          >
-            <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/20 to-transparent z-10 opacity-60 group-hover:opacity-90 transition-opacity duration-500" />
+          <div className="col-span-12 md:col-span-8 row-span-2 group relative rounded-3xl overflow-hidden cursor-pointer">
             <img 
-              src={achievements[0].image}
-              alt={achievements[0].title}
+              src={achievementImages[0]}
+              alt="Achievement"
               className="w-full h-full object-cover aspect-[4/3] md:aspect-auto md:h-[500px] group-hover:scale-110 transition-transform duration-700"
             />
-            <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 z-20">
-              <div className={`transform transition-all duration-500 ${hoveredIndex === 0 ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
-                <span className="inline-block px-3 py-1 bg-primary/20 backdrop-blur-sm text-primary text-xs font-semibold rounded-full mb-3 border border-primary/30">
-                  {achievements[0].category}
-                </span>
-              </div>
-              <h3 className="text-2xl md:text-3xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
-                {achievements[0].title}
-              </h3>
-              <div className="flex gap-1 mt-3">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-primary text-primary" />
-                ))}
-              </div>
-            </div>
-            {/* Glowing border on hover */}
             <div className="absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-primary/50 transition-colors duration-500 z-30 pointer-events-none" />
             <div className="absolute inset-0 rounded-3xl group-hover:shadow-[0_0_40px_rgba(var(--primary),0.3)] transition-shadow duration-500 z-0" />
           </div>
 
           {/* Side cards */}
-          {achievements.slice(1, 3).map((item, index) => (
+          {achievementImages.slice(1, 3).map((image, index) => (
             <div 
               key={index + 1}
               className="col-span-6 md:col-span-4 group relative rounded-2xl overflow-hidden cursor-pointer"
-              onMouseEnter={() => setHoveredIndex(index + 1)}
-              onMouseLeave={() => setHoveredIndex(null)}
             >
-              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent z-10 opacity-70 group-hover:opacity-95 transition-opacity duration-500" />
               <img 
-                src={item.image}
-                alt={item.title}
+                src={image}
+                alt="Achievement"
                 className="w-full h-48 md:h-60 object-cover group-hover:scale-110 transition-transform duration-700"
               />
-              <div className="absolute bottom-0 left-0 right-0 p-4 z-20">
-                <span className={`inline-block px-2 py-0.5 bg-accent/20 backdrop-blur-sm text-accent text-[10px] font-semibold rounded-full mb-2 border border-accent/30 transform transition-all duration-500 ${hoveredIndex === index + 1 ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0'}`}>
-                  {item.category}
-                </span>
-                <h3 className="text-sm md:text-base font-bold text-foreground group-hover:text-primary transition-colors duration-300 line-clamp-2">
-                  {item.title}
-                </h3>
-              </div>
               <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-primary/40 transition-colors duration-500 z-30 pointer-events-none" />
             </div>
           ))}
 
           {/* Bottom row cards */}
-          {achievements.slice(3, 6).map((item, index) => (
+          {achievementImages.slice(3, 7).map((image, index) => (
             <div 
               key={index + 3}
-              className="col-span-4 group relative rounded-2xl overflow-hidden cursor-pointer"
-              onMouseEnter={() => setHoveredIndex(index + 3)}
-              onMouseLeave={() => setHoveredIndex(null)}
+              className="col-span-6 md:col-span-3 group relative rounded-2xl overflow-hidden cursor-pointer"
             >
-              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent z-10 opacity-70 group-hover:opacity-95 transition-opacity duration-500" />
               <img 
-                src={item.image}
-                alt={item.title}
+                src={image}
+                alt="Achievement"
                 className="w-full h-32 md:h-44 object-cover group-hover:scale-110 transition-transform duration-700"
               />
-              <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4 z-20">
-                <span className={`inline-block px-2 py-0.5 bg-primary/20 backdrop-blur-sm text-primary text-[10px] font-semibold rounded-full mb-1 border border-primary/30 transform transition-all duration-500 ${hoveredIndex === index + 3 ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0'}`}>
-                  {item.category}
-                </span>
-                <h3 className="text-xs md:text-sm font-bold text-foreground group-hover:text-primary transition-colors duration-300 line-clamp-1">
-                  {item.title}
-                </h3>
-              </div>
               <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-accent/40 transition-colors duration-500 z-30 pointer-events-none" />
             </div>
           ))}
