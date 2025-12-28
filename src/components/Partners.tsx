@@ -69,7 +69,7 @@ const Partners = () => {
     { name: "Abakkus MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830285/Abakkus_Mutual_Fund_msu5cv.png" },
     { name: "Aditya Birla Sun Life MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830285/Aditya_Birla_Sun_Life_Mutual_Fund_gribmb.png" },
     { name: "Angel One MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830285/Angel_One_Mutual_Fund_lyykn0.png" },
-    { name: "Axis MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830285/Axis_Mutual_Fund_jpxvr4.png" },
+    { name: "Axis MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830285/Axis_Mutual_Fund_jpxvr4.png", bgColor: "bg-black" },
     { name: "Bajaj Finserv MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830286/Bajaj_Finserv_Mutual_Fund_cgv8j6.png" },
     { name: "Bandhan MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830285/Bandhan_Mutual_Fund_gbbpp2.png" },
     { name: "Bank of India MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830286/Bank_of_India_Mutual_Fund_ijzte5.png" },
@@ -79,7 +79,7 @@ const Partners = () => {
     { name: "DSP MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830286/DSP_Mutual_Fund_yek60i.png" },
     { name: "Edelweiss MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830287/Edelweiss_Mutual_Fund_oingif.png" },
     { name: "Franklin Templeton MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830286/Franklin_Templeton_Mutual_Fund_jdrbpr.png" },
-    { name: "Goldman Sachs MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830288/Goldman_Sachs_Mutual_Fund_usiere.png" },
+    { name: "Goldman Sachs MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830288/Goldman_Sachs_Mutual_Fund_usiere.png", bgColor: "bg-black" },
     { name: "Groww MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830294/Groww_Mutual_Fund_uakalz.png" },
     { name: "HDFC MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830294/HDFC_Mutual_Fund_fmq6yu.png" },
     { name: "Helios MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830295/Helios_Mutual_Fund_hegrza.png" },
@@ -99,6 +99,7 @@ const Partners = () => {
     { name: "Navi MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830301/Navi_Mutual_Fund_fx7mjq.png" },
     { name: "Nippon India MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830301/Nippon_India_Mutual_Fund_hrarjs.png" },
     { name: "NJ MF", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766830302/NJ_Mutual_Fund_nrhe1c.png" },
+    { name: "Indian Post", image: "https://res.cloudinary.com/dbznj2cof/image/upload/v1766944802/post-office-logo-clipart-26_wyq3f3.jpg" },
   ];
 
   const MarqueeRow = ({ 
@@ -106,7 +107,7 @@ const Partners = () => {
     label, 
     reverse = false 
   }: { 
-    partners: { name: string; image: string }[]; 
+    partners: { name: string; image: string; bgColor?: string }[]; 
     label: string;
     reverse?: boolean;
   }) => {
@@ -146,7 +147,9 @@ const Partners = () => {
               <div
                 key={`row-${index}`}
                 onClick={() => handleCardClick(partner.name)}
-                className={`flex-shrink-0 bg-muted/30 border rounded-xl px-3 sm:px-5 md:px-6 py-3 sm:py-4 md:py-5 min-w-[120px] sm:min-w-[150px] md:min-w-[200px] h-16 sm:h-20 md:h-24 flex flex-col items-center justify-center cursor-pointer transition-all duration-300 ${
+                className={`flex-shrink-0 border rounded-xl px-3 sm:px-5 md:px-6 py-3 sm:py-4 md:py-5 min-w-[120px] sm:min-w-[150px] md:min-w-[200px] h-16 sm:h-20 md:h-24 flex flex-col items-center justify-center cursor-pointer transition-all duration-300 ${
+                  partner.bgColor ? partner.bgColor : 'bg-muted/30'
+                } ${
                   selectedPartner === partner.name 
                     ? 'border-primary bg-primary/10 scale-105' 
                     : 'border-border/60 hover:border-primary/50 hover:bg-muted/40'
@@ -182,7 +185,9 @@ const Partners = () => {
               <div
                 key={`row-dup-${index}`}
                 onClick={() => handleCardClick(partner.name)}
-                className={`flex-shrink-0 bg-muted/30 border rounded-xl px-3 sm:px-5 md:px-6 py-3 sm:py-4 md:py-5 min-w-[120px] sm:min-w-[150px] md:min-w-[200px] h-16 sm:h-20 md:h-24 flex flex-col items-center justify-center cursor-pointer transition-all duration-300 ${
+                className={`flex-shrink-0 border rounded-xl px-3 sm:px-5 md:px-6 py-3 sm:py-4 md:py-5 min-w-[120px] sm:min-w-[150px] md:min-w-[200px] h-16 sm:h-20 md:h-24 flex flex-col items-center justify-center cursor-pointer transition-all duration-300 ${
+                  partner.bgColor ? partner.bgColor : 'bg-muted/30'
+                } ${
                   selectedPartner === partner.name 
                     ? 'border-primary bg-primary/10 scale-105' 
                     : 'border-border/60 hover:border-primary/50 hover:bg-muted/40'
